@@ -2,26 +2,47 @@
 # Name: Cleaning bot storage
 
 import objects
-#import position from movement_modified
+#import outdoors_north
+import movement_modified
+
+visited = 0 #trigger to tell if room is visited 
 
 description = ''' Cleaning Bot Storage
 Door: West (action: unlock)
-Items: broom
+Items: door, broom
 '''
 
-class cleaningBots(objects.item):
-    def __init__(self):
-        objects.isAccessible = None 
-        objects.isPickup = True
-        objects.isLocked = None
-        objects.examine = True
-        self.items = [ objects.broom()]
+itemshere = [ objects.broom()]
+
+objects.door.isLocked = True
+#objects.isAccessible = None 
+objects.broom.isPickup = True
+objects.broom.examine = True
+
+doorLocked = objects.door.isLocked
+broomPickup_ = objects.broom.isPickup
+
+# def nextroom():
+#     print('Moving to outdoors_north')
+#     import outdoors_north
     
-    def examine():
-        # return output
-        pass
+def prevroom():
+    print('Moving back to movement_modified')
+    import movement_modified
+
+def doorUnlock(doorLocked):
+    if doorLocked == True:
+        objects.door.isLocked = False
+        doorLocked = False
+    return doorLocked
+ 
+def broomPickup(broomPickup_):
+    if broomPickup_ == True:
+        objects.broom.isPickup = True
+        print("Picked up broom")
     
-    def unlock():
-        #return action
-        pass
+def examine():
+    action = "description or insight here, possible action sequence ot set up"
+    #return action
+    
     

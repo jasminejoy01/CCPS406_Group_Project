@@ -33,7 +33,27 @@ def whereami(string1, string2):
     
     location = initialize.roomdict[inputint][0]
     return location
-  
+
+def getItem(obj):
+  #Checks objects in the room against string "object", returns object
+  x = utils.x
+  y = utils.y
+  where = library(str(x), str(y))
+  items = __import__(where).itemshere
+  for i in range(len(items)):
+    if items[i].name == obj:
+      return items[i]
+
+def hasItem(obj):
+    #Checks objects in the room against string "object"
+  x = utils.x
+  y = utils.y
+  where = library(str(x), str(y))
+  items = __import__(where).itemshere
+  for i in range(len(items)):
+    if items[i].name == obj:
+      return True
+  return False
 
 def processLanguage(obj=None):        
     #basic variables
@@ -43,6 +63,9 @@ def processLanguage(obj=None):
     command = input(" ")
     command = command.replace("'.,;:?[]{}|+-*&^%$#@!~_", "")
     splitCommand = command.split()
+    x = utils.x
+    y = utils.y
+    where = library(str(x), str(y))
     
     #Check for non-empty input
     while len(splitCommand) == 0 or not validCommand:
@@ -51,27 +74,19 @@ def processLanguage(obj=None):
         
         #1-word commands
         if len(splitCommand) == 1: 
-            x = utils.x
-            y = utils.y
-            
             if (verb == "n") | (verb == "north"):
-                where = library(str(x), str(y))
                 __import__(where).movenorth()
                 validCommand = True
             if (verb == "e") | (verb == "east"):
-                where = library(str(x), str(y))
                 __import__(where).moveeast()
                 validCommand = True
             if (verb == "s") | (verb == "south"):
-                where = library(str(x), str(y))
                 __import__(where).movesouth()
                 validCommand = True
             if (verb == "w") | (verb == "west"):
-                where = library(str(x), str(y))
                 __import__(where).movewest()
                 validCommand = True
             if (verb == "look"):
-                where = library(str(x), str(y))
                 __import__(where).basicDes()
                 validCommand = True
             if (verb == "cheat"):
@@ -83,35 +98,35 @@ def processLanguage(obj=None):
   
         #2-word commands
         if len(splitCommand) >= 2:
+            noun = splitCommand[1].lower()
             x = utils.x
             y = utils.y
+            
             if command == "where am i":
                 locate = whereami(str(x), str(y))
                 print("You are currently in", locate, ".")
-                validCommand = True
-            if command == "look again":
-                where = library(str(x), str(y))
-                __import__(where).fancyDes()
                 validCommand = True
             noun = splitCommand[1].lower()
             if verb == "read":
                 if 'userguide'== noun or 'guide' == noun:
                     T.readUserGuide()
+                    validCommand = True                    
+
+            if hasItem(noun):
+                obj = getItem(noun)
+                if (verb == "exam") | (verb == "examine"):
+                    obj.examine()
                     validCommand = True
-                if 'paper' == noun or 'note' == noun:
-                    ################################
+                if (verb == "take"):
+                    obj.take()
                     validCommand = True
-            if (verb == "exam") | (verb == "examine"):
-                #Check that noun is a valid object
-                obj.examine()
-                validCommand = True
-            if (verb == "take"):
-                #Check that noun is a valid object
-                obj.take()
-                validCommand = True
-            if (verb == "use"):
-                obj.use()
-                validCommand = True
+                if (verb == "use"):
+                    obj.use()
+                    validCommand = True
+                if verb == "read" and ("paper" == obj.name or "note" == obj.name):
+                    validCommand = True
+                    obj.use()
+                  
                     
         #3-word commands
         if len(splitCommand) == 3:

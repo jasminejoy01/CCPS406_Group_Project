@@ -1,3 +1,4 @@
+from player import Player
 inventory = []
 
 class Item:
@@ -70,7 +71,7 @@ class Computer:
             self.home()
         elif "spare key" in file:
             print("Downloading spare key to nearest wireless device....")
-            Player.key1 = True
+            player.key1 = True
             print("Downloaded!")
             print("I have [name]'s key!'")
             print("I'm done with the computer, so I log off.")

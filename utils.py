@@ -35,7 +35,14 @@ def exitgame(roomcodes):
             arr = initialize.visited
             arr = arr.tolist()
             
-            arraylist = ['## rooms visited\n', 'visited =', str(arr)+"\n", '## current location\n', 'x = ', str(initialize.x)+"\n" , 'y = ', str(initialize.y)+"\n" , 'roomcodes = ', str(roomcodes)+"\n", '## current inventory'+"\n" ]
+            arraylist = ['## rooms visited\n', 
+                         'visited =', str(arr)+"\n", 
+                         '## current location\n', 
+                         'x = ', str(initialize.x)+"\n" , 
+                         'y = ', str(initialize.y)+"\n" , 
+                         'roomcodes = ', str(roomcodes)+"\n", 
+                         '## current inventory\n', 
+                         'inventory = ', str(inventory)+"\n" ]
             
             f = open(my_file, 'w')
             for each in arraylist:

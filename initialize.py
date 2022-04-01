@@ -39,10 +39,7 @@ roomdict = { # [desc, xcoord, ycoord, code]
 
 visited = numpy.zeros(len(roomdict))
 
-
 T.intro()
-#currentroom = roomdict[0]
-
 x = 0
 y = 0
 

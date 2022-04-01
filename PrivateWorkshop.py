@@ -9,6 +9,7 @@ import utils
 
 utils.roomsvisited[0] = 1
 
+
 itemshere = [I.computer1, I.nullItem]
 
 def basicDes():
@@ -26,6 +27,7 @@ def movewest():
         utils.y = 0
     #print("You're moving to Cleaning Bot Storage", utils.x, utils.y)
 
+
 def movenorth():
     #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
@@ -40,3 +42,11 @@ def moveeast():
 
 def itemsInhere():
     print("A computer.")
+    
+def examine(obj):
+    if obj == "computer":
+        print("Got a computer.")
+        I.Computer(False, "Password:").examine()
+        I.Computer(False, "Password:").use()
+    if obj == "stickynote":
+        print("The notes mostly contain sketches of strange robots and bizarre contraptions, surrounded by hearts.")

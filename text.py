@@ -11,4 +11,5 @@ def readUserGuide():
     print("Anyway, you, my beautiful creation, are actually alive! It might take some getting used to, but you'll be able to do all sorts of amazing things. I hope to meet you very soon! I should be by shortly to check on you. Ah, it might be hard to find time, though. You see, I wasn't exaaaactly supposed to be inventing new life... Ugh, Rin's always on me about 'profits' and 'safety' and 'not needing to call the ethics comitee every time I find a new project'. 'No, [name], you can't just try to invent a whole new branch of science when you haven't even finished the last three projects we let you start!' She just doesn't understand the joy of discovery! That's what science is about! Am I rambling? I'm rambling. Well, see you soon!")
 
 def help():
-    print("Commands: look, n, north, s, south, e, east, w, west, exam [object], examine [object], take [object], use [object], read [object], where am i")
+    print("Commands: look, n, north, s, south, e, east, w, west, exam [object], examine [object], take [object], use [object], read [object], where am i, yes, y, no, n, exit")
+    

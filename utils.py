@@ -7,10 +7,38 @@ Created on Wed Mar 30 10:06:38 2022
 
 import sys
 import initialize
-
+import os
 
 roomsvisited = initialize.visited
 
 x = initialize.x
 y = initialize.x
 
+def exitgame(roomcodes):
+    print("Are you sure you want to quit the game?")
+    response = input()
+    response = response.lower()
+    if response == "yes" or response == "y":
+        print("Press 's' to save game, 'n' to quit anyway.")
+        saveinput = input()
+        
+        my_file = 'save.py'
+        
+        if os.path.isfile(my_file) == True:
+            os.remove(my_file)
+        if saveinput == 's':
+            arr = initialize.visited
+            arr = arr.tolist()
+            
+            arraylist = ['## rooms visited\n', 'visited =', str(arr)+"\n", '## current location\n', 'x = ', str(initialize.x)+"\n" , 'y = ', str(initialize.y)+"\n" , 'roomcodes = ', str(roomcodes)+"\n", '## current inventory'+"\n" ]
+            
+            f = open(my_file, 'w')
+            for each in arraylist:
+                f.write(each)
+            f.close()
+            
+            sys.exit()
+        if saveinput == 'n':
+            sys.exit()
+    else:
+        pass

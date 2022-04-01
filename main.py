@@ -64,7 +64,6 @@ def processLanguage(obj=None):
         if len(splitCommand) == 1: 
             x = utils.x
             y = utils.y
-            
             if (verb == "n") | (verb == "north"):
                 where = library(str(x), str(y))
                 __import__(where).movenorth()
@@ -122,15 +121,15 @@ def processLanguage(obj=None):
                 validCommand = True
             if (verb == "take"):
                 where = library(str(x), str(y))
-                __import__(where).take()
+                __import__(where).take(noun)
                 validCommand = True
             if (verb == "use"):
                 where = library(str(x), str(y))
-                __import__(where).use()
+                __import__(where).use(noun)
                 validCommand = True
-            if verb == "read" and ("paper" == obj.name or "note" == obj.name):
+            if verb == "read" and ("paper" == noun or "note" == noun):
                 where = library(str(x), str(y))
-                __import__(where).use()
+                __import__(where).use(noun)
                 validCommand = True
             if ("item" in command or "items" in command) and ("room" in command or "rooms" in command):
                 where = library(str(x), str(y))
@@ -151,8 +150,6 @@ def processLanguage(obj=None):
             print("Please input a valid command")
             command = input(" ")
             
-# print("What should I do?")
-
 while True:
     processLanguage()
     

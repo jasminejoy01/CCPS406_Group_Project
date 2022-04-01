@@ -54,3 +54,10 @@ def exitgame(roomcodes):
             sys.exit()
     else:
         pass
+
+# def unlockRooms():
+#     #Cheat to unlock all rooms
+#     for i in range(0, 6):
+#         for j in range(0, 6):
+#             if not (rooms[i][j].name == "no room here"):
+#                 rooms[i][j].unlock()

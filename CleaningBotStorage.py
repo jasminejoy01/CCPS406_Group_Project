@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Room#1: Private Workshop
+Room#2: Storage for Cleaning Bots
 """
 import Item as I
 import utils
 
-#print("You're in the Private Workshop.")
+print("You're in the Cleaning Bot Storage.")
 
-utils.roomsvisited[0] = 1
+utils.roomsvisited[1] = 1
 
 ## Items in Room
 ##################
@@ -20,31 +20,33 @@ note = I.Item("note", None, True, False, "It reads: 'If I forget again: Initials
 trash = I.Item("trash", None, False, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it", "")
 door = I.Item("door", True, False, False, "", True, "", "")
 
+broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping", "")
+terminal = I.Item("terminal", True, False, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
+paper = I.Item("paper", False, True, False, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", True, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", "")
+
+
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , False],
-   'computer': [computer1 , True ],
-   'keyboard': [keyboard  , None ],               
-   'note':     [note      , None ],
-   'trash':    [trash     , None ],
-   'door':     [door      , True ]
+   'broom':     [broom     , None ],
+   'terminal':  [keyboard  , True ],               
+   'paper':     [note      , None ],
+   'door':      [door      , True ]
 }
 
 def basicDes():
-    print("A small room with a computer on a desk. There is a door to the West.")
+    print("Storage for Cleaning Bots")
 
 def fancyDes():
-    print("There room has no windows. There is a door to the left.")
+    print("This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.", "This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.")
 
 def movewest():
-    if itemdictionary['door'][1] == True:
-        itemdictionary['door'][0].unlock()
     utils.x = utils.x + 1
     utils.y = utils.y + 0
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving to Cleaning Bot Storage", utils.x, utils.y)
+    #print("You're moving outdoors!")
 
 def movenorth():
     #print(utils.x, utils.y)
@@ -55,8 +57,13 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    #print(utils.x, utils.y)
-    print("Woops! Can't go that way!")
+    utils.x = utils.x - 1
+    utils.y = utils.y + 0
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back to Private workshop!")
 
 def itemsInhere():
     itemlist = []

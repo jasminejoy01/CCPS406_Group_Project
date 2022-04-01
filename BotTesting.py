@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Room#15: Security Office
+Room#16: The building's side entrance.
 """
-
 import Item as I
 import utils
 
-print("You're in the Security Office.")
+print("You're in the Bot Testing Room.")
 
-utils.roomsvisited[15] = 1
+utils.roomsvisited[16] = 1
 
 ## Items in Room
 ##################
@@ -23,25 +22,31 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("Here is a door to the North.")
+    print("There is a door to the South, and a larger door to the West.")
 
 def fancyDes():
     print("")
 
 def movewest():
-    print("Woops! Can't go that way!")
-
-def movenorth():
-    utils.x = utils.x - 1
+    utils.x = utils.x + 1
     utils.y = utils.y + 0
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving to Hallway - Section 5.")
+    #print("You're moving to the Bot Testing Obstacle Room!")
+
+def movenorth():
+    print("Woops! Can't go that way!")
 
 def movesouth():
-    print("Woops! Can't go that way!")
+    utils.x = utils.x + 1
+    utils.y = utils.y + 0
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back to Hallway!")
 
 def moveeast():
     print("Woops! Can't go that way!")

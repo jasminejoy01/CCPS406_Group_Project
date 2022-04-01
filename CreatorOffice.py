@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Room#15: Security Office
+Room#25: Creator's Office
 """
-
 import Item as I
 import utils
 
-print("You're in the Security Office.")
+print("You're in the Creator's Office.")
 
-utils.roomsvisited[15] = 1
+utils.roomsvisited[25] = 1
 
 ## Items in Room
 ##################
@@ -23,28 +22,28 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("Here is a door to the North.")
+    print("There is a door to the East.")
 
 def fancyDes():
-    print("")
+    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. A tall bookshelf to the left stands with figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds. In the middle of the room is a large wooden desk, the edges decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments. In its center are a pair of large monitors and a softly glowing computer tower.")
 
 def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    utils.x = utils.x - 1
-    utils.y = utils.y + 0
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving to Hallway - Section 5.")
+    print("Woops! Can't go that way!")
 
 def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    print("Woops! Can't go that way!")
+    utils.x = utils.x - 1
+    utils.y = utils.y
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Hallway#3.")
 
 def itemsInhere():
     itemlist = []
@@ -96,4 +95,3 @@ def removeInventory(obj):
         (utils.inventory).remove(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))
-        

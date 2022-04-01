@@ -43,4 +43,8 @@ T.intro()
 x = 0
 y = 0
 
+GPS = False
+advanced = False  #Determines description complexity
+PlayerKey1 = False #Creator's key
+    
 print("Write a command")

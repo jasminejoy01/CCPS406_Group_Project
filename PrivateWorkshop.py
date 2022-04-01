@@ -36,6 +36,8 @@ def fancyDes():
     print("There room has no windows. There is a door to the left.")
 
 def movewest():
+    if itemdictionary['door'][1] == True:
+        itemdictionary['door'][0].unlock()
     utils.x = utils.x + 1
     utils.y = utils.y + 0
     if utils.x < 0:

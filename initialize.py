@@ -46,5 +46,6 @@ y = 0
 GPS = False
 advanced = False  #Determines description complexity
 PlayerKey1 = False #Creator's key
+inventory = []
     
 print("Write a command")

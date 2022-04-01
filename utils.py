@@ -17,6 +17,7 @@ y = initialize.x
 GPS = initialize.GPS
 advanced = initialize.advanced  #Determines description complexity
 PlayerKey1 = initialize.PlayerKey1 #Creator's key
+inventory = initialize.inventory #Inventory list
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")

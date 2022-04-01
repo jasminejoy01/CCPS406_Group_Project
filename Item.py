@@ -1,24 +1,23 @@
-inventory = []
 import utils
 
 class Item:
-    def __init__(self, name, unlocked, canTake, description, interactable, useText, unlockText):
+    def __init__(self, name, islocked, canTake, inInventory, description, interactable, useText, unlockText):
         self.name = name
-        self.unlocked = unlocked
-        self.canTake = canTake
+        self.islocked = False
+        self.canTake = True
         self.inInventory = False
         self.description = description
-        self.interactable = interactable
+        self.interactable = True
         self.useText = useText
 
     def unlock(self):
-        self.unlocked = True
+        self.islocked = True
 
     def take(self):
         if self.canTake:
             self.inInventory = True
-            inventory.append(self)
-            print("I picked up the broom")
+            utils.inventory.append(self.name)
+            print("I picked up the {}.".format(self.name))
         else:
             print("I can't do that.")
 
@@ -32,18 +31,34 @@ class Item:
             print("I can't do anything with this")
 
 class Computer:
-    def __init__(self, unlocked, description):
-      self.name = "computer"
-      self.unlocked = unlocked
+    def __init__(self, name, islocked, canTake, inInventory, description, interactable, useText, unlockText):
+      # islocked, description
+      self.name = name
+      self.islocked = True
+      self.canTake = True
+      self.inInventory = False
       self.description = description
+      self.interactable = True
+      self.useText = useText
 
+    def unlock(self):
+        self.islocked = True
+
+    def take(self):
+        if self.canTake:
+            self.inInventory = True
+            utils.inventory.append(self.name)
+            print("I picked up the {}.".format(self.name))
+        else:
+            print("I can't do that.")
+            
     def use(self):
-      if self.unlocked == False:
+      if self.islocked == True:
         tryingPassword = True
         password = input("Please enter the password: \n")
         while (not self.unlocked) and tryingPassword:
             if password == "MEF19948":
-                self.unlocked = True
+                self.islocked = False
                 print("Welcome")
                 self.home()
             elif password == "exit":
@@ -82,13 +97,8 @@ class Computer:
            print("That's not a valid command")
            self.home()
 
-
-broom = Item("broom", True, True, "an ordinary broom", True, "I'm sweeping", "")
-terminal1 = Item("terminal", True, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
-terminal2 = Item("terminal", True, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
-computer1 = Computer(False, "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk.")
-nullItem = Item("", False, False, "", False, "", "")
-trash = Item("trash", True, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it", "")
-paper = Item("paper", True, False, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", True, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", "")
-keyboard = Item("keyboard", True, False, "A beat up old keyboard. There's a note sitcking out from under it.", True, "A beat up old keyboard. There's a note sitcking out from under it.", "")
-note = Item("note", True, False, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", "")
+## 
+# broom = Item("broom", True, True, "an ordinary broom", True, "I'm sweeping", "")
+# terminal1 = Item("terminal", True, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
+# terminal2 = Item("terminal", True, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
+# paper = Item("paper", True, False, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", True, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", "")

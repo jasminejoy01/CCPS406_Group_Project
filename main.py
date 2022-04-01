@@ -1,7 +1,5 @@
 #from Item import Item, Computer
 import Item as I
-#import room as R
-import player as P
 import text as T
 import utils
 import initialize
@@ -9,8 +7,6 @@ import initialize
 rooms = []
 objects = []
 currentroomdict = []
-
-player = P.Player()
 
 def library(string1, string2):
     inputstring = string1+string2
@@ -125,15 +121,21 @@ def processLanguage(obj=None):
                 __import__(where).examine(noun)
                 validCommand = True
             if (verb == "take"):
-                #Check that noun is a valid object
-                obj.take()
+                where = library(str(x), str(y))
+                __import__(where).take()
                 validCommand = True
             if (verb == "use"):
-                obj.use()
+                where = library(str(x), str(y))
+                __import__(where).use()
                 validCommand = True
             if verb == "read" and ("paper" == obj.name or "note" == obj.name):
+                where = library(str(x), str(y))
+                __import__(where).use()
                 validCommand = True
-                obj.use()
+            if ("item" in command or "items" in command) and ("room" in command or "rooms" in command):
+                where = library(str(x), str(y))
+                __import__(where).listItems()
+                validCommand = True
                     
         #3-word commands
         if len(splitCommand) == 3:
@@ -143,9 +145,8 @@ def processLanguage(obj=None):
                     validCommand = True
                 if splitCommand[1].lower() == "sticky" and splitCommand[2].lower() == "notes":
                     where = library(str(x), str(y))
-                    __import__(where).examine('stickynote')
+                    __import__(where).examine(obj)
                     validCommand = True
-    
         if len(splitCommand) == 0 or not validCommand:
             print("Please input a valid command")
             command = input(" ")

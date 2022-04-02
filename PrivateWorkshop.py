@@ -16,7 +16,7 @@ utils.roomsvisited[0] = 1
 #nullItem = I.Item("", False, False, False, "", False, "", "")
 computer1 = I.Computer("computer", True, False, False, "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk.", True, "", "")
 keyboard = I.Item("keyboard", None, False, False, "A beat up old keyboard. There's a note sitcking out from under it.", True, "A beat up old keyboard. There's a note sitcking out from under it.", "")
-note = I.Item("note", None, True, False, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", "")
+note = I.Item("note", None, True, False, "It reads: 'If I forget again: 4 grapes , 1 apple , 7 bananas , 7 mangoes , 2 pineapples , 1 orange , 8 pomegranates. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", "")
 trash = I.Item("trash", None, False, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it", "")
 door = I.Item("door", True, False, False, "", True, "", "")
 
@@ -36,7 +36,7 @@ def fancyDes():
     print("There room has no windows. There is a door to the left.")
 
 def movewest():
-    if itemdictionary['door'][1] == True:
+    if itemdictionary['door'][1] == True or utils.cheat == True:
         itemdictionary['door'][0].unlock()
     utils.x = utils.x + 1
     utils.y = utils.y + 0
@@ -83,6 +83,7 @@ def use(obj):
     if obj in lst:
         if itemdictionary[obj][1] == True:
             print("It's Locked!")
+            itemdictionary[obj][0].use()
         else:
             itemdictionary[obj][0].use()
     else:

@@ -93,6 +93,13 @@ def processLanguage(obj=None):
             if verb == "exit":
                 utils.exitgame(currentroomdict)
                 validCommand = True
+            if verb == "inventory":
+                print(utils.inventory)
+                validCommand = True
+            if verb == "cheat":
+                utils.cheat = True
+                print("Awesome! All doors have been unlocked!")
+                validCommand = True
   
         #2-word commands
         if len(splitCommand) >= 2:

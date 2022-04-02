@@ -47,5 +47,6 @@ GPS = False
 advanced = False  #Determines description complexity
 PlayerKey1 = False #Creator's key
 inventory = []
-    
+cheat = False
+   
 print("Write a command")

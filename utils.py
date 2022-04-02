@@ -18,6 +18,7 @@ GPS = initialize.GPS
 advanced = initialize.advanced  #Determines description complexity
 PlayerKey1 = initialize.PlayerKey1 #Creator's key
 inventory = initialize.inventory #Inventory list
+cheat = initialize.cheat
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")
@@ -54,10 +55,3 @@ def exitgame(roomcodes):
             sys.exit()
     else:
         pass
-
-# def unlockRooms():
-#     #Cheat to unlock all rooms
-#     for i in range(0, 6):
-#         for j in range(0, 6):
-#             if not (rooms[i][j].name == "no room here"):
-#                 rooms[i][j].unlock()

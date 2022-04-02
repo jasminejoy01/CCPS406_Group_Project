@@ -56,8 +56,8 @@ class Computer:
       if self.islocked == True:
         tryingPassword = True
         password = input("Please enter the password: \n")
-        while (not self.unlocked) and tryingPassword:
-            if password == "MEF19948":
+        while (self.islocked) and tryingPassword:
+            if password == "passion":
                 self.islocked = False
                 print("Welcome")
                 self.home()
@@ -89,7 +89,7 @@ class Computer:
             utils.PlayerKey1 = True
             
             print("Downloaded!")
-            print("I have [name]'s key!'")
+            print("I have {}'s key!'".format(self.name))
             print("I'm done with the computer, so I log off.")
         elif "exit" in file:
             print("I log off the computer.")

@@ -43,22 +43,12 @@ def hasItem(obj):
     return False
 
 def processLanguage(obj=None): 
-    if os.path.exists('save.py') == True:
-        import utils, save
-        utils.cheat = save.cheat
-        utils.PlayerKey1 = save.PlayerKey1
-        utils.advanced = save.advanced
-        utils.x = save.x
-        utils.y = save.y
-        utils.inventory = save.inventory
-        utils.roomsvisited = save.visited
-        os.remove('save.py')
-    else:
-        if len(rooms) == 0:
-            x = utils.x
-            y = utils.y
-            library(str(x), str(y))
-            import PrivateWorkshop
+    import utils
+    if len(rooms) == 0:
+        x = utils.x
+        y = utils.y
+        library(str(x), str(y))
+        import PrivateWorkshop
             
     #basic variables
     validCommand = False
@@ -171,5 +161,16 @@ def processLanguage(obj=None):
             command = input(" ")
             
 while True:
+    if os.path.exists('save.py') == True:
+        import utils, save
+        utils.cheat = save.cheat
+        utils.PlayerKey1 = save.PlayerKey1
+        utils.advanced = save.advanced
+        utils.x = save.x
+        utils.y = save.y
+        utils.inventory = save.inventory
+        utils.roomsvisited = save.visited
+        os.remove('save.py')
+
     processLanguage()
     

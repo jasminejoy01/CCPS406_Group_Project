@@ -1,8 +1,8 @@
 #from Item import Item, Computer
 import Item as I
 import text as T
-import utils
 import initialize
+import os
 
 rooms = []
 objects = []
@@ -32,6 +32,7 @@ def whereami(string1, string2):
   
 def hasItem(obj):
     #Checks objects in the room against string "object"
+    import utils
     x = utils.x
     y = utils.y
     where = library(str(x), str(y))
@@ -41,12 +42,24 @@ def hasItem(obj):
             return True
     return False
 
-def processLanguage(obj=None):        
-    if len(rooms) == 0:
-        x = utils.x
-        y = utils.y
-        library(str(x), str(y))
-        import PrivateWorkshop
+def processLanguage(obj=None): 
+    if os.path.exists('save.py') == True:
+        import utils, save
+        utils.cheat = save.cheat
+        utils.PlayerKey1 = save.PlayerKey1
+        utils.advanced = save.advanced
+        utils.x = save.x
+        utils.y = save.y
+        utils.inventory = save.inventory
+        utils.roomsvisited = save.visited
+        os.remove('save.py')
+    else:
+        if len(rooms) == 0:
+            x = utils.x
+            y = utils.y
+            library(str(x), str(y))
+            import PrivateWorkshop
+            
     #basic variables
     validCommand = False
     noun = ""

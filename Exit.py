@@ -4,6 +4,7 @@ Room#9: The Exit
 """
 import Item as I
 import utils
+import os
 
 print("The ultimate goal.")
 
@@ -31,6 +32,7 @@ def movenorth():
 
 def movesouth():
     print("Congrats! You're exiting the Game!")
+    os.remove('save.py')
 
 def moveeast():
     print("Woops! Can't go that way!")

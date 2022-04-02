@@ -43,7 +43,13 @@ def exitgame(roomcodes):
                          'y = ', str(initialize.y)+"\n" , 
                          'roomcodes = ', str(roomcodes)+"\n", 
                          '## current inventory\n', 
-                         'inventory = ', str(inventory)+"\n" ]
+                         'inventory = ', str(inventory)+"\n",
+                         '## keys\n', 
+                         'GPS = ', str(GPS)+"\n" ,
+                         'advanced = ', str(advanced)+"\n" ,
+                         'PlayerKey1 = ', str(PlayerKey1)+"\n" ,
+                         'cheat = ', str(cheat)+"\n" 
+                         ]
             
             f = open(my_file, 'w')
             for each in arraylist:

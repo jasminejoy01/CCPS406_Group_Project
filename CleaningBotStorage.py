@@ -108,7 +108,7 @@ def use(obj):
 def take(obj):
     lst = itemsInhere()
     if obj in lst:
-        itemdictionary[obj][0].take()
+        itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
 

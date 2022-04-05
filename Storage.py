@@ -10,7 +10,7 @@ import Hallway6
 
 #print("You're in the Storage Room.")
 filename = 'Storage'
-utils.roomsvisited[7] = 1
+#utils.roomsvisited[7] = 1
 # Put on disguise:  I2.StorageCloset.disguise()
 
 
@@ -18,12 +18,11 @@ utils.roomsvisited[7] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
+  'terminal':  [terminal1     , None ]    
 }
 
 def basicDes():
@@ -40,13 +39,28 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.y = utils.y + 1
-    Hallway6.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Hallway - Section 6!")
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
+            utils.y = utils.y + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[8] = 1
+            Hallway6.basicDes()
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
+            utils.y = utils.y + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway6.fancyDes()
+            utils.roomsvisited[8] = 1
+        else:
+            print("The door is locked.")    
 
 def moveeast():
     print("Woops! Can't go that way!")

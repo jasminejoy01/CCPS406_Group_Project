@@ -65,6 +65,11 @@ def processLanguage(obj=None):
         splitCommand = command.split()
         if len(splitCommand)>0:
           verb = splitCommand[0]
+
+        #Helping the user
+        if "key" in command:
+          if len(utils.PlayerKeys) > 0:
+            print("I have a key. This will let me use a terminal")
         
         #1-word commands
         if len(splitCommand) == 1: 
@@ -168,7 +173,7 @@ def processLanguage(obj=None):
             if (verb == "take"):
                 __import__(where).take(noun)
                 validCommand = True
-            if (verb == "use"):
+            if (verb == "use") and noun != "key":
                 __import__(where).use(noun)
 
                 #Puzzle 3: sweeping

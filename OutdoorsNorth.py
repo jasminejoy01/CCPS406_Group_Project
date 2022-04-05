@@ -9,7 +9,7 @@ import OutdoorsMiddle
 import CleaningBotStorage
 
 #print("You've stepped outside into the North corridoors.")
-utils.roomsvisited[4] = 1
+#utils.roomsvisited[4] = 1
 filename = 'OutdoorsNorth'
 
 ## Items in Room
@@ -34,12 +34,14 @@ def movewest():
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[10] == 1:
             utils.x = utils.x + 1
             Greenspace.basicDes()
+            utils.roomsvisited[10] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[10] == 1:
             utils.x = utils.x + 1
             Greenspace.fancyDes()
+            utils.roomsvisited[10] = 1
         else:
             print("The door is locked.")    
     if utils.x < 0:
@@ -55,12 +57,14 @@ def movesouth():
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
             utils.y = utils.y + 1
             OutdoorsMiddle.basicDes()
+            utils.roomsvisited[5] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
             utils.y = utils.y + 1
             OutdoorsMiddle.fancyDes()
+            utils.roomsvisited[5] = 1
         else:
             print("The door is locked.")    
     if utils.x < 0:
@@ -73,12 +77,14 @@ def moveeast():
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x - 1
             CleaningBotStorage.basicDes()
+            utils.roomsvisited[1] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x - 1
             CleaningBotStorage.fancyDes()
+            utils.roomsvisited[1] = 1
         else:
             print("The door is locked.")    
     if utils.x < 0:

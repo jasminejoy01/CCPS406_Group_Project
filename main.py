@@ -128,7 +128,7 @@ def processLanguage(obj=None):
             noun = splitCommand[1].lower()
             noun = noun.replace(" ", "")
             if verb == "read":
-                if 'userguide'== noun or 'guide' == noun:
+                if 'userguide'== noun or 'guide' == noun or 'usersguide' == noun:
                     T.readUserGuide()
                     validCommand = True
                 if 'paper' == noun or 'note' == noun:
@@ -146,6 +146,15 @@ def processLanguage(obj=None):
             if (verb == "use"):
                 where = library(str(x), str(y))
                 __import__(where).use(noun)
+                if noun == "broom" and x == 3 and y == 1:
+                  hasKey2 = False
+                  for i in range(len(utils.PlayerKeys)):
+                    if utils.PlayerKeys[i] == 2:
+                      hasKey2 = True
+                      print("'Those things sure do love sweeping...' the guard says to herself.")
+                  if not hasKey2:
+                    print("The guard carefully inspects my work. 'Well I've certainly seen better, but I suppose it's passable. You may proceed.''")
+                    utils.PlayerKeys.append(2)
                 validCommand = True
             if (verb == "speak to" or verb == "speak with"):
                 where = library(str(x), str(y))

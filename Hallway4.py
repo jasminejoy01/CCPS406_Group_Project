@@ -53,16 +53,22 @@ def movenorth():
     #print("You're moving into Hallway#3.")
 
 def movesouth():
-    utils.y = utils.y + 1
-    if utils.advanced:
-      OrigamiHeadOffice.fancyDes()
-    else:
-      OrigamiHeadOffice.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're  moving into Hallway#5.")
+    oriUnlocked = False  
+    for i in range(len(utils.PlayerKeys)):
+      if utils.PlayerKeys[i] == 4:
+        oriUnlocked = True
+    if not oriUnlocked and not utils.cheat:
+      print("I try to open a door marked 'Head of Origami Bots', but it's locked. It sounds like there's someone inside.")
+    else: 
+      utils.y = utils.y + 1
+      if utils.advanced:
+        OrigamiHeadOffice.fancyDes()
+      else:
+        OrigamiHeadOffice.basicDes()
+      if utils.x < 0:
+          utils.x = 0
+      if utils.y < 0:
+          utils.y = 0
 
 def moveeast():
     utils.x = utils.x - 1

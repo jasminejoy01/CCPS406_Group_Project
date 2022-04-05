@@ -4,6 +4,8 @@ Room#11: The building's side entrance.
 """
 import Item as I
 import utils
+import Hallway1
+import OutdoorsMiddle
 
 #print("You're in the building's side entrance.")
 filename = 'BuildingEntranceExit'
@@ -22,18 +24,27 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the East and the beginning of a hallway to the West..")
+    print("There is a door to the East and the beginning of a hallway to the West.")
 
 def fancyDes():
-    print("")
+    print("There is a door to the East and the beginning of a hallway to the West.")
 
 def movewest():
-    utils.x = utils.x + 1
-    utils.y = utils.y + 0
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
+    clean = False  
+    for i in range(len(utils.PlayerKeys)):
+      if utils.PlayerKeys[i] == 2:
+        clean = True
+    if not clean and not utils.cheat:
+      print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
+    else: 
+      utils.y = utils.y + 1
+      Hallway1.basicDes()
+      utils.x = utils.x + 1
+      utils.y = utils.y + 0
+      if utils.x < 0:
+          utils.x = 0
+      if utils.y < 0:
+          utils.y = 0
     #print("You're moving to the Hallway#1 !")
 
 def movenorth():
@@ -46,7 +57,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y + 0
+    OutdoorsMiddle.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

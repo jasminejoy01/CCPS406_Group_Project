@@ -27,10 +27,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the West.")
+    print("[Construction Bot Storage] \n The layout of this building is organized differently than the Housekeeping storage. \n The shelves are in the center of the room and there are racks lined up against the walls; all of them stocked with different types of construction material.")
 
 def fancyDes():
-    print("")
+    print("[Construction Bot Storage] \n I never noticed how much wooden furniture is used in this building; all the shelves and racks are made up of different types of wood. \n Anything and everything in this room is made up of a beautiful combination of different colored wood. \n What a unique feature. ")
 
 def movewest():
     if utils.constructionBotChecker == False:

@@ -14,7 +14,7 @@ I2.CreatorOffice.GPS
 utils.advanced = True
 #print("You're in the Creator's Office.")
 filename = 'CreatorOffice'
-utils.roomsvisited[25] = 1
+#utils.roomsvisited[25] = 1
 ventOpen = False
 
 ## Items in Room
@@ -25,13 +25,14 @@ nullItem = I.Item("", False, False, "", False, "")
 bookshelf = I.Item("bookshelf", False, False, "The bookself has figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds.", False, "")
 desk = I.Item("desk", False, False, "The edges of the desk are decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments.", False, "")
 vent = I.Item("vent", False, False, "A old vent. The screws seem fairly loose.", True, "I try to pull on the screws... Seems like I might need a tool to open this.")
-
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
   'bookshelf': [bookshelf, None],
   'desk':      [desk, None],
-  'vent':      [vent, None]
+  'vent':      [vent, None],
+  'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -50,13 +51,28 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    utils.x = utils.x - 1
-    Hallway3.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Hallway#3.")
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway3.basicDes()
+            utils.roomsvisited[19] = 1
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway3.fancyDes()
+            utils.roomsvisited[19] = 1
+        else:
+            print("The door is locked.")  
 
 def itemsInhere():
     itemlist = []

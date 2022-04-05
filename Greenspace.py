@@ -7,7 +7,7 @@ import utils
 import OutdoorsNorth
 
 filename = 'Greenspace'
-utils.roomsvisited[10] = 1
+#tils.roomsvisited[10] = 1
 
 ## Items in Room
 ##################
@@ -40,20 +40,26 @@ def moveeast():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
             OutdoorsNorth.basicDes()
+            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
             OutdoorsNorth.fancyDes()
+            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")    
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving back to Outdoors (North)!", utils.x, utils.y)
+
 
 def itemsInhere():
     itemlist = []

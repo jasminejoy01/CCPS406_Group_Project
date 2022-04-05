@@ -9,7 +9,7 @@ import Hallway6
 
 #print("The ultimate goal.")
 filename = 'Exit'
-utils.roomsvisited[9] = 1
+#utils.roomsvisited[9] = 1
 
 itemshere = []## Items in Room
 ##################

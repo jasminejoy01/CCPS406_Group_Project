@@ -14,31 +14,24 @@ I2.CreatorOffice.GPS
 utils.advanced = True
 #print("You're in the Creator's Office.")
 filename = 'CreatorOffice'
-utils.roomsvisited[25] = 1
-ventOpen = False
+#utils.roomsvisited[25] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-bookshelf = I.Item("bookshelf", False, False, "The bookself has figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds.", False, "")
-desk = I.Item("desk", False, False, "The edges of the desk are decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments.", False, "")
-vent = I.Item("vent", False, False, "A old vent. The screws seem fairly loose.", True, "I try to pull on the screws... Seems like I might need a tool to open this.")
-
+#nullItem = I.Item("", False, False, "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
-  'bookshelf': [bookshelf, None],
-  'desk':      [desk, None],
-  'vent':      [vent, None]
+   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
     print("There is a door to the East.")
 
 def fancyDes():
-    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. Cool air flows in from a vent on the wall. A tall bookshelf stands beside it. In the middle of the room is a large wooden desk. In its center are a pair of large monitors and a softly glowing computer tower.\n A woman with wild hair is fidgiting with some springs and gears.")
+    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. A tall bookshelf to the left stands with figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds. In the middle of the room is a large wooden desk, the edges decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments. In its center are a pair of large monitors and a softly glowing computer tower.\n Creator is <doing something> in this room.")
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -49,14 +42,29 @@ def movenorth():
 def movesouth():
     print("Woops! Can't go that way!")
 
-def moveeast():
-    utils.x = utils.x - 1
-    Hallway3.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Hallway#3.")
+def moveeast(): 
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway3.basicDes()
+            utils.roomsvisited[19] = 1
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway3.fancyDes()
+            utils.roomsvisited[19] = 1
+        else:
+            print("The door is locked.")  
 
 def itemsInhere():
     itemlist = []

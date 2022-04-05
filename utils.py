@@ -28,11 +28,10 @@ def exitgame(roomcodes):
         if os.path.isfile(my_file) == True:
             os.remove(my_file)
         if saveinput == 's':
-            arr = initialize.visited
-            arr = arr.tolist()
+            #arr = roomsvisited.tolist()
             
             arraylist = ['## rooms visited\n', 
-                         'visited =', str(arr)+"\n", 
+                         'visited =', str(roomsvisited)+"\n", 
                          '## current location\n', 
                          'x = ', str(initialize.x)+"\n" , 
                          'y = ', str(initialize.y)+"\n" , 

@@ -31,7 +31,11 @@ roomdict = { # [desc, xcoord, ycoord, code]
   54: ["Server Room"                , 5, 4, "Server"]
 }
 
-visited = numpy.zeros(len(roomdict))
+#visited = numpy.zeros(len(roomdict))
+visited = [0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0 , 0, 0]
+
+if len(visited) != len(roomdict):
+    print("initialize.py : Array length does not match")
 
 T.intro()
 x = 0

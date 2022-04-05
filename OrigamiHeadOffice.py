@@ -9,18 +9,19 @@ import Hallway4
 
 #print("You're in the Head of Origami Office.")
 filename = 'OrigamiHeadOffice'
-utils.roomsvisited[21] = 1
+#utils.roomsvisited[21] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-OrigamiKey = I.Item("", True, False, "", False, "")
-
+OrigamiKey = I.Item("", True, False,  "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'OrigamiKey' : [OrigamiKey, None]
+  'OrigamiKey' : [OrigamiKey, None],
+ 'terminal':  [terminal1     , None ]  
 }
 
 def basicDes():
@@ -33,13 +34,28 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    utils.y = utils.y - 1
-    Hallway4.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Hallway#4.")
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
+            utils.y = utils.y - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway4.basicDes()
+            utils.roomsvisited[20] = 1
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
+            utils.y = utils.y - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway4.fancyDes()
+            utils.roomsvisited[20] = 1
+        else:
+            print("The door is locked.")   
 
 def movesouth():
     print("Woops! Can't go that way!")

@@ -4,22 +4,23 @@ Room#22: A lab for testing robots.
 """
 import Item as I
 import utils
+import BotTesting
 
 #print("You're in the Bot Testing - Obstacle Room.")
 filename = 'BotTestingObstacle'
-utils.roomsvisited[22] = 1
+#utils.roomsvisited[22] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-
+#nullItem = I.Item("", False, False, "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
-
+   'terminal':  [terminal1 , None ]
 }
+
 
 def basicDes():
     print("There is a large door to the East.")
@@ -35,17 +36,31 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
-def moveeast():
-    utils.x = utils.x - 1
-    utils.y = utils.y + 0
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving back to Bot Testing Room!")
+def moveeast():  
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            BotTesting.basicDes()
+            utils.roomsvisited[16] = 1
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            BotTesting.fancyDes()
+            utils.roomsvisited[16] = 1
+        else:
+            print("The door is locked.") 
 
 def itemsInhere():
     itemlist = []

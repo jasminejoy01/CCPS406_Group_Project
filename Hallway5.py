@@ -10,18 +10,17 @@ import Hallway6
 
 #print("You're in the Hallway#5.")
 filename = 'Hallway5'
-utils.roomsvisited[14] = 1
+#utils.roomsvisited[14] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-
+#nullItem = I.Item("", False, False, "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
-
+   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -30,38 +29,80 @@ def basicDes():
 def fancyDes():
     print("")
 
-def movewest():
-    utils.x = utils.x + 1
-    Hallway4.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Hallway#4!")
+def movewest(): 
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
+            utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[20] = 1
+            Hallway4.basicDes()
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
+            utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[20] = 1
+            Hallway4.fancyDes()
+        else:
+            print("The door is locked.")
 
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.y = utils.y + 1
-    if utils.advanced:
-      Security.fancyDes()
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[15] == 1:
+            utils.y = utils.y + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[15] = 1
+            Security.basicDes()
+        else:
+            print("The door is locked.")
     else:
-      Security.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into Security Room.")
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[15] == 1:
+            utils.y = utils.y + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Security.fancyDes()
+            utils.roomsvisited[15] = 1
+        else:
+            print("The door is locked.")  
 
-def moveeast():
-    utils.x = utils.x - 1
-    Hallway6.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving into into Hallway#6!")
+def moveeast():   
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[8] = 1
+            Hallway6.basicDes()
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[8] = 1
+            Hallway6.fancyDes()
+        else:
+            print("The door is locked.")
 
 def itemsInhere():
     itemlist = []

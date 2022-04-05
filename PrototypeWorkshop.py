@@ -9,18 +9,19 @@ import Hallway1
 
 #print("You're in the Prototyping Lab.")
 filename = 'PrototypeWorkshop'
-utils.roomsvisited[23] = 1
+#utils.roomsvisited[23] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
 copperwire = I.Item("", False, False, "", False, "")
-
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-    'copperwire': [copperwire  , None]
+    'copperwire': [copperwire  , None],
+    'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -38,14 +39,29 @@ def movenorth():
 def movesouth():
     print("Woops! Can't go that way!")
 
-def moveeast():
-    utils.x = utils.x - 1
-    Hallway1.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving back into Hallway #1.")
+def moveeast():   
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway1.basicDes()
+            utils.roomsvisited[17] = 1
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
+            utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            Hallway1.fancyDes()
+            utils.roomsvisited[17] = 1
+        else:
+            print("The door is locked.") 
 
 def itemsInhere():
     itemlist = []

@@ -31,8 +31,15 @@ def movenorth():
     #print("You're moving into Hallway6!")
 
 def movesouth():
-    print("Congrats! You're exiting the Game!")
-    os.remove('save.py')
+    if utils.GPS == False and utils.disguise == True:
+        print("Congrats! You're exiting the Game!")
+        os.remove('save.py')
+    elif utils.GPS == True and utils.disguise == True:
+        print("Your disguise is great, but they can still find you because your GPS tracker is on.\n You need to find your Creator to turn off your GPS tracker.")
+    elif utils.GPS == False and utils.disguise == False:
+        print("Your GPS is off, but you still need a disguise to leave the building.\n Go back in the Storage Closet and find a disguise so that you won't be spotted when you leave.")
+    else:
+        print("Congrats! You're exiting the Game!")
 
 def moveeast():
     print("Woops! Can't go that way!")

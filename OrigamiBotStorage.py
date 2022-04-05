@@ -6,10 +6,11 @@ Room#3: Storage for Origami Bots.
 import Item as I
 import utils
 import OutdoorsSouth
+import oriBot as o
 
 #print("You're in the Origami Bot Storage.")
 filename = 'OrigamiBotStorage'
-#utils.roomsvisited[3] = 1
+utils.roomsvisited[3] = 1
 
 ## Items in Room
 ##################
@@ -17,9 +18,11 @@ filename = 'OrigamiBotStorage'
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
+origamiBot = o.oriBot()
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+   'terminal':  [terminal1 , None ],
+  'origamibot': [origamiBot, None]
 }
 
 def basicDes():
@@ -32,25 +35,20 @@ def movewest():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[6] == 1:
             utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsSouth.basicDes()
-            utils.roomsvisited[6] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[6] == 1:
             utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsSouth.fancyDes()
-            utils.roomsvisited[6] = 1
         else:
             print("The door is locked.")    
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+
 
 def movenorth():
     print("Woops! Can't go that way!")

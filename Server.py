@@ -5,10 +5,24 @@ Room#26: Server room
 import Item as I
 import utils
 import Hallway4
+import time
 
 #print("You're in the Server room.")
 filename = 'Server'
 #utils.roomsvisited[26] = 1
+
+
+if utils.securityPuzzleCheck == False and utils.roomsvisited[15] == 1:
+    if 'copperwire' in utils.inventory.keys():
+        print("Short cirtcuiting the smoke alarm at Programming Lab... Sprinkles turn on..")
+        utils.programminglabOccupied = False
+        time.sleep(2)
+        print("Everyone in the Programming Lab exits the room.")
+        utils.securityPuzzleCheck == True
+    else:
+        print("You can short the smoke alarm in the Programming Lab. But, you need to find a copper wire to first.")
+        utils.securityPuzzleCheck == False
+    
 
 ## Items in Room
 ##################
@@ -35,7 +49,6 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    terminal1.locked = False
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
             utils.x = utils.x - 1

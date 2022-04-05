@@ -4,17 +4,14 @@ Room#13: The Office of the Head of Contruction Bots.
 """
 
 import Item as I
+import Item2 as I2
 import utils
 import Hallway3
+import Puzzle4
 
 #print("You're in the Head of Contruction Office.")
 filename = 'ConstructionHeadOffice'
 #utils.roomsvisited[13] = 1
-
-if utils.constructionChecker == False and utils.roomsvisited[13] == 1:
-    import Puzzle4
-    Puzzle4.constructionchecker()
-    utils.constructionChecker == True
 
 
 ## Items in Room
@@ -35,6 +32,13 @@ def fancyDes():
     print("")
 
 def movewest():
+    if utils.constructionChecker == False:
+        Puzzle4.constructionchecker()
+        utils.constructionChecker == True
+        
+    if 'ConstructionKeyCard' in utils.inventory.keys():
+        I2.Construc_Headoff.item_add()
+        
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
             utils.x = utils.x + 1

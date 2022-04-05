@@ -162,7 +162,7 @@ class Origami_Office:
 
 class PrototypeWorkshop:
     def item_add():
-        item = "copperwire"
+        item = "wire"
         if item in utils.inventory:
             x = 0
             while x == 0:
@@ -276,15 +276,17 @@ class Check_Inventory:
     def check():
         print(utils.inventory)
 
-class Server:
+class ServerRoom:
     def smokealarm():
-        item = 'copperwire'
+        item = 'wire'
         if utils.programminglabOccupied == True:
             if item in utils.inventory.keys():
                 print("Using copper wire to set off the smoke alarm in Progrmaming Lab.")
                 utils.inventory.keys(item).use()
+                utils.securityPuzzleCheck == True
             else:
                 print("Grab a copper wire from Prototype Workshop!")
+                utils.securityPuzzleCheck == False
             
         
         

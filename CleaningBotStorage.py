@@ -3,6 +3,7 @@
 Room#2: Storage for Cleaning Bots
 """
 import Item as I
+import Item2 as I2
 import utils
 import PrivateWorkshop
 import OutdoorsNorth
@@ -33,6 +34,8 @@ def fancyDes():
 def movewest(): 
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
+            if 'broom' not in utils.inventory.keys():
+                I2.Main_Building.item_add()
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -44,6 +47,8 @@ def movewest():
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
+            if 'broom' not in utils.inventory.keys():
+                I2.Main_Building.item_add()
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -53,8 +58,6 @@ def movewest():
             utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")    
-
-
 
 def movenorth():
     #print(utils.x, utils.y)

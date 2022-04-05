@@ -2,19 +2,16 @@
 """
 Room#21: Head of Origami Office.
 """
-
+import Item2 as I2
 import Item as I
 import utils
 import Hallway4
+import puzzle6
 
 #print("You're in the Head of Origami Office.")
 filename = 'OrigamiHeadOffice'
 #utils.roomsvisited[21] = 1
 
-if utils.origamiHeadChecker == False and utils.roomsvisited[21] == 1:
-    import puzzle6
-    puzzle6.main()
-    utils.origamiHeadChecker == True
 
 ## Items in Room
 ##################
@@ -39,6 +36,14 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
+    
+    if utils.origamiHeadChecker == False: 
+        puzzle6.main()
+        utils.origamiHeadChecker == True
+     
+    if 'OrigamiKey' not in utils.inventory.keys():
+        I2.Origami_Office.item_add()
+        
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
             utils.y = utils.y - 1

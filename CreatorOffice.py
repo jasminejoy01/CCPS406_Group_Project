@@ -8,7 +8,7 @@ import Item2 as I2
 import Hallway3
 
 ## Turn off GPS: 
-I2.CreatorOffice.GPS
+I2.CreatorOffice.GPS()
 
 # Advanced descriptions turn on
 utils.advanced = True

@@ -6,14 +6,12 @@ Room#2: Storage for Construction Bots
 import Item as I
 import utils
 import OutdoorsMiddle
+import Puzzle4
 
 #print("You're in the Construction Bot Storage.")
 filename = 'ConstructionBotStorage'
 
-if utils.constructionBotChecker == False and utils.roomsvisited[2] == 1:
-    import Puzzle4
-    Puzzle4.consbot()
-    utils.constructionBotChecker == True
+
 
 
 ## Items in Room
@@ -35,6 +33,10 @@ def fancyDes():
     print("")
 
 def movewest():
+    if utils.constructionBotChecker == False:
+        Puzzle4.consbot()
+        utils.constructionBotChecker == True
+        
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
             utils.x = utils.x + 1

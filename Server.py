@@ -3,6 +3,7 @@
 Room#26: Server room
 """
 import Item as I
+import Item2 as I2
 import utils
 import Hallway4
 import time
@@ -10,19 +11,6 @@ import time
 #print("You're in the Server room.")
 filename = 'Server'
 #utils.roomsvisited[26] = 1
-
-
-if utils.securityPuzzleCheck == False and utils.roomsvisited[15] == 1:
-    if 'wire' in utils.inventory.keys():
-        print("Short cirtcuiting the smoke alarm at Programming Lab... Sprinkles turn on..")
-        utils.programminglabOccupied = False
-        time.sleep(2)
-        print("Everyone in the Programming Lab exits the room.")
-        utils.securityPuzzleCheck == True
-    else:
-        print("You can short the smoke alarm in the Programming Lab. But, you need to find a copper wire to first.")
-        utils.securityPuzzleCheck == False
-    
 
 ## Items in Room
 ##################
@@ -35,9 +23,13 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     print("[Server Room] \n There is nothing in this room except many large glass boxes, all containing flashing lights, and wires pouring in and out of the shelves of lights. \n One thing to note of this room is the amount of ventilation that's been designed; I reason that these large glass boxes must create a large amount of heat. \n To the East is the door that leads back into [Hallway - Section 4]")
+    if utils.securityPuzzleCheck == False:
+        I2.ServerRoom.smokealarm()
 
 def fancyDes():
     print("[Server Room] \n The most boring room in the building; bland, colorless (minus the blinking red and green lights), and uninteresting. \n There are ribbons hanging from the vents above the room; they're flying in rythym to the air current. \n To the East is the door that leads back into [Hallway - Section 4] \n  I see a panel I haven't noticed before; There's a wire labeled Smoke Alarm.")
+    if utils.securityPuzzleCheck == False:
+        I2.ServerRoom.smokealarm()
 
 def movewest():
     print("Woops! Can't go that way!")

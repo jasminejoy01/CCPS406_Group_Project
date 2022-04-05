@@ -23,12 +23,6 @@ itemdictionary = { # [Item, isLocked]
   'computer':  [ computer  , True ]
 }
 
-if utils.programminglabOccupied == False and utils.roomsvisited[12] == 1:
-    computer.getSchedule()
-    utils.origamiHeadChecker == False
-elif utils.programminglabOccupied == False and utils.roomsvisited[12] == 0:
-    print("You need to vacate the Programming Lab to access a computer.")
-
 
 def basicDes():
     print("here is a door to the West.")
@@ -37,6 +31,12 @@ def fancyDes():
     print("")
 
 def movewest():
+    if utils.programminglabOccupied == False:
+        computer.getSchedule()
+        utils.origamiHeadChecker == False
+    else:
+        print("You need to vacate the Programming Lab to access a computer.")
+
     terminal1.locked = False
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:

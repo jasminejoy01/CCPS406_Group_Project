@@ -31,7 +31,7 @@ def basicDes():
     print("There is a door to the East.")
 
 def fancyDes():
-    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. A tall bookshelf to the left stands with figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds. In the middle of the room is a large wooden desk, the edges decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments. In its center are a pair of large monitors and a softly glowing computer tower.")
+    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. A tall bookshelf to the left stands with figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds. In the middle of the room is a large wooden desk, the edges decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments. In its center are a pair of large monitors and a softly glowing computer tower.\n Creator is <doing something> in this room.")
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -114,3 +114,9 @@ def removeInventory(obj):
         (utils.inventory).remove(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))
+
+def speakTo(person):
+    if person == 'creator':
+        I2.CreatorOffice.GPS()
+    else:
+        print("Hmm... {} isn't someone in this room!".format(person))

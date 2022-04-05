@@ -147,6 +147,10 @@ def processLanguage(obj=None):
                 where = library(str(x), str(y))
                 __import__(where).use(noun)
                 validCommand = True
+            if (verb == "speak to" or verb == "speak with"):
+                where = library(str(x), str(y))
+                __import__(where).speakTo(noun)
+                validCommand = True
             if verb == "read" and ("paper" == noun or "note" == noun):
                 where = library(str(x), str(y))
                 __import__(where).use(noun)

@@ -14,6 +14,7 @@ inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
 disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
+origamiHeadChecker = initialize.origamiHeadChecker
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")

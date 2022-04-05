@@ -11,6 +11,11 @@ import Hallway4
 filename = 'OrigamiHeadOffice'
 #utils.roomsvisited[21] = 1
 
+if utils.origamiHeadChecker == False:
+    import puzzle6
+    puzzle6.main()
+    utils.origamiHeadChecker == True
+
 ## Items in Room
 ##################
 
@@ -21,7 +26,7 @@ terminal1 = I.Terminal(1)
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
   'OrigamiKey' : [OrigamiKey, None],
- 'terminal':  [terminal1     , None ]  
+  'terminal':  [terminal1     , None ]  
 }
 
 def basicDes():

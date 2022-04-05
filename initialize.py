@@ -48,5 +48,6 @@ inventory = {}
 cheat = False
 disguise = False
 programminglabOccupied = True
+origamiHeadChecker = False     #puzzle6.py
 
 print("Write a command")

@@ -9,16 +9,17 @@ import utils
 
 class Workshop:
     def item_add():
-        item = ['NFC key', random.randint(0000,9999)]
+        #item = ['NFC key', random.randint(0000,9999)]
         #visited = False
+        item = 'NFCKey'
         if item in utils.inventory:
             #visited = True
             x = 0
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'PrivateWorkshop'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -33,9 +34,9 @@ class Workshop:
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
-                        print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
-                        x = 1.
+                        print("Added {} to inventory.".format(item))
+                        utils.inventory[item] = 'PrivateWorkshop'
+                        x = 1
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")
                         x = 1
@@ -55,8 +56,8 @@ class Main_Building:
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'CleaningBotStorage'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -70,9 +71,9 @@ class Main_Building:
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
-                        print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
-                        x = 1.
+                        print("Added {} to inventory.".format(item))
+                        utils.inventory[item] = 'CleaningBotStorage'
+                        x = 1
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")
                         x = 1
@@ -85,7 +86,7 @@ class Main_Building:
 
 class Construc_Headoff:
     def item_add():
-        item = "Head of Construction's Key Card"
+        item = "ConstructionKeyCard"
         #visited = False
         if item in utils.inventory:
             #visited = True
@@ -93,8 +94,8 @@ class Construc_Headoff:
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'ConstructionHeadOffice'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -109,9 +110,9 @@ class Construc_Headoff:
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
-                        print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
-                        x = 1.
+                        print("Added {} to inventory.".format(item))
+                        utils.inventory[item] = 'ConstructionHeadOffice'
+                        x = 1
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")
                         x = 1
@@ -148,8 +149,8 @@ class Origami_Office:
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'OrigamiHeadOffice'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -164,9 +165,9 @@ class Origami_Office:
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
-                        print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
-                        x = 1.
+                        print("Added {} to inventory.".format(item))
+                        utils.inventory[item] = 'OrigamiHeadOffice'
+                        x = 1
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")
                         x = 1
@@ -187,7 +188,7 @@ class PrototypeWorkshop:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
                     print("Added {} to inventory.".format(item))
-                    utils.inventory.append(item)
+                    utils.inventory[item] = 'PrototypeWorkshop'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print("You refused to take the {}.".format(item))
@@ -202,7 +203,7 @@ class PrototypeWorkshop:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
                         print("Added {} to inventory.".format(item))
-                        utils.inventory.append(item)
+                        utils.inventory[item] = 'PrototypeWorkshop'
                         x = 1
                     elif (value == 'N') or (value == 'n'):
                         print("You refused to take the {}.".format(item))
@@ -224,8 +225,8 @@ class Obstacle_Course:
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'BotTestingObstacle'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -240,9 +241,9 @@ class Obstacle_Course:
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
-                        print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
-                        x = 1.
+                        print("Added {} to inventory.".format(item))
+                        utils.inventory[item] = 'BotTestingObstacle'
+                        x = 1
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")
                         x = 1
@@ -263,8 +264,8 @@ class Lost_Found:
             while x == 0:
                 value = input("There's something here... Wanna pick it up? Y/N\n")
                 if (value == 'Y') or (value == 'y'):
-                    print(f"Added {item} to inventory.")
-                    utils.inventory.append(item)
+                    print("Added {} to inventory.".format(item))
+                    utils.inventory[item] = 'Storage'
                     x = 1
                 elif (value == 'N') or (value == 'n'):
                     print(f"You refused to take the object.")
@@ -279,7 +280,7 @@ class Lost_Found:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
                         print(f"Added {item} to inventory.")
-                        utils.inventory.append(item)
+                        utils.inventory[item] = 'Storage'
                         x = 1.
                     elif (value == 'N') or (value == 'n'):
                         print(f"You refused to take the object.")

@@ -65,7 +65,7 @@ def itemsInhere():
 def itemsInInventory():
     inventorylist = []
     if len(inventorylist) == 0 : 
-        return None
+        return inventorylist
     else:
         for each in utils.keys():
             inventorylist.append(each)

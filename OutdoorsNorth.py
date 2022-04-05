@@ -9,24 +9,6 @@ import OutdoorsMiddle
 import CleaningBotStorage
 
 #print("You've stepped outside into the North corridoors.")
-
-utils.roomsvisited[4] = 1
-
-itemshere = []
-
-def basicDes():
-    print("Outside space between the storage building and main lab")
-
-def fancyDes():
-    print("The open paved area continues South. There is a grassy area with picnic benches to the the West.")
-
-# -*- coding: utf-8 -*-
-"""
-Room#4: Outdoors North
-"""
-import Item as I
-import utils
-
 utils.roomsvisited[4] = 1
 filename = 'OutdoorsNorth'
 
@@ -88,7 +70,7 @@ def itemsInhere():
 def itemsInInventory():
     inventorylist = []
     if len(inventorylist) == 0 : 
-        return None
+        return inventorylist
     else:
         for each in utils.keys():
             inventorylist.append(each)

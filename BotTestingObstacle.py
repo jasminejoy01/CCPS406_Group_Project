@@ -55,13 +55,13 @@ def itemsInhere():
 
 def itemsInInventory():
     inventorylist = []
-    if len(inventorylist) == 0 : 
+    if len(utils.inventory) == 0 : 
         return inventorylist
     else:
-        for each in utils.keys():
+        for each in utils.inventory.keys():
             inventorylist.append(each)
         return inventorylist
-
+    
 def listItems():
     lst = itemsInhere()
     for each in lst:

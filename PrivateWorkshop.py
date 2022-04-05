@@ -70,10 +70,10 @@ def itemsInhere():
 
 def itemsInInventory():
     inventorylist = []
-    if len(inventorylist) == 0 : 
+    if len(utils.inventory) == 0 : 
         return inventorylist
     else:
-        for each in utils.keys():
+        for each in utils.inventory.keys():
             inventorylist.append(each)
         return inventorylist
 
@@ -94,11 +94,12 @@ def examine(obj):
 def use(obj):
     lst = itemsInhere()
     lst2 = itemsInInventory()
-    #print(lst2)
+    #print(obj in lst, obj in lst2)
     if obj in lst and obj not in lst2:
         itemdictionary[obj][0].use()
     elif obj in lst2 and obj not in lst:
         where = utils.inventory[obj]
+        print(where)
         __import__(where).use(obj)
     elif obj in lst and obj in lst2:
         itemdictionary[obj][0].use()

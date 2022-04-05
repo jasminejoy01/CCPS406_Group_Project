@@ -100,7 +100,7 @@ def moveeast():
       if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[2] == 1:
             utils.x = utils.x - 1
             ConstructionBotStorage.fancyDes()
-        else:
+      else:
             print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0

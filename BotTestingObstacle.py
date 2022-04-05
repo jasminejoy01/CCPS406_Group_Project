@@ -10,6 +10,12 @@ import BotTesting
 filename = 'BotTestingObstacle'
 #utils.roomsvisited[22] = 1
 
+if utils.puzzle4 == False:
+    import Puzzle4
+    Puzzle4.puzzle4()
+    utils.puzzle4 == True
+
+
 ## Items in Room
 ##################
 

@@ -15,6 +15,11 @@ cheat = initialize.cheat
 disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
 origamiHeadChecker = initialize.origamiHeadChecker
+puzzle4 = initialize.puzzle4
+constructionChecker = initialize.constructionChecker
+constructionBotChecker = initialize.constructionBotChecker
+prototypeChecker = initialize.prototypeChecker
+
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")

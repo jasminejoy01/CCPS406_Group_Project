@@ -11,6 +11,12 @@ import Hallway1
 filename = 'PrototypeWorkshop'
 #utils.roomsvisited[23] = 1
 
+if utils.prototypeChecker == False:
+    import Puzzle4
+    Puzzle4.breakbotcheck()
+    utils.prototypeChecker == True
+
+
 ## Items in Room
 ##################
 

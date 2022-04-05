@@ -10,6 +10,11 @@ import Hallway3
 #print("You're in the Head of Contruction Office.")
 filename = 'ConstructionHeadOffice'
 #utils.roomsvisited[13] = 1
+if utils.constructionChecker == False:
+    import Puzzle4
+    Puzzle4.constructionchecker()
+    utils.constructionChecker == True
+
 
 ## Items in Room
 ##################

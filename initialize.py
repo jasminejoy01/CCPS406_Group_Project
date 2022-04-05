@@ -49,5 +49,9 @@ cheat = False
 disguise = False
 programminglabOccupied = True
 origamiHeadChecker = False     #puzzle6.py
+puzzle4 = False                #puzzle4.py
+constructionChecker = False    #puzzle4.py
+constructionBotChecker = False    #puzzle4.py
+prototypeChecker = False    #puzzle4.py
 
 print("Write a command")

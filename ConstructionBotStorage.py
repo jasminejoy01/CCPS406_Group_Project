@@ -10,6 +10,11 @@ import OutdoorsMiddle
 #print("You're in the Construction Bot Storage.")
 filename = 'ConstructionBotStorage'
 #utils.roomsvisited[2] = 1
+if utils.constructionBotChecker == False:
+    import Puzzle4
+    Puzzle4.consbot()
+    utils.constructionBotChecker == True
+
 
 ## Items in Room
 ##################

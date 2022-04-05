@@ -39,11 +39,18 @@ def fancyDes():
     print("A small room with a computer on a desk. Next to the desk is a trash bin. There is a door to the West, and a terminal beside it.")
 
 def movewest():
-    if utils.cheat == True or terminal1.locked == False:
-      utils.x = utils.x + 1
-      CleaningBotStorage.basicDes()
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
+            utils.x = utils.x + 1
+            CleaningBotStorage.basicDes()
+        else:
+            print("The door is locked.")
     else:
-      print("The door is locked.")
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
+            utils.x = utils.x + 1
+            CleaningBotStorage.fancyDes()
+        else:
+            print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

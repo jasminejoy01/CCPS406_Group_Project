@@ -16,11 +16,11 @@ utils.roomsvisited[16] = 1
 
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
-
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
+  'terminal':  [terminal1     , None ]    
 }
 
 def basicDes():
@@ -30,31 +30,43 @@ def fancyDes():
     print("")
 
 def movewest():
-    utils.x = utils.x + 1
     if utils.advanced == True:
-        BotTestingObstacle.fancyDes()
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
+            utils.x = utils.x + 1
+            BotTestingObstacle.basicDes()
+        else:
+            print("The door is locked.")
     else:
-        BotTestingObstacle.basicDes()
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
+            utils.x = utils.x + 1
+            BotTestingObstacle.fancyDes()
+        else:
+            print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving to the Bot Testing Obstacle Room!")
 
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.y = utils.y + 1
     if utils.advanced == True:
-        Hallway1.fancyDes()
+        if utils.cheat == True or terminal1.locked == False:
+            utils.y = utils.y + 1
+            Hallway1.basicDes()
+        else:
+            print("The door is locked.")
     else:
-        Hallway1.basicDes()
+        if utils.cheat == True or terminal1.locked == False:
+            utils.y = utils.y + 1
+            Hallway1.fancyDes()
+        else:
+            print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving back to Hallway!")
 
 def moveeast():
     print("Woops! Can't go that way!")

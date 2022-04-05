@@ -15,12 +15,12 @@ utils.roomsvisited[2] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-
+#nullItem = I.Item("", False, False, "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
+  'terminal':  [terminal1     , None ]    
 }
 
 def basicDes():
@@ -30,23 +30,27 @@ def fancyDes():
     print("")
 
 def movewest():
-    utils.x = utils.x + 1
-    if utils.advanced:
-      OutdoorsMiddle.fancyDes()
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+            utils.x = utils.x + 1
+            OutdoorsMiddle.basicDes()
+        else:
+            print("The door is locked.")
     else:
-      OutdoorsMiddle.basicDes()
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+            utils.x = utils.x + 1
+            OutdoorsMiddle.fancyDes()
+        else:
+            print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving to Outdoor Middle!")
 
 def movenorth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def moveeast():

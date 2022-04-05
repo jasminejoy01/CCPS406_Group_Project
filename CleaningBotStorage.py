@@ -16,12 +16,12 @@ utils.roomsvisited[1] = 1
 
 #name,  canTake, inInventory, description, interactable, useText
 broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping")
-terminal2 = I.Terminal(1)
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , False],
    'broom':     [broom     , None ],
-  'terminal':  [terminal2     , None ]           
+  'terminal':  [terminal1     , None ]           
 }
 
 def basicDes():
@@ -30,24 +30,24 @@ def basicDes():
 def fancyDes():
     print("This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.", "This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.")
 
-def movewest():
-    if utils.cheat == True or terminal2.locked == False:
-        utils.x = utils.x + 1
-        utils.y = utils.y + 0
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        if utils.advanced == True:
+def movewest(): 
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
+            utils.x = utils.x + 1
+            OutdoorsNorth.basicDes()
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
+            utils.x = utils.x + 1
             OutdoorsNorth.fancyDes()
         else:
-            OutdoorsNorth.basicDes()
-    else:
-        print("The door is locked.")
-        terminal2.use()
-        movewest()
-        
-    #print("You're moving outdoors!")
+            print("The door is locked.")    
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+
 
 def movenorth():
     #print(utils.x, utils.y)
@@ -58,16 +58,23 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    utils.x = utils.x - 1
-    if utils.advanced:
-      PrivateWorkshop.fancyDes()
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
+            utils.x = utils.x - 1
+            PrivateWorkshop.basicDes()
+        else:
+            print("The door is locked.")
     else:
-      PrivateWorkshop.basicDes()
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
+            utils.x = utils.x - 1
+            PrivateWorkshop.fancyDes()
+        else:
+            print("The door is locked.")    
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    #print("You're moving back to Private workshop!")
+
 
 def itemsInhere():
     itemlist = []

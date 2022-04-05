@@ -9,7 +9,7 @@ import OutdoorsNorth
 
 #print("You're in the Cleaning Bot Storage.")
 filename = 'CleaningBotStorage'
-utils.roomsvisited[1] = 1
+#utils.roomsvisited[1] = 1
 
 ## Items in Room
 ##################
@@ -34,19 +34,26 @@ def movewest():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
             OutdoorsNorth.basicDes()
+            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
             OutdoorsNorth.fancyDes()
+            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")    
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
+
 
 
 def movenorth():
@@ -61,19 +68,25 @@ def moveeast():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
             utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[0] = 1
             PrivateWorkshop.basicDes()
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
             utils.x = utils.x - 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[0] = 1
             PrivateWorkshop.fancyDes()
         else:
             print("The door is locked.")    
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
 
 
 def itemsInhere():

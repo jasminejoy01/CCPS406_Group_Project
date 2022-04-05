@@ -85,7 +85,7 @@ def use(obj):
         itemdictionary[obj][0].use()
     elif obj in lst2 and obj not in lst:
         where = utils.inventory[obj]
-        __import__(where).use()
+        __import__(where).use(obj)
     elif obj in lst and obj in lst2:
         itemdictionary[obj][0].use()
     else:

@@ -61,9 +61,10 @@ def processLanguage(obj=None):
     
     #Check for non-empty input
     while len(splitCommand) == 0 or not validCommand:
+        command = command.lower()
         splitCommand = command.split()
         if len(splitCommand)>0:
-          verb = splitCommand[0].lower()
+          verb = splitCommand[0]
         
         #1-word commands
         if len(splitCommand) == 1: 
@@ -118,34 +119,59 @@ def processLanguage(obj=None):
                 locate = whereami(str(x), str(y))
                 print("You are currently in", locate, ".")
                 validCommand = True
+            if command == "look around" and not utils.advanced:
+              where = library(str(x), str(y))
+              __import__(where).basicDes()
+              validCommand = True
+            if command == "look around" and utils.advanced:
+              where = library(str(x), str(y))
+              __import__(where).fancyDes()
+              validCommand = True
             if command == "game map":
                 T.gamemap()
+                validCommand = True
+            if "north" in command:
+                where = library(str(x), str(y))
+                __import__(where).movenorth()
+                validCommand = True
+            if "east" in command:
+                where = library(str(x), str(y))
+                __import__(where).moveeast()
+                validCommand = True
+            if "south" in command:
+                where = library(str(x), str(y))
+                __import__(where).movesouth()
+                validCommand = True
+            if "west" in command:
+                where = library(str(x), str(y))
+                __import__(where).movewest()
                 validCommand = True
             if command == "look again":
                 where = library(str(x), str(y))
                 __import__(where).fancyDes()
                 validCommand = True
-            noun = splitCommand[1].lower()
+
+            #object interactions
+            noun = splitCommand[1]
             noun = noun.replace(" ", "")
+            where = library(str(x), str(y))
             if verb == "read":
-                if 'userguide'== noun or 'guide' == noun or 'usersguide' == noun:
+                if "user" in command:
                     T.readUserGuide()
                     validCommand = True
                 if 'paper' == noun or 'note' == noun:
-                    where = library(str(x), str(y))
                     __import__(where).use(noun)
                     validCommand = True
             if (verb == "exam") or (verb == "examine"):
-                where = library(str(x), str(y))
                 __import__(where).examine(noun)
                 validCommand = True
             if (verb == "take"):
-                where = library(str(x), str(y))
                 __import__(where).take(noun)
                 validCommand = True
             if (verb == "use"):
-                where = library(str(x), str(y))
                 __import__(where).use(noun)
+
+                #Puzzle 3: sweeping
                 if noun == "broom" and x == 3 and y == 1:
                   hasKey2 = False
                   for i in range(len(utils.PlayerKeys)):
@@ -156,6 +182,7 @@ def processLanguage(obj=None):
                     print("The guard carefully inspects my work. 'Well I've certainly seen better, but I suppose it's passable. You may proceed.''")
                     utils.PlayerKeys.append(2)
                 validCommand = True
+              
             if (verb == "speak to" or verb == "speak with"):
                 where = library(str(x), str(y))
                 __import__(where).speakTo(noun)
@@ -170,15 +197,25 @@ def processLanguage(obj=None):
                 validCommand = True
                     
         #3-word commands
-        if len(splitCommand) == 3:
+        if len(splitCommand) >= 3:
             if (verb == "read" or verb == "exam" or verb == "examine"):
-                if splitCommand[1].lower() == "users" and splitCommand[2].lower() == "guide":
+                if "user" in splitCommand[1]:
                     T.readUserGuide()
                     validCommand = True
-                if splitCommand[1].lower() == "sticky" and splitCommand[2].lower() == "notes":
+                if splitCommand[1] == "sticky" and splitCommand[2] == "notes":
                     where = library(str(x), str(y))
                     __import__(where).examine(obj)
                     validCommand = True
+            if (splitCommand[0] == "look"):
+              if "user" in command:
+                    T.readUserGuide()
+                    validCommand = True
+              else:
+                noun = splitCommand[1]
+                noun = noun.replace(" ", "")
+                where = library(str(x), str(y))
+                __import__(where).use(noun)
+                validCommand = True
         if len(splitCommand) == 0 or not validCommand:
             print("Please input a valid command")
             command = input(" ")

@@ -8,7 +8,7 @@ import Item2 as I2
 import Hallway3
 
 ## Turn off GPS: 
-I2.CreatorOffice.GPS()
+
 
 # Advanced descriptions turn on
 utils.advanced = True
@@ -37,9 +37,11 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     print("[Creator's Office] \n Upon entering the room, a wave of familiarity overloads my thought process. This room feels similar to the room I've woken up in, but looks nothing alike. \n There are cupboards and shelves that line the walls of the room; they're filled with everything from scrap metal, gears, wires, and a multitude of snack foods. \n To my left is a tall bookshelf with a vent beside it.\n There is a large wooden desk in the middle of the room. \n On the desk is a pair of large monitors and a computer tower with a soft glow. \n To the East is the door that leads back into [Hallway - Section 3]")
+    I2.CreatorOffice.GPS()
 
 def fancyDes():
     print("[Creator's Office] \n The Creator is still here doing her work. When I walk in, she looks at me with a smile, but reminds me that she's very busy with something. \n The Creator's office is very unique compared to the other offices; is it because she's in a higher position, or perhaps she's spent more time making her room more unique than the other staff members? \n To the East is [Hallway - Section 3]")
+    I2.CreatorOffice.GPS()
 
 def movewest():
     print("Woops! Can't go that way!")

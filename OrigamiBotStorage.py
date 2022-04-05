@@ -26,10 +26,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the West.")
+    print("[Abstract Solutions Storage Bay] \n Despite it's unique exterior, the inside of this storage bay is identical to the one for Housekeeping. \n The shelves line the walls and they're full of different machine parts. A single origamibot lies on the table.")
 
 def fancyDes():
-    print("")
+    print("[Abstract Solutions Storage Bay] \n Coming back, I realize how intricate these machine parts are on the shelves; they're all capable of folding in different directions. \n What interesting pieces of technology.")
 
 def movewest():
     if utils.advanced == True:

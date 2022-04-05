@@ -22,10 +22,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Building Exit] \n Identical to the other Security Checkpoint I walked through earlier, there is a guard desk in between two metal gates, with a set of monitors displaying different moving images. \n There is no one sitting at the desk, but there is a window that faces out to the Security Checkpoint, and one of the guards inside occasionally looks outside. \n To the North is the door that leads back into [Hallway - Section 6].")
+    print("[Building Exit] \n Identical to the other Security Checkpoint I walked through earlier, there is a guard desk in between two metal gates, with a set of monitors displaying different moving images. \n There is a guard sitting at the desk, and there is a window that faces out to the Security Checkpoint. \n To the North is the door that leads back into [Hallway - Section 6].")
 
 def fancyDes():
-    print("[Building Exit] \n The vacant Security Checkpoint still sits here, with no one sitting at the desk. \n The window can still be seen with the Security occasionally looking up to check on the Checkpoint. \n To the North is [Hallway - Section 6].")
+    print("[Building Exit] \n The vacant Security Checkpoint still sits here, with the same guard sitting at the desk. \n His face is glued to the monitors. \n To the North is [Hallway - Section 6].")
 
 def movewest():
     print("Woops! Can't go that way!")

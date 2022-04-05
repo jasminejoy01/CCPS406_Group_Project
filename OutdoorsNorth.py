@@ -31,7 +31,6 @@ def fancyDes():
 
 def movewest():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[10] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -39,8 +38,6 @@ def movewest():
                 utils.y = 0
             utils.roomsvisited[10] = 1
             Greenspace.basicDes()
-        else:
-            print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[10] == 1:
             utils.x = utils.x + 1
@@ -58,7 +55,7 @@ def movenorth():
 
 def movesouth():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+
             utils.y = utils.y + 1
             if utils.x < 0:
                 utils.x = 0
@@ -66,10 +63,9 @@ def movesouth():
                 utils.y = 0
             OutdoorsMiddle.basicDes()
             utils.roomsvisited[5] = 1
-        else:
-            print("The door is locked.")
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+
             utils.y = utils.y + 1
             if utils.x < 0:
                 utils.x = 0
@@ -77,8 +73,7 @@ def movesouth():
                 utils.y = 0
             OutdoorsMiddle.fancyDes()
             utils.roomsvisited[5] = 1
-        else:
-            print("The door is locked.")    
+
 
 def moveeast():    
     if utils.advanced == True:

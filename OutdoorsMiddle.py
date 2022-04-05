@@ -34,7 +34,6 @@ def fancyDes():
 
 def movewest():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[11] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -42,10 +41,8 @@ def movewest():
                 utils.y = 0
             utils.roomsvisited[11] = 1
             BuildingEntranceExit.basicDes()
-        else:
-            print("The door is locked.")
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[11] == 1:
+       
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -53,8 +50,6 @@ def movewest():
                 utils.y = 0
             utils.roomsvisited[11] = 1
             BuildingEntranceExit.fancyDes()
-        else:
-            print("The door is locked.")    
 
 def movenorth():
     if utils.advanced == True:

@@ -34,7 +34,7 @@ def movewest():
 
 def movenorth():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+
             utils.y = utils.y - 1
             if utils.x < 0:
                 utils.x = 0
@@ -42,10 +42,9 @@ def movenorth():
                 utils.y = 0
             utils.roomsvisited[5] = 1
             OutdoorsMiddle.basicDes()
-        else:
-            print("The door is locked.")
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
+
             utils.y = utils.y - 1
             if utils.x < 0:
                 utils.x = 0
@@ -53,8 +52,7 @@ def movenorth():
                 utils.y = 0
             utils.roomsvisited[5] = 1
             OutdoorsMiddle.fancyDes()
-        else:
-            print("The door is locked.")    
+ 
 
 def movesouth():
     print("Woops! Can't go that way!")

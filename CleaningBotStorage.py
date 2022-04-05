@@ -33,31 +33,27 @@ def fancyDes():
   
 def movewest(): 
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
-            if 'broom' not in utils.inventory.keys():
-                I2.Main_Building.item_add()
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsNorth.basicDes()
-            utils.roomsvisited[4] = 1
-        else:
-            print("The door is locked.")
+        if 'broom' not in utils.inventory.keys():
+            I2.Main_Building.item_add()
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OutdoorsNorth.basicDes()
+        utils.roomsvisited[4] = 1
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
-            if 'broom' not in utils.inventory.keys():
-                I2.Main_Building.item_add()
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsNorth.fancyDes()
-            utils.roomsvisited[4] = 1
-        else:
-            print("The door is locked.")    
+
+        if 'broom' not in utils.inventory.keys():
+            I2.Main_Building.item_add()
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OutdoorsNorth.fancyDes()
+        utils.roomsvisited[4] = 1  
 
 def movenorth():
     #print(utils.x, utils.y)
@@ -69,27 +65,24 @@ def movesouth():
 
 def moveeast():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[0] = 1
-            PrivateWorkshop.basicDes()
-        else:
-            print("The door is locked.")
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[0] = 1
+        PrivateWorkshop.basicDes()
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[0] = 1
-            PrivateWorkshop.fancyDes()
-        else:
-            print("The door is locked.")    
+
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[0] = 1
+        PrivateWorkshop.fancyDes()
+  
 
 
 def itemsInhere():

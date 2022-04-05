@@ -42,10 +42,11 @@ def fancyDes():
     print("[Private Workshop] \n I'm back in the same dark room where I woke up from. \n I never noticed how dark it actually is in this room, I'd better turn on the lights. \n After turning the lights on, I notice that the computer is still on, and the small metal trash bin sits beside the desk. The notes inside the bin are different colors; a bright pink and a vibrant orange. \n On the West is the door that leads to [Housekeeping Storage Bay].")
 
 def movewest():
+    #if 'NFCKey' not in utils.inventory.keys():
+    #    I2.Workshop.item_add()
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            if 'NFCKey' not in utils.inventory.keys():
-                I2.Workshop.item_add()
+            
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0

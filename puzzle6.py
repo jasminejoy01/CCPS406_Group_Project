@@ -6,6 +6,7 @@ import time
 headstat = []
 
 #call function when interacting with room computer
+# in programming lab or just call it when entering room
 def setSchedule():
     x=0
     while x == 0:
@@ -45,15 +46,17 @@ def setSchedule():
 
 #from puzzle6 import headstat
 
-#Add function comparing room coordinates
+#Call when player position == origami head office position
 def origamiheadchecker():
     if '1' not in headstat:
         print("The Head seems to still be in the office\nSeems they'll only leave when the schedule is set to Meditation")
         print("I gotta change their schedule... Maybe I can do that at the programming lab?")
         #Place player back to room prior to this one
+        #lock em out
     elif '1' in headstat:
         print("You got a key!")
-        #Add key to inventory function
+        inventory.append('this key')
+        #Add key to inventory function to maeve's inventory
 
 #tester ignore
 def main():

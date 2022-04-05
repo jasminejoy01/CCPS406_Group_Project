@@ -25,7 +25,7 @@ itemdictionary = { # [Item, isLocked]
 
 
 def basicDes():
-    print("here is a door to the West.")
+    print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. The only other features that this room has are the red and white lights that are placed all over the ceiling. \n There are many NASA staff scattered throughout the room, all of them glued to their computer screens. \n To the West is the door that leads back into [Hallway - Section 2]")
 
 def fancyDes():
     print("")

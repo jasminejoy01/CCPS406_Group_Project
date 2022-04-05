@@ -26,10 +26,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the West.")
+    print("[Construction Head's Office] \n A spacious room with plenty of locked storage cabinets covering the walls of the room. \n There is a lone desk at the far end of the room with a computer and chair. \n Around the room are different types of storage containers, all containing rolled up sheets of paper. \n One such container is right beside the door; looking at the contents of the paper, it appears to be designed for different types of buildings and rooms. \n To the West is the door that leads back into [Hallway - Section 3]")
 
 def fancyDes():
-    print("")
+    print("[Construction Head's Office] \n The Construction Head's Office looks the same as when I had visited earlier. \n Looking around again, there's not much difference compared to when I first came, except it's clear that the Construction Head has a clear love for wooden items. \n His desk is wooden, his shelves are all wooden; it appears that everything in here might have been made by them. \n To the West is [Hallway - Section 3]")
 
 def movewest():
     if utils.constructionChecker == False:

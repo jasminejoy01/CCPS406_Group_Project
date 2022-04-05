@@ -275,3 +275,16 @@ class StorageCloset:
 class Check_Inventory:
     def check():
         print(utils.inventory)
+
+class Server:
+    def smokealarm():
+        item = 'copperwire'
+        if utils.programminglabOccupied == True:
+            if item in utils.inventory.keys():
+                print("Using copper wire to set off the smoke alarm in Progrmaming Lab.")
+                utils.inventory.keys(item).use()
+            else:
+                print("Grab a copper wire from Prototype Workshop!")
+            
+        
+        

@@ -34,54 +34,50 @@ def movewest():
 
 def movenorth():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[5] = 1
-            OutdoorsMiddle.basicDes()
-        else:
-            print("The door is locked.")
+
+        utils.y = utils.y - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[5] = 1
+        OutdoorsMiddle.basicDes()
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[5] = 1
-            OutdoorsMiddle.fancyDes()
-        else:
-            print("The door is locked.")    
+
+        utils.y = utils.y - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[5] = 1
+        OutdoorsMiddle.fancyDes()
+   
 
 def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[3] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OrigamiBotStorage.basicDes()
-            utils.roomsvisited[3] = 1
-        else:
-            print("The door is locked.")
+
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OrigamiBotStorage.basicDes()
+        utils.roomsvisited[3] = 1
+
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[3] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OrigamiBotStorage.fancyDes()
-            utils.roomsvisited[3] = 1
-        else:
-            print("The door is locked.")    
+
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OrigamiBotStorage.fancyDes()
+        utils.roomsvisited[3] = 1
+
 
 
 def itemsInhere():

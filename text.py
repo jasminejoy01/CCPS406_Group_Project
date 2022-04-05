@@ -19,3 +19,193 @@ def gamemap():
         reader = csv.reader(file, delimiter = '\t')
         for row in reader:
             print(row)
+
+class PrivateWorkshop:
+    def basicDes():
+        print("[Private Workshop] \n I find myself in the dark corner of a room, wires connected to multiple parts of my body. As I boot up, the wires disconnect automatically and the monitor’s bright lights slowly fade away. \n Nearby is a desk with a computer setup and some paper scattered around. \n Next to the desk is a trash bin with some crumpled pieces of paper inside. \n On the West side of the room is a closed door with light shining in from the other side.")
+              
+    def fancyDes():
+        print("[Private Workshop] \n I'm back in the same dark room where I woke up from. \n I never noticed how dark it actually is in this room, I'd better turn on the lights. \n After turning the lights on, I notice that the computer is still on, and the small metal trash bin sits beside the desk. The notes inside the bin are different colors; a bright pink and a vibrant orange. \n On the West is the door that leads to [Housekeeping Storage Bay].")
+
+class PrivateWorkshop:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class CleaningBotStorage:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class Greenspace:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class OutdoorNorth:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class OutdoorMiddle:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class OutdoorSouth:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class ConstructionBotStorage:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class OrigamiBotStorage:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class BuildingEntranceExit:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class ProgrammingLab:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class BotTesting:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class BotTestingObstacleCourse:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class PrototypeWorksop:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class PrintingLab:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class CreatorOffice:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class ServerRoom:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class OrigamiHeadOffice:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class Security:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class Storage:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class Hallway1:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class Hallway2:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class Hallway3:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class Hallway4:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+
+class Hallway5:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+class Hallway6:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass
+    
+
+class Exit:
+    def basicDes():
+        pass
+              
+    def fancyDes():
+        pass

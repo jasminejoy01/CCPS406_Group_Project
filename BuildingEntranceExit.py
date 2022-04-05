@@ -37,10 +37,8 @@ def movewest():
     if not clean and not utils.cheat:
       print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
     else: 
-      utils.y = utils.y + 1
-      Hallway1.basicDes()
       utils.x = utils.x + 1
-      utils.y = utils.y + 0
+      Hallway1.basicDes()
       if utils.x < 0:
           utils.x = 0
       if utils.y < 0:

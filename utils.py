@@ -14,6 +14,7 @@ inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
 disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
+
 origamiHeadChecker = initialize.origamiHeadChecker
 puzzle4 = initialize.puzzle4
 constructionChecker = initialize.constructionChecker
@@ -50,7 +51,11 @@ def exitgame(roomcodes):
                          'PlayerKey1 = ', str(PlayerKeys)+"\n" ,
                          'cheat = ', str(cheat)+"\n",
                          'disguise = ', str(disguise)+"\n",
-                         'programminglabOccupied = ', str(programminglabOccupied)+"\n"
+                         'origamiHeadChecker = ', str(origamiHeadChecker)+"\n",
+                         'puzzle4 = ', str(programminglabOccupied)+"\n",
+                         'constructionChecker = ', str(constructionChecker)+"\n",
+                         'constructionBotChecker = ', str(constructionBotChecker)+"\n",
+                         'prototypeChecker = ', str(prototypeChecker)+"\n"
                          ]
             
             f = open(my_file, 'w')

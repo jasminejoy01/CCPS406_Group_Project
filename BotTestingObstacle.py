@@ -29,10 +29,10 @@ itemdictionary = { # [Item, isLocked]
 
 
 def basicDes():
-    print("There is a large door to the East.")
+    print("[Robotics Testing Facility – Obstacle Course] /nThe lights in the room turn on after I step through the door; this room looks a lot bigger on the inside than it does on the outside.\nLooking around the room, there are areas that are sectioned off; it appears as if there are separate tasks in this room.\nThere are beams and platforms organized all around the room, it appears to be a room for testing one's ability to move effectively.\nTo the East is the door that leads back to [Robotics Testing Facility - Basic Functions]")
 
 def fancyDes():
-    print("")
+    print("[Robotics Testing Facility – Obstacle Course]\nThe beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed.\nThe beams and platforms all  around the room have different colors marked on them, as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines.\nThe Red colored paths look like they have the most difficult paths to go through.\nTo the East is the door that leads back to [Robotics Testing Facility - Basic Functions]")
 
 def movewest():
     print("Woops! Can't go that way!")

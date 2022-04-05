@@ -15,10 +15,8 @@ filename = 'PrintingLab'
 
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():

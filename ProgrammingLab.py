@@ -19,8 +19,7 @@ terminal1 = I.Terminal(1)
 computer = I.Item("", False, False, "", False, "Hmm.. let's see if I can access people's schedules here... ")
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
-  'terminal':  [ terminal1  , None ],   
+#   'nullItem': [nullItem  , None],  
   'computer':  [ computer  , True ]
 }
 
@@ -38,6 +37,7 @@ def fancyDes():
     print("")
 
 def movewest():
+    terminal1.locked = False
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
             utils.x = utils.x + 1

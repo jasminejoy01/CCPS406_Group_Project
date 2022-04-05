@@ -130,6 +130,6 @@ def unlock(obj):
 def removeInventory(obj):
     lst = itemsInInventory()
     if obj in lst:
-        (utils.inventory).pop(obj)
+        (utils.inventory).drop(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))

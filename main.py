@@ -102,6 +102,9 @@ def processLanguage(obj=None):
             if verb == "inventory":
                 print(utils.inventory)
                 validCommand = True
+            if verb == "gamemap":
+                T.gamemap()
+                validCommand = True
             if verb == "cheat":
                 utils.cheat = True
                 print("Awesome! All doors have been unlocked!")
@@ -114,6 +117,9 @@ def processLanguage(obj=None):
             if command == "where am i":
                 locate = whereami(str(x), str(y))
                 print("You are currently in", locate, ".")
+                validCommand = True
+            if command == "game map":
+                T.gamemap()
                 validCommand = True
             if command == "look again":
                 where = library(str(x), str(y))

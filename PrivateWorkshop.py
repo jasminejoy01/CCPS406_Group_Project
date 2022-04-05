@@ -99,7 +99,6 @@ def use(obj):
         itemdictionary[obj][0].use()
     elif obj in lst2 and obj not in lst:
         where = utils.inventory[obj]
-        print(where)
         __import__(where).use(obj)
     elif obj in lst and obj in lst2:
         itemdictionary[obj][0].use()
@@ -123,6 +122,6 @@ def unlock(obj):
 def removeInventory(obj):
     lst = itemsInhere()
     if obj in lst:
-        (utils.inventory).remove(obj)
+        (utils.inventory).drop(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))

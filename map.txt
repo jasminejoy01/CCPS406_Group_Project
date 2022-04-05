@@ -1,0 +1,19 @@
+:!^^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!:
+:! Bot Testing    . Bot Testing   ! Greenspace    . Outdoors      . Cleaning Bot      . Private       !:
+:! Obstacle Course.               !               . (North)       . Storage           . Workshop      !:
+:!^^^^^^^^^^^^^^^^...............^^^^^^^^^^^^^^^^.................^^^^^^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!:
+:! Prototype      . Hallway       . Building      . Outdoors      . Construction  Bot !:                
+:! Workshop       . (Sec 1)       . entrance/exit . (Middle)      . Storage           !:                
+:!^^^^^^^^^^^^^^^^^...............^^^^^^^^^^^^^^^^!...............^^^^^^^^^^^^^^^^^^^^!:                
+:! 3D Printing    . Hallway       . Programming   ! Outdoors      . Origami Bot       !:                
+:! Lab            . (Sec 2)       . Lab           ! (South)       . Storage           !:                
+:!^^^^^^^^^^^^^^^^^...............^^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!:                
+:! Creator's      . Hallway       . Construction  ! Storage       !:                                    
+:! Office         . (Sec 3)       . Head's Office ! Closet        !:                                    
+:!^^^^^^^^^^^^^^^^^...............^^^^^^^^^^^^^^^^!...............!:                                    
+:! Server         . Hallway       . Hallway       . Hallway       !:                                    
+:! Room           . (Sec 4)       . (Sec 5)       . (Sec 6)       !:                                    
+:!^^^^^^^^^^^^^^^^!...............!...............!...............!:                                    
+                 .! Origami       !               !               !:                                    
+                 .! Head's Office ! Security      ! Exit          !:                                    
+                  ?^^^^^^^^^^^^^^^!^^^^^^^^^^^^^^^!...............!:                                    

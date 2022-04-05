@@ -17,6 +17,14 @@ class Item:
         else:
             print("I can't do that.")
 
+    def drop(self):
+        if self.name in utils.inventory.keys():
+            self.inInventory = False
+            utils.inventory.pop(self.name)
+            print("I remove the {} from my inventory.".format(self.name))
+        else:
+            print("I can't do that.")
+            
     def examine(self):
         print(self.description)
 

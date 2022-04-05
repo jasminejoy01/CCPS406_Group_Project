@@ -16,11 +16,19 @@ filename = 'ProgrammingLab'
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
+computer = I.Item("", False, False, "", False, "Hmm.. let's see if I can access people's schedules here... ")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'terminal':  [terminal1     , None ]    
+  'terminal':  [ terminal1  , None ],   
+  'computer':  [ computer  , True ]
 }
+
+if utils.programminglabOccupied == False:
+    computer.getSchedule()
+    utils.origamiHeadChecker == False
+else:
+    print("You need to vacate the Programming Lab to access a computer.")
 
 
 def basicDes():

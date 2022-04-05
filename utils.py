@@ -20,7 +20,7 @@ puzzle4 = initialize.puzzle4
 constructionChecker = initialize.constructionChecker
 constructionBotChecker = initialize.constructionBotChecker
 prototypeChecker = initialize.prototypeChecker
-
+securityPuzzleCheck = initialize.securityPuzzleCheck
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")
@@ -55,7 +55,8 @@ def exitgame(roomcodes):
                          'puzzle4 = ', str(programminglabOccupied)+"\n",
                          'constructionChecker = ', str(constructionChecker)+"\n",
                          'constructionBotChecker = ', str(constructionBotChecker)+"\n",
-                         'prototypeChecker = ', str(prototypeChecker)+"\n"
+                         'prototypeChecker = ', str(prototypeChecker)+"\n",
+                         'securityPuzzleCheck = ', str(securityPuzzleCheck)+"\n"
                          ]
             
             f = open(my_file, 'w')

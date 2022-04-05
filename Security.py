@@ -6,10 +6,23 @@ Room#15: Security Office
 import Item as I
 import utils
 import Hallway5
+import time
 
 #print("You're in the Security Office.")
 filename = 'Security'
 #utils.roomsvisited[15] = 1
+
+if utils.securityPuzzleCheck == False:
+    if 'copperwire' in utils.inventory.keys():
+        print("Short cirtcuiting the smoke alarm at Programming Lab... Sprinkles turn on..")
+        utils.programminglabOccupied = False
+        time.sleep(2)
+        print("Everyone in the Programming Lab exits the room.")
+        utils.securityPuzzleCheck == True
+    else:
+        print("You can short the smoke alarm in the Programming Lab. But, you need to find a copper wire to first.")
+        utils.securityPuzzleCheck == False
+    
 
 ## Items in Room
 ##################

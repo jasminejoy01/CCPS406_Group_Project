@@ -97,6 +97,10 @@ class Computer:
         else:
            print("That's not a valid command")
            self.home()
+    
+    def getSchedule():
+        import puzzle6
+        puzzle6.setSchedule()
 
 class Terminal:
   def __init__(self, key):

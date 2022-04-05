@@ -17,8 +17,8 @@ utils.roomsvisited[7] = 1
 ## Items in Room
 ##################
 
-#name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
+#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
+#nullItem = I.Item("", False, False, False, "", False, "", "")
 
 
 itemdictionary = { # [Item, isLocked]

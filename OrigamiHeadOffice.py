@@ -15,7 +15,7 @@ utils.roomsvisited[21] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-OrigamiKey = I.Item("", True, False, "", False, "")
+OrigamiKey = I.Item("", True, False,  "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]

@@ -9,10 +9,10 @@ class Item:
         self.interactable = True
         self.useText = useText
 
-    def take(self):
+    def take(self, filename):
         if self.canTake:
             self.inInventory = True
-            utils.inventory.append(self.name)
+            utils.inventory[self.name] = filename
             print("I picked up the {}.".format(self.name))
         else:
             print("I can't do that.")
@@ -37,10 +37,10 @@ class Computer:
       self.interactable = True
       self.useText = useText
 
-    def take(self):
+    def take(self, filename):
         if self.canTake:
             self.inInventory = True
-            utils.inventory.append(self.name)
+            utils.inventory[self.name] = filename
             print("I picked up the {}.".format(self.name))
         else:
             print("I can't do that.")

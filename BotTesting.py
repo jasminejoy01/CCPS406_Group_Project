@@ -63,6 +63,15 @@ def itemsInInventory():
         inventorylist.append(each)
     return inventorylist
 
+def itemsInInventory():
+    inventorylist = []
+    if len(inventorylist) == 0 : 
+        return None
+    else:
+        for each in utils.keys():
+            inventorylist.append(each)
+        return inventorylist
+    
 def listItems():
     lst = itemsInhere()
     for each in lst:
@@ -80,12 +89,14 @@ def examine(obj):
 def use(obj):
     lst = itemsInhere()
     lst2 = itemsInInventory()
-    if obj in lst or obj in lst2:
-        if obj in lst2:
-            where = utils.inventory[obj]
-            __import__(where).use()
-        else:
-            itemdictionary[obj][0].use()
+    #print(lst2)
+    if obj in lst and obj not in lst2:
+        itemdictionary[obj][0].use()
+    elif obj in lst2 and obj not in lst:
+        where = utils.inventory[obj]
+        __import__(where).use()
+    elif obj in lst and obj in lst2:
+        itemdictionary[obj][0].use()
     else:
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  

@@ -32,19 +32,21 @@ def fancyDes():
 
 def movewest():
     if utils.cheat == True or terminal2.locked == False:
-      utils.x = utils.x + 1
-      if utils.advanced:
-        OutdoorsNorth.fancyDes()
-      else:
-        OutdoorsNorth.basicDes()
+        utils.x = utils.x + 1
+        utils.y = utils.y + 0
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        if utils.advanced == True:
+            OutdoorsNorth.fancyDes()
+        else:
+            OutdoorsNorth.basicDes()
     else:
-      print("The door is locked.")
-    utils.x = utils.x + 1
-    utils.y = utils.y + 0
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
+        print("The door is locked.")
+        terminal2.use()
+        movewest()
+        
     #print("You're moving outdoors!")
 
 def movenorth():
@@ -75,9 +77,13 @@ def itemsInhere():
 
 def itemsInInventory():
     inventorylist = []
-    for each in utils.keys:
-        inventorylist.append(each)
-    return inventorylist
+    if len(inventorylist) == 0 : 
+        return None
+    else:
+        for each in utils.keys():
+            inventorylist.append(each)
+        return inventorylist
+
 
 def listItems():
     lst = itemsInhere()
@@ -96,14 +102,17 @@ def examine(obj):
 def use(obj):
     lst = itemsInhere()
     lst2 = itemsInInventory()
-    if obj in lst or obj in lst2:
-        if obj in lst2:
-            where = utils.inventory[obj]
-            __import__(where).use()
-        else:
-            itemdictionary[obj][0].use()
+    #print(lst2)
+    if obj in lst and obj not in lst2:
+        itemdictionary[obj][0].use()
+    elif obj in lst2 and obj not in lst:
+        where = utils.inventory[obj]
+        __import__(where).use()
+    elif obj in lst and obj in lst2:
+        itemdictionary[obj][0].use()
     else:
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
+ 
  
 def take(obj):
     lst = itemsInhere()

@@ -9,18 +9,23 @@ import Hallway3
 
 #print("You're in the Head of Contruction Office.")
 filename = 'ConstructionHeadOffice'
-utils.roomsvisited[13] = 1
+#utils.roomsvisited[13] = 1
+
+if utils.constructionChecker == False and utils.roomsvisited[13] == 1:
+    import Puzzle4
+    Puzzle4.constructionchecker()
+    utils.constructionChecker == True
+
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-
+#nullItem = I.Item("", False, False, "", False, "")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
-
+   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -30,34 +35,44 @@ def fancyDes():
     print("")
 
 def movewest():
-    print("Woops! Can't go that way!")
+    if utils.advanced == True:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[19] = 1
+            Hallway3.basicDes()
+        else:
+            print("The door is locked.")
+    else:
+        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
+            utils.x = utils.x + 1
+            if utils.x < 0:
+                utils.x = 0
+            if utils.y < 0:
+                utils.y = 0
+            utils.roomsvisited[19] = 1
+            Hallway3.fancyDes()
+        else:
+            print("The door is locked.")
 
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.y = utils.y + 1
-    Hallway3.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
+    print("Woops! Can't go that way!")
     #print("You're  moving into Hallway#5.")
 
 def moveeast():
     print("Woops! Can't go that way!")
-
+    
 def itemsInhere():
     itemlist = []
     for each in itemdictionary.keys():
         itemlist.append(each)
     return itemlist
-
-def itemsInInventory():
-    inventorylist = []
-    for each in utils.keys:
-        inventorylist.append(each)
-    return inventorylist
 
 def itemsInInventory():
     inventorylist = []

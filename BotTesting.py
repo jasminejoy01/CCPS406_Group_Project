@@ -6,7 +6,7 @@ import Item as I
 import utils
 
 #print("You're in the Bot Testing Room.")
-
+filename = 'BotTesting'
 utils.roomsvisited[16] = 1
 
 ## Items in Room
@@ -57,6 +57,12 @@ def itemsInhere():
         itemlist.append(each)
     return itemlist
 
+def itemsInInventory():
+    inventorylist = []
+    for each in utils.keys:
+        inventorylist.append(each)
+    return inventorylist
+
 def listItems():
     lst = itemsInhere()
     for each in lst:
@@ -73,9 +79,11 @@ def examine(obj):
 
 def use(obj):
     lst = itemsInhere()
-    if obj in lst:
-        if itemdictionary[obj][1] == True:
-            print("It's Locked!")
+    lst2 = itemsInInventory()
+    if obj in lst or obj in lst2:
+        if obj in lst2:
+            where = utils.inventory[obj]
+            __import__(where).use()
         else:
             itemdictionary[obj][0].use()
     else:
@@ -84,7 +92,7 @@ def use(obj):
 def take(obj):
     lst = itemsInhere()
     if obj in lst:
-        itemdictionary[obj][0].take()
+        itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
 

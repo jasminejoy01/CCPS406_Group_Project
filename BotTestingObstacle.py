@@ -4,35 +4,28 @@ Room#22: A lab for testing robots.
 """
 import Item as I
 import utils
-import BotTesting
 
 #print("You're in the Bot Testing - Obstacle Room.")
 filename = 'BotTestingObstacle'
-#utils.roomsvisited[22] = 1
-
-if utils.puzzle4 == False:
-    import Puzzle4
-    Puzzle4.puzzle4()
-    utils.puzzle4 == True
-
+utils.roomsvisited[22] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+#   'nullItem': [nullItem  , None],
+
 }
 
-
 def basicDes():
-    print("There is a large door to the East.")
+    print("[Robotics Testing Facility – Obstacle Course] \n The lights in the room turn on after I step through the door; this room looks a lot bigger on the inside than it does on the outside. \n Looking around the room, there are areas that are sectioned off; it appears as if there are separate tasks in this room. \n There are beams and platforms organized all around the room, it appears to be a room for testing one's ability to move effectively. \n To the East is the door that leads back to [Robotics Testing Facility - Basic Functions]")
 
 def fancyDes():
-    print("")
+    print("[Robotics Testing Facility – Obstacle Course] \n The beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed. \n The beams and platforms all  around the room have different colors marked on them, as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines. \n The Red colored paths look like they have the most difficult paths to go through. \n To the East is the door that leads back to [Robotics Testing Facility - Basic Functions]")
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -42,31 +35,17 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
+    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
-def moveeast():  
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            BotTesting.basicDes()
-            utils.roomsvisited[16] = 1
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            BotTesting.fancyDes()
-            utils.roomsvisited[16] = 1
-        else:
-            print("The door is locked.") 
+def moveeast():
+    utils.x = utils.x - 1
+    utils.y = utils.y + 0
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back to Bot Testing Room!")
 
 def itemsInhere():
     itemlist = []

@@ -9,80 +9,58 @@ import OutdoorsMiddle
 
 #print("You're in the building's side entrance.")
 filename = 'BuildingEntranceExit'
-#utils.roomsvisited[11] = 1
+utils.roomsvisited[11] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'terminal':  [terminal1     , None ]    
+
 }
+
 def basicDes():
-    print("There is a door to the East and the beginning of a hallway to the West..")
-
+    print("[Main Facility Entrance] (Before cleaning the dirt) \n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
+  
 def fancyDes():
-    print("")
-
+    print("[Main Facility Entrance] (After cleaning the dirt) \n I'm back near the Security Checkpoint for the Storage Bays. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
+  
 def movewest():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway1.basicDes()
-            utils.roomsvisited[17] = 1
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway1.fancyDes()
-            utils.roomsvisited[17] = 1
-        else:
-            print("The door is locked.")    
-
+    clean = False  
+    for i in range(len(utils.PlayerKeys)):
+      if utils.PlayerKeys[i] == 2:
+        clean = True
+    if not clean and not utils.cheat:
+      print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
+    else: 
+      utils.x = utils.x + 1
+      Hallway1.basicDes()
+      if utils.x < 0:
+          utils.x = 0
+      if utils.y < 0:
+          utils.y = 0
+    #print("You're moving to the Hallway#1 !")
 
 def movenorth():
+    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
+    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def moveeast():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsMiddle.basicDes()
-            utils.roomsvisited[5] = 1
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsMiddle.fancyDes()
-            utils.roomsvisited[5] = 1
-        else:
-            print("The door is locked.")    
-
+    utils.x = utils.x - 1
+    OutdoorsMiddle.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back to Outdoor (middle)!")
 
 def itemsInhere():
     itemlist = []

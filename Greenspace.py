@@ -7,7 +7,7 @@ import utils
 import OutdoorsNorth
 
 filename = 'Greenspace'
-#utils.roomsvisited[10] = 1
+utils.roomsvisited[10] = 1
 
 ## Items in Room
 ##################
@@ -22,10 +22,10 @@ itemdictionary = { # [Item, isLocked]
 
 
 def basicDes():
-    print("An outdoor greenspace.")
+    print("[Outdoor Break Area] \n I'm surrounded by many employees, walking to and from different benches, tables, and areas. \n Upon closer inspection, it's clear that this area has a lot more foliage compared to the rest of the pathway. There are significantly more sections of shrubbery and plants, along with rows of large trees providing shade for the people below. \n The path to the East leads back to [North Garden Pathway].")
 
 def fancyDes():
-    print("There is an open paved area to the East.")
+    print("[Outdoor Break Area] \n There are still many employees working outdoors. They're all wearing similar uniforms, but I notice now that each employee has their own accessories. Some have different colored/branded lanyards, others have a combination of pins, buttons, earrings, and other jewelry that seem to make each person more unique. \n The abundance of trees and flowers out here are amazing; they're all varying colors and designs, and the trees that offer shade for everyone, also are host to different small animals and fruits. The colors and beauty of the foliage have to be the main attraction of this space. \n The path to the East leads back to [North Garden Pathway].")
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -40,26 +40,19 @@ def moveeast():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsNorth.basicDes()
-            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsNorth.fancyDes()
-            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")    
-
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
     #print("You're moving back to Outdoors (North)!", utils.x, utils.y)
 
 def itemsInhere():

@@ -9,6 +9,7 @@ import OutdoorsNorth
 
 #print("You're in the Cleaning Bot Storage.")
 filename = 'CleaningBotStorage'
+utils.roomsvisited[1] = 1
 
 ## Items in Room
 ##################
@@ -20,39 +21,33 @@ terminal1 = I.Terminal(1)
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , False],
    'broom':     [broom     , None ],
-   'terminal':  [terminal1 , None ]           
+  'terminal':  [terminal1     , None ]           
 }
 
 def basicDes():
-    print("Storage for Cleaning Bots")
+    print("[Housekeeping Storage Bay] \n This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; a familiar sight. \n There are shelves and storage containers covering a majority of the room. They’re full of storage racks containing bleach, soap, and other types of cleaning supplies organized by product. \n There are brooms neatly stacked on a storage rack near the door to the West. \n Beside the door is another NFC Terminal identical to the first one found in the other room.")
 
 def fancyDes():
-    print("This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.", "This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.")
-
+    print("[Housekeeping Storage Bay] \n Returning back to this room, I realize how much cleaner it is compared to the rest of the compound; not a speck of dust anywhere. \n There are shelves and storage containers covering a majority of the room. There's less items in here than when I had woken up. There are less brooms on the storage rack near the door, I remember which of the missing brooms was the one I took.")
+  
 def movewest(): 
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsNorth.basicDes()
-            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[4] == 1:
             utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             OutdoorsNorth.fancyDes()
-            utils.roomsvisited[4] = 1
         else:
             print("The door is locked.")    
-    
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+
 
 def movenorth():
     #print(utils.x, utils.y)
@@ -66,25 +61,20 @@ def moveeast():
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
             utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             PrivateWorkshop.basicDes()
-            utils.roomsvisited[0] = 1
         else:
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[0] == 1:
             utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             PrivateWorkshop.fancyDes()
-            utils.roomsvisited[0] = 1
         else:
             print("The door is locked.")    
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+
 
 def itemsInhere():
     itemlist = []

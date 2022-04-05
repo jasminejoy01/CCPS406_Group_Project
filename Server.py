@@ -8,27 +8,26 @@ import Hallway4
 
 #print("You're in the Server room.")
 filename = 'Server'
-#utils.roomsvisited[26] = 1
+utils.roomsvisited[26] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-#nullItem = I.Item("", False, False, False, "", False, "", "")
-terminal1 = I.Terminal(1)
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+#   'nullItem': [nullItem  , None],
+
 }
 
-
 def basicDes():
-    print("There is a door to the East.")
+    print("[Server Room] \n There is nothing in this room except many large glass boxes, all containing flashing lights, and wires pouring in and out of the shelves of lights. \n One thing to note of this room is the amount of ventilation that's been designed; I reason that these large glass boxes must create a large amount of heat. \n To the East is the door that leads back into [Hallway - Section 4]")
 
 def fancyDes():
-    print("Something about the Server room and the switches and stuff. You see the panel for programming room, and find the smoke alarm trip wire.")
-    
-    
+    print("[Server Room] \n The most boring room in the building; bland, colorless (minus the blinking red and green lights), and uninteresting. \n There are ribbons hanging from the vents above the room; they're flying in rythym to the air current. \n To the East is the door that leads back into [Hallway - Section 4] \n  I see a panel I haven't noticed before; There's a wire labeled Smoke Alarm.")
+
 def movewest():
     print("Woops! Can't go that way!")
 
@@ -39,29 +38,13 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.basicDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.fancyDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")    
-
+    utils.x = utils.x - 1
+    Hallway4.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Hallway#4.")
 
 def itemsInhere():
     itemlist = []

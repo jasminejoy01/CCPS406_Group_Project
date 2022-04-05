@@ -12,8 +12,8 @@ filename = 'OrigamiHeadOffice'
 #utils.roomsvisited[21] = 1
 
 if utils.origamiHeadChecker == False:
-    import puzzle6
-    puzzle6.main()
+    import Puzzle6
+    Puzzle6.main()
     utils.origamiHeadChecker == True
 
 ## Items in Room
@@ -30,10 +30,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the West.")
+    print("[Abstract Solutions Office] \n The first thing I notice as I walk through the door is the vast amount of small animal figures that cover the room. \n Detailed paper recreations of animals are on display on lit-up display shelves, sitting across counters, and covering the lone desk at the back of the room. \n Behind the desk is a large framed picture; I don’t think I've ever seen anything like this before, it looks similar to the foliage I saw outside. \n To the North is the door that leads back into [Hallway - Section 4]")
 
 def fancyDes():
-    print("")
+    print("[Abstract Solutions Office] \n Back to the room filled with 'Origami'. \n The paper recreations of animals are still on display on the lit-up display shelves.\n Seeing these recreations again, it's interesting to think that I value the way they look more now than I had when I first came, but nothing changed about them. \n The way each animal was created with its own specific paper, and that some bigger models have multiple, different coloured paper used to create it. \n To the North is [Hallway - Section 4]")
 
 def movewest():
     print("Woops! Can't go that way!")

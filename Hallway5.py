@@ -10,99 +10,58 @@ import Hallway6
 
 #print("You're in the Hallway#5.")
 filename = 'Hallway5'
-#utils.roomsvisited[14] = 1
+utils.roomsvisited[14] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+#   'nullItem': [nullItem  , None],
+
 }
 
 def basicDes():
-    print("The hall continues East and West. There is a door to the South.")
+    print("[Hallway – Section 5] \n To the South is a door with a sign that reads: \n 'Security Office' \n To the West is [Hallway – Section #4]. \n To the East is [Hallway – Section #5].")
 
 def fancyDes():
-    print("")
+    print("[Hallway – Section 5] \n To the South is [Security Office]. \n To the West is [Hallway – Section #4]. \n To the East is [Hallway – Section #5].")
 
-def movewest(): 
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[20] = 1
-            Hallway4.basicDes()
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[20] = 1
-            Hallway4.fancyDes()
-        else:
-            print("The door is locked.")
+def movewest():
+    utils.x = utils.x + 1
+    Hallway4.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Hallway#4!")
 
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[15] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[15] = 1
-            Security.basicDes()
-        else:
-            print("The door is locked.")
+    utils.y = utils.y + 1
+    if utils.advanced:
+      Security.fancyDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[15] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Security.fancyDes()
-            utils.roomsvisited[15] = 1
-        else:
-            print("The door is locked.")  
+      Security.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Security Room.")
 
-def moveeast():   
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[8] = 1
-            Hallway6.basicDes()
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[8] = 1
-            Hallway6.fancyDes()
-        else:
-            print("The door is locked.")
+def moveeast():
+    utils.x = utils.x - 1
+    Hallway6.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into into Hallway#6!")
 
 def itemsInhere():
     itemlist = []

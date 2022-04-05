@@ -105,7 +105,7 @@ def processLanguage(obj=None):
             if verb == "exit":
                 utils.exitgame(currentroomdict)
                 validCommand = True
-            if verb == "inventory":
+            if verb == "inventory" or verb == "i":
                 print(utils.inventory)
                 validCommand = True
             if verb == "gamemap":

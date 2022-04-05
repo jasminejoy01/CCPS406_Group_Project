@@ -16,91 +16,52 @@ utils.roomsvisited[8] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'terminal':  [terminal1     , None ]    
+
 }
 
 def basicDes():
-    print("The hall continues West. There are doors North and South.")
+    print("[Hallway – Section 6] \n I've reached the other end of the Hallway. \n To the North is a door with a sign that reads: \n 'Lost and Found / Storage' \n To the South is another Guard Desk, similar to the one I saw earlier. There appears to be two Security Guards, both sitting behind the desk monitoring different sets of monitors. \n To the West is [Hallway – Section #5].")
 
 def fancyDes():
-    print("")
+    print("[Hallway – Section 6] \n To the North is [Lost and Found / Storage]' \n To the South is [Security Checkpoint] \n To the West is [Hallway – Section #5].")
 
-def movewest():  
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[14] = 1
-            Hallway5.basicDes()
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[14] = 1
-            Hallway5.fancyDes()
-        else:
-            print("The door is locked.")
+def movewest():
+    utils.x = utils.x + 1
+    Hallway5.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Hallway Section 5!")
 
-def movenorth(): 
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[7] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[7] = 1
-            Storage.basicDes()
-        else:
-            print("The door is locked.")
+def movenorth():
+    utils.y = utils.y - 1
+    if utils.advanced:
+      Storage.fancyDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[7] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[7] = 1
-            Storage.fancyDes()
-        else:
-            print("The door is locked.")    
+      Storage.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into the lost and found storage room!")
 
 def movesouth():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[9] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[9] = 1
-            Exit.basicDes()
-        else:
-            print("The door is locked.")
+    utils.y = utils.y + 1
+    if utils.advanced:
+      Exit.fancyDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[9] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Exit.fancyDes()
-            utils.roomsvisited[9] = 1
-        else:
-            print("The door is locked.")    
+      Exit.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're exiting the Building!")
 
 def moveeast():
     print("Woops! Can't go that way!")

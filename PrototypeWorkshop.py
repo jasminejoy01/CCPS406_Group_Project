@@ -9,29 +9,22 @@ import Hallway1
 
 #print("You're in the Prototyping Lab.")
 filename = 'PrototypeWorkshop'
-#utils.roomsvisited[23] = 1
-
-if utils.prototypeChecker == False:
-    import Puzzle4
-    Puzzle4.breakbotcheck()
-    utils.prototypeChecker == True
-
+utils.roomsvisited[23] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
 copperwire = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-    'copperwire': [copperwire  , None],
-    'terminal':  [terminal1 , None ]
+    'copperwire': [copperwire  , None]
 }
 
 def basicDes():
-    print("There is a door to the East.")
+    print("[Prototype Workshop] \n This room is very cluttered; there are items scattered everywhere on the floor, in storage containers, and on the tables. \n The robots in this room look like they're a mixture of the other models I've seen on the compound. \n On one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state. \n To the East is the door that leads back into [Hallway - Section 1]")
 
 def fancyDes():
     print("")
@@ -45,29 +38,14 @@ def movenorth():
 def movesouth():
     print("Woops! Can't go that way!")
 
-def moveeast():   
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway1.basicDes()
-            utils.roomsvisited[17] = 1
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[17] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway1.fancyDes()
-            utils.roomsvisited[17] = 1
-        else:
-            print("The door is locked.") 
+def moveeast():
+    utils.x = utils.x - 1
+    Hallway1.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back into Hallway #1.")
 
 def itemsInhere():
     itemlist = []

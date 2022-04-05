@@ -1,4 +1,5 @@
 import utils
+import time
 
 class Item:
     def __init__(self, name, canTake, inInventory, description, interactable, useText):
@@ -87,6 +88,7 @@ class Computer:
             self.home()
         elif "spare key" in file:
             print("Downloading spare key to nearest wireless device....")
+            time.sleep(1)
             utils.PlayerKeys.append(1)
             
             print("Downloaded!")
@@ -97,10 +99,6 @@ class Computer:
         else:
            print("That's not a valid command")
            self.home()
-    
-    def getSchedule():
-        import puzzle6
-        puzzle6.setSchedule()
 
 class Terminal:
   def __init__(self, key):

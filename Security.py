@@ -6,67 +6,40 @@ Room#15: Security Office
 import Item as I
 import utils
 import Hallway5
-import time
 
 #print("You're in the Security Office.")
 filename = 'Security'
-#utils.roomsvisited[15] = 1
-
-if utils.securityPuzzleCheck == False:
-    if 'copperwire' in utils.inventory.keys():
-        print("Short cirtcuiting the smoke alarm at Programming Lab... Sprinkles turn on..")
-        utils.programminglabOccupied = False
-        time.sleep(2)
-        print("Everyone in the Programming Lab exits the room.")
-        utils.securityPuzzleCheck == True
-    else:
-        print("You can short the smoke alarm in the Programming Lab. But, you need to find a copper wire to first.")
-        utils.securityPuzzleCheck == False
-    
+utils.roomsvisited[15] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-#nullItem = I.Item("", False, False, False, "", False, "", "")
-terminal1 = I.Terminal(1)
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+#   'nullItem': [nullItem  , None],
+
 }
 
 def basicDes():
-    print("Here is a door to the North.")
+    print("[Security] \n A room filled with monitors, all showing a different moving image on the screen. \n There are three employees sitting inside, they match the uniform as the Security employee I cleaned up for on the way here. \n They're all too busy watching the screen to take notice of it. \n There is a large glowing button with a label underneath: \n 'Barrier: ACTIVE'. \n Past the guards and the monitors is a large window, it's facing towards the Security Checkpoint outside. \n To the North is the door that leads back into [Hallway - Section 5].")
 
 def fancyDes():
-    print("")
+    print("[Security] \n The room is filled with monitors, all showing a different moving image on the screen. \n The same employees are sitting inside, too busy with their jobs to notice me inside. \n The large glowing button is still there with its label underneath. \n The window leading outside still shows a vacant Security Checkpoint. \n To the North is [Hallway - Section 5].")
 
 def movewest():
     print("Woops! Can't go that way!")
 
-def movenorth():  
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[14] = 1
-            Hallway5.basicDes()
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway5.fancyDes()
-            utils.roomsvisited[14] = 1
-        else:
-            print("The door is locked.")   
+def movenorth():
+    utils.x = utils.x - 1
+    Hallway5.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving to Hallway - Section 5.")
 
 def movesouth():
     print("Woops! Can't go that way!")

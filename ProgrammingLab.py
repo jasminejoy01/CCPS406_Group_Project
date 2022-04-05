@@ -8,58 +8,34 @@ import Hallway2
 
 #print("You're in the Programming Lab.")
 filename = 'ProgrammingLab'
-#utils.roomsvisited[12] = 1
+utils.roomsvisited[12] = 1
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
-computer = I.Item("", False, False, "", False, "Hmm.. let's see if I can access people's schedules here... ")
+nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'terminal':  [ terminal1  , None ],   
-  'computer':  [ computer  , True ]
+
 }
 
-if utils.programminglabOccupied == False:
-    computer.getSchedule()
-    utils.origamiHeadChecker == False
-else:
-    print("You need to vacate the Programming Lab to access a computer.")
-
-
 def basicDes():
-    print("here is a door to the West.")
+    print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. \n The only other features that this room has are the red and white lights that are placed all over the ceiling. \n There are many NASA staff scattered throughout the room, all of them glued to their computer screens. \n To the West is the door that leads back into [Hallway - Section 2]")
 
 def fancyDes():
-    print("")
+    print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. \n I notice now that the different desks and computers have people's names on them; it also looks like a lot of the desks have been personalized, perhaps by their specific users. \n To the West is [Hallway - Section 2]")
 
 def movewest():
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[18] = 1
-            Hallway2.basicDes()
-        else:
-            print("The door is locked.")
-    else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[18] = 1
-            Hallway2.fancyDes()
-        else:
-            print("The door is locked.")
+    utils.x = utils.x + 1
+    Hallway2.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving back into Hallway #2.")
 
 def movenorth():
     print("Woops! Can't go that way!")

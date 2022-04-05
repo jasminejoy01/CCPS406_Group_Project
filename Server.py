@@ -13,7 +13,7 @@ filename = 'Server'
 
 
 if utils.securityPuzzleCheck == False and utils.roomsvisited[15] == 1:
-    if 'copperwire' in utils.inventory.keys():
+    if 'wire' in utils.inventory.keys():
         print("Short cirtcuiting the smoke alarm at Programming Lab... Sprinkles turn on..")
         utils.programminglabOccupied = False
         time.sleep(2)

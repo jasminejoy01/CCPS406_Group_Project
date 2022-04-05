@@ -21,7 +21,7 @@ if utils.prototypeChecker == False and utils.roomsvisited[23] == 1:
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-wire = I.Item("wire", False, False, "A piece of copper wire, highly conductive", False, "I push the copper wire into the pannel")
+wire = I.Item("wire", False, False, "A piece of copper wire, highly conductive", False, "I try to use the wire")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]

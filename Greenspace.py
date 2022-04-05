@@ -4,16 +4,16 @@ Room#10: Greenspace break area
 """
 import Item as I
 import utils
+import OutdoorsNorth
 
-print("You're in the Greenspace area.")
 
 utils.roomsvisited[10] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -38,7 +38,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y + 0
+    OutdoorsNorth.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

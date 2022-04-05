@@ -4,8 +4,9 @@ Room#26: Server room
 """
 import Item as I
 import utils
+import Hallway4
 
-print("You're in the Server room.")
+#print("You're in the Server room.")
 
 utils.roomsvisited[26] = 1
 
@@ -25,7 +26,9 @@ def basicDes():
     print("There is a door to the East.")
 
 def fancyDes():
-    print("")
+    print("Something about the Server room and the switches and stuff. You see the panel for programming room, and find the smoke alarm trip wire.")
+    
+    
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -38,7 +41,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    Hallway4.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

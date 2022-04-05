@@ -5,15 +5,15 @@ Room#22: A lab for testing robots.
 import Item as I
 import utils
 
-print("You're in the Bot Testing - Obstacle Room.")
+#print("You're in the Bot Testing - Obstacle Room.")
 
 utils.roomsvisited[22] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]

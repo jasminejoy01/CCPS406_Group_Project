@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Room#12: Programming Lab"
+Room#24: 3D Printing Lab
 """
 import Item as I
 import utils
 import Hallway2
 
-#print("You're in the Programming Lab.")
+#print("You're in the 3D Printing Lab.")
 
-utils.roomsvisited[12] = 1
+utils.roomsvisited[24] = 1
 
 ## Items in Room
 ##################
@@ -23,19 +23,13 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("here is a door to the West.")
+    print("There is a door to the East.")
 
 def fancyDes():
-    print("")
+    print("A brightly-lit room with floor to ceiling windows. Rows of white tables hold brightly coloured printers of various sizes, whirring away almost musically. Clear plastic bins under the desks hold rainbows of failed prints and old filament. A few massive printers move silently behind thick walls of glass, responsible for making the finest and most precise creations. There is a door to the East.")
 
 def movewest():
-    utils.x = utils.x + 1
-    Hallway2.basicDes()
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("You're moving back into Hallway #2.")
+    print("Woops! Can't go that way!")
 
 def movenorth():
     print("Woops! Can't go that way!")
@@ -44,7 +38,13 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    print("Woops! Can't go that way!")
+    utils.x = utils.x - 1
+    Hallway2.basicDes()
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    #print("You're moving into Hallway#2.")
 
 def itemsInhere():
     itemlist = []

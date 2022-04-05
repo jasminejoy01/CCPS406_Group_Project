@@ -4,16 +4,36 @@ Room#4: Outdoors North
 """
 import Item as I
 import utils
+import Greenspace
+import OutdoorsMiddle
+import CleaningBotStorage
 
-print("You've stepped outside into the North corridoors.")
+#print("You've stepped outside into the North corridoors.")
+
+utils.roomsvisited[4] = 1
+
+itemshere = []
+
+def basicDes():
+    print("Outside space between the storage building and main lab")
+
+def fancyDes():
+    print("The open paved area continues South. There is a grassy area with picnic benches to the the West.")
+
+# -*- coding: utf-8 -*-
+"""
+Room#4: Outdoors North
+"""
+import Item as I
+import utils
 
 utils.roomsvisited[4] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -29,7 +49,7 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y + 0
+    Greenspace.basicDes()
     #print(utils.x, utils.y)
     if utils.x < 0:
         utils.x = 0

@@ -5,15 +5,15 @@ Room#16: The building's side entrance.
 import Item as I
 import utils
 
-print("You're in the Bot Testing Room.")
+#print("You're in the Bot Testing Room.")
 
 utils.roomsvisited[16] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -101,4 +101,3 @@ def removeInventory(obj):
         (utils.inventory).remove(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))
-        

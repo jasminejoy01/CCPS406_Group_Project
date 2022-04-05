@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar 30 10:06:38 2022
-
 @author: jasmi
 """
 
@@ -16,9 +15,11 @@ y = initialize.x
 
 GPS = initialize.GPS
 advanced = initialize.advanced  #Determines description complexity
-PlayerKey1 = initialize.PlayerKey1 #Creator's key
+PlayerKeys = initialize.PlayerKeys #Creator's key
 inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
+disguise = initialize.disguise
+programminglabOccupied = initialize.programminglabOccupied
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")
@@ -47,8 +48,10 @@ def exitgame(roomcodes):
                          '## keys\n', 
                          'GPS = ', str(GPS)+"\n" ,
                          'advanced = ', str(advanced)+"\n" ,
-                         'PlayerKey1 = ', str(PlayerKey1)+"\n" ,
-                         'cheat = ', str(cheat)+"\n" 
+                         'PlayerKey1 = ', str(PlayerKeys)+"\n" ,
+                         'cheat = ', str(cheat)+"\n",
+                         'disguise = ', str(disguise)+"\n",
+                         'programminglabOccupied = ', str(programminglabOccupied)+"\n"
                          ]
             
             f = open(my_file, 'w')

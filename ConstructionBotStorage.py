@@ -5,16 +5,17 @@ Room#2: Storage for Construction Bots
 
 import Item as I
 import utils
+import OutdoorsMiddle
 
-print("You're in the Construction Bot Storage.")
+#print("You're in the Construction Bot Storage.")
 
 utils.roomsvisited[2] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -30,7 +31,10 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y + 0
+    if utils.advanced:
+      OutdoorsMiddle.fancyDes()
+    else:
+      OutdoorsMiddle.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

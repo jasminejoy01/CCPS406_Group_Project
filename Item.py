@@ -1,17 +1,13 @@
 import utils
 
 class Item:
-    def __init__(self, name, islocked, canTake, inInventory, description, interactable, useText, unlockText):
+    def __init__(self, name, canTake, inInventory, description, interactable, useText):
         self.name = name
-        self.islocked = False
         self.canTake = True
         self.inInventory = False
         self.description = description
         self.interactable = True
         self.useText = useText
-
-    def unlock(self):
-        self.islocked = True
 
     def take(self):
         if self.canTake:
@@ -31,7 +27,7 @@ class Item:
             print("I can't do anything with this")
 
 class Computer:
-    def __init__(self, name, islocked, canTake, inInventory, description, interactable, useText, unlockText):
+    def __init__(self, name, canTake, inInventory, description, interactable, useText):
       # islocked, description
       self.name = name
       self.islocked = True
@@ -40,9 +36,6 @@ class Computer:
       self.description = description
       self.interactable = True
       self.useText = useText
-
-    def unlock(self):
-        self.islocked = True
 
     def take(self):
         if self.canTake:
@@ -57,7 +50,7 @@ class Computer:
         tryingPassword = True
         password = input("Please enter the password: \n")
         while (self.islocked) and tryingPassword:
-            if password == "passion":
+            if password == "cw19928":
                 self.islocked = False
                 print("Welcome")
                 self.home()
@@ -86,7 +79,7 @@ class Computer:
             self.home()
         elif "spare key" in file:
             print("Downloading spare key to nearest wireless device....")
-            utils.PlayerKey1 = True
+            utils.PlayerKeys.append(1)
             
             print("Downloaded!")
             print("I have {}'s key!'".format(self.name))
@@ -96,3 +89,21 @@ class Computer:
         else:
            print("That's not a valid command")
            self.home()
+
+class Terminal:
+  def __init__(self, key):
+    self.name = "terminal"
+    self.key = key;
+    self.locked = True;
+
+  def use(self):
+    for i in range(len(utils.PlayerKeys)):
+      if utils.PlayerKeys[i] == self.key:
+        self.locked = False;
+        print("I touched the terminal and it scanned my NFC key. The door clicked open.")
+      else: print("It seems to require an NFC key that I don't have yet.")
+    if len(utils.PlayerKeys) == 0:
+      print("It seems to require an NFC key that I don't have yet.")
+
+  def examine(self):
+    print("The terminal reads \n\'LOCKED\'")

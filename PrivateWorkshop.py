@@ -4,6 +4,7 @@ Room#1: Private Workshop
 """
 import Item as I
 import utils
+import CleaningBotStorage
 
 #print("You're in the Private Workshop.")
 
@@ -12,34 +13,38 @@ utils.roomsvisited[0] = 1
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-#nullItem = I.Item("", False, False, False, "", False, "", "")
-computer1 = I.Computer("computer", True, False, False, "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk.", True, "", "")
-keyboard = I.Item("keyboard", None, False, False, "A beat up old keyboard. There's a note sitcking out from under it.", True, "A beat up old keyboard. There's a note sitcking out from under it.", "")
-note = I.Item("note", None, True, False, "It reads: 'If I forget again: 4 grapes , 1 apple , 7 bananas , 7 mangoes , 2 pineapples , 1 orange , 8 pomegranates. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'", "")
-trash = I.Item("trash", None, False, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it", "")
-door = I.Item("door", True, False, False, "", True, "", "")
+#name, canTake, inInventory, description, interactable, useText
+#nullItem = I.Item("", False, False, "", False, "")
+computer1 = I.Computer("computer", False, False, "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk.", True, "")
+keyboard = I.Item("keyboard", False, False, "A beat up old keyboard. There's a note sitcking out from under it.", True, "A beat up old keyboard. There's a note sitcking out from under it.",)
+note = I.Item("note", True, False, "It reads: 'If I forget again: Initials, year of birth, lucky number. No commas or spaces. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'")
+trash = I.Item("trash", False, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it")
+trash = I.Item("trash", False, False, "Inside the bin, there is a piece of paper.", True, "I could take the paper out of it")
+paper = I.Item("paper", False, False, "It reads:\nApril 20, 2020. \nHead of Robotics at The National Institute for Mechanical Innovation, Cordelia Weaver, has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", True, "It reads:\nApril 20, 2020. \nHead of Robotics at The National Institute for Mechanical Innovation, Cordelia Weaver, has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.")
+terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , False],
-   'computer': [computer1 , True ],
+   'computer': [computer1 , False ],
    'keyboard': [keyboard  , None ],               
    'note':     [note      , None ],
    'trash':    [trash     , None ],
-   'door':     [door      , True ]
+  'paper':     [paper     , None ],
+  'terminal':  [terminal1     , None ]
 }
 
 def basicDes():
-    print("A small room with a computer on a desk. There is a door to the West.")
+    print("A small room with a computer on a desk. Next to the desk is a trash bin. There is a door to the West, and a terminal beside it.")
 
 def fancyDes():
-    print("There room has no windows. There is a door to the left.")
+    print("A small room with a computer on a desk. Next to the desk is a trash bin. There is a door to the West, and a terminal beside it.")
 
 def movewest():
-    if itemdictionary['door'][1] == True or utils.cheat == True:
-        itemdictionary['door'][0].unlock()
-    utils.x = utils.x + 1
-    utils.y = utils.y + 0
+    if utils.cheat == True or terminal1.locked == False:
+      utils.x = utils.x + 1
+      CleaningBotStorage.basicDes()
+    else:
+      print("The door is locked.")
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -83,7 +88,7 @@ def use(obj):
     if obj in lst:
         if itemdictionary[obj][1] == True:
             print("It's Locked!")
-            itemdictionary[obj][0].use()
+            #itemdictionary[obj][0].use()
         else:
             itemdictionary[obj][0].use()
     else:

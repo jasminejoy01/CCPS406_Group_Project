@@ -5,15 +5,15 @@ Room#11: The building's side entrance.
 import Item as I
 import utils
 
-print("You're in the building's side entrance.")
+#print("You're in the building's side entrance.")
 
 utils.roomsvisited[11] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]

@@ -9,7 +9,7 @@ class Player(object):
     self.y = 5
     self.GPS = False
     self.advanced = False  #Determines description complexity
-    self.key1 = False #Creator's key
+    self.keys = []
     
   def moveNorth(self, rooms):
     if rooms[self.x][self.y].northDoor:

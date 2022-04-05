@@ -4,21 +4,27 @@ Room#25: Creator's Office
 """
 import Item as I
 import utils
+import Item2 as I2
+import Hallway3
 
-print("You're in the Creator's Office.")
+## Turn off GPS: 
+I2.CreatorOffice.GPS
+
+# Advanced descriptions turn on
+utils.advanced = True
+#print("You're in the Creator's Office.")
 
 utils.roomsvisited[25] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
 }
 
 def basicDes():
@@ -38,7 +44,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    Hallway3.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

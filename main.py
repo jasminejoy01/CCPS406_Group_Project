@@ -42,6 +42,7 @@ def hasItem(obj):
             return True
     return False
 
+
 def processLanguage(obj=None): 
     import utils
     if len(rooms) == 0:
@@ -61,7 +62,8 @@ def processLanguage(obj=None):
     #Check for non-empty input
     while len(splitCommand) == 0 or not validCommand:
         splitCommand = command.split()
-        verb = splitCommand[0].lower()
+        if len(splitCommand)>0:
+          verb = splitCommand[0].lower()
         
         #1-word commands
         if len(splitCommand) == 1: 
@@ -83,12 +85,13 @@ def processLanguage(obj=None):
                 where = library(str(x), str(y))
                 __import__(where).movewest()
                 validCommand = True
-            if (verb == "look"):
+            if (verb == "look" and utils.advanced == False):
                 where = library(str(x), str(y))
                 __import__(where).basicDes()
                 validCommand = True
-            if (verb == "cheat"):
-                rooms.unlockRooms()
+            if (verb == "look" and utils.advanced == True):
+                where = library(str(x), str(y))
+                __import__(where).fancyDes()
                 validCommand = True
             if verb == "help":
                 T.help()
@@ -123,7 +126,8 @@ def processLanguage(obj=None):
                     T.readUserGuide()
                     validCommand = True
                 if 'paper' == noun or 'note' == noun:
-                    ################################
+                    where = library(str(x), str(y))
+                    __import__(where).use(noun)
                     validCommand = True
             if (verb == "exam") or (verb == "examine"):
                 where = library(str(x), str(y))
@@ -170,7 +174,8 @@ while True:
         utils.y = save.y
         utils.inventory = save.inventory
         utils.roomsvisited = save.visited
+        utils.disguise = save.disguise
+        utils.programminglabOccupied = save.programminglabOccupied
         os.remove('save.py')
 
     processLanguage()
-    

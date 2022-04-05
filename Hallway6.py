@@ -4,16 +4,19 @@ Room#8: Hallway 6
 """
 import Item as I
 import utils
+import Storage
+import Exit
+import Hallway5
 
-print("You're in the Hallway#6.")
+#print("You're in the Hallway#6.")
 
 utils.roomsvisited[8] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -29,7 +32,7 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y + 0
+    Hallway5.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -37,8 +40,11 @@ def movewest():
     #print("You're moving into Hallway Section 5!")
 
 def movenorth():
-    utils.x = utils.x + 0
     utils.y = utils.y - 1
+    if utils.advanced:
+      Storage.fancyDes()
+    else:
+      Storage.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -46,8 +52,11 @@ def movenorth():
     #print("You're moving into the lost and found storage room!")
 
 def movesouth():
-    utils.x = utils.x + 0
     utils.y = utils.y + 1
+    if utils.advanced:
+      Exit.fancyDes()
+    else:
+      Exit.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

@@ -5,16 +5,17 @@ Room#3: Storage for Origami Bots.
 
 import Item as I
 import utils
+import OutdoorsSouth
 
-print("You're in the Origami Bot Storage.")
+#print("You're in the Origami Bot Storage.")
 
 utils.roomsvisited[3] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -30,7 +31,10 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y + 0
+    if utils.advanced:
+      OutdoorsSouth.fancyDes()
+    else:
+      OutdoorsSouth.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

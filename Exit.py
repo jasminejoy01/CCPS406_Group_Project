@@ -5,8 +5,9 @@ Room#9: The Exit
 import Item as I
 import utils
 import os
+import Hallway6
 
-print("The ultimate goal.")
+#print("The ultimate goal.")
 
 utils.roomsvisited[9] = 1
 
@@ -22,7 +23,7 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    utils.x = utils.x + 0
+    Hallway6.basicDes()
     utils.y = utils.y - 1
     if utils.x < 0:
         utils.x = 0

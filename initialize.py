@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 30 09:33:41 2022
-
-@author: jasmi
-"""
 import numpy
 import text as T
 
@@ -43,10 +37,12 @@ T.intro()
 x = 0
 y = 0
 
-GPS = False
+GPS = True
 advanced = False  #Determines description complexity
-PlayerKey1 = False #Creator's key
+PlayerKeys = [] #Creator's key
 inventory = []
 cheat = False
-   
+disguise = False
+programminglabOccupied = True
+
 print("Write a command")

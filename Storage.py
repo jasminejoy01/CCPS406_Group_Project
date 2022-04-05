@@ -5,10 +5,13 @@ Room#7: Storage room
 
 import Item as I
 import utils
-
-print("You're in the Storage Room.")
+import Item2 as I2
+import Hallway6
+#print("You're in the Storage Room.")
 
 utils.roomsvisited[7] = 1
+# Put on disguise:  I2.StorageCloset.disguise()
+
 
 ## Items in Room
 ##################
@@ -36,8 +39,8 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.x = utils.x + 0
     utils.y = utils.y + 1
+    Hallway6.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

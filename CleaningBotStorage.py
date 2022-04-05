@@ -4,6 +4,8 @@ Room#2: Storage for Cleaning Bots
 """
 import Item as I
 import utils
+import PrivateWorkshop
+import OutdoorsNorth
 
 #print("You're in the Cleaning Bot Storage.")
 
@@ -12,19 +14,14 @@ utils.roomsvisited[1] = 1
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-#nullItem = I.Item("", False, False, False, "", False, "", "")
-broom = I.Item("broom", False, False, False, "an ordinary broom", True, "I'm sweeping", "")
-terminal = I.Item("terminal", True, False, False, "The terminal reads \n\'LOCKED\'", True, "It seems to require an NFC key", "You interact with the NFC terminal and the screen changes: \n\‘UNLOCKED\’")
-paper = I.Item("paper", False, True, False, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", True, "It reads: April 20, 2020. Head of Robotics at [company], [name], has been awarded for remarkable contribution to science for her creation of a highly adaptable cleaning robot. At the age of 28, she is one of the youngest scientists to ever achieve such an acomplishment. We're excited to see what she does next.", "")
-door = I.Item("door", True, False, False, "", True, "", "")
+#name,  canTake, inInventory, description, interactable, useText
+broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping")
+terminal2 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , False],
    'broom':     [broom     , None ],
-   'terminal':  [terminal  , True ],               
-   'paper':     [paper      , None ],
-   'door':      [door      , True ]
+  'terminal':  [terminal2     , None ]           
 }
 
 def basicDes():
@@ -34,6 +31,14 @@ def fancyDes():
     print("This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.", "This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; it’s a familiar sight. There are shelves and storage containers covering a majority of the room. They’re full of containers containing bleach, soap, and other types of cleaning supplies organized by product. There are brooms neatly stacked on a storage rack near the door to the West. Beside the West door is another NFC Terminal identical to the first one found in the other room. There is an East door back to the private workshop.")
 
 def movewest():
+    if utils.cheat == True or terminal2.locked == False:
+      utils.x = utils.x + 1
+      if utils.advanced:
+        OutdoorsNorth.fancyDes()
+      else:
+        OutdoorsNorth.basicDes()
+    else:
+      print("The door is locked.")
     utils.x = utils.x + 1
     utils.y = utils.y + 0
     if utils.x < 0:
@@ -52,7 +57,10 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y + 0
+    if utils.advanced:
+      PrivateWorkshop.fancyDes()
+    else:
+      PrivateWorkshop.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

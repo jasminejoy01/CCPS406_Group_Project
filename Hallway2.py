@@ -4,16 +4,20 @@ Room#18: Hallway 2
 """
 import Item as I
 import utils
+import Hallway1
+import PrintingLab
+import ProgrammingLab
+import Hallway3
 
-print("You're in the Hallway#2.")
+#print("You're in the Hallway#2.")
 
 utils.roomsvisited[18] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -29,7 +33,10 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y
+    if utils.advanced:
+      PrintingLab.fancyDes()
+    else:
+      PrintingLab.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -37,8 +44,8 @@ def movewest():
     #print("You're moving into 3D Printing lab!")
 
 def movenorth():
-    utils.x = utils.x
     utils.y = utils.y - 1
+    Hallway1.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -46,8 +53,8 @@ def movenorth():
     #print("You're moving into Hallway#1.")
 
 def movesouth():
-    utils.x = utils.x
     utils.y = utils.y + 1
+    Hallway3.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -56,7 +63,10 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    if utils.advanced:
+      ProgrammingLab.fancyDes()
+    else:
+      ProgrammingLab.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

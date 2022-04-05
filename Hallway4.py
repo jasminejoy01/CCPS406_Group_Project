@@ -4,16 +4,20 @@ Room#20: Hallway 4
 """
 import Item as I
 import utils
+import Server
+import OrigamiHeadOffice
+import Hallway5
+import Hallway3
 
-print("You're in the Hallway#4.")
+#print("You're in the Hallway#4.")
 
 utils.roomsvisited[20] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -29,7 +33,10 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    utils.y = utils.y
+    if utils.advanced:
+      Server.fancyDes()
+    else:
+      Server.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -37,8 +44,8 @@ def movewest():
     #print("You're moving into Server Room!")
 
 def movenorth():
-    utils.x = utils.x
     utils.y = utils.y - 1
+    Hallway3.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -46,8 +53,11 @@ def movenorth():
     #print("You're moving into Hallway#3.")
 
 def movesouth():
-    utils.x = utils.x
     utils.y = utils.y + 1
+    if utils.advanced:
+      OrigamiHeadOffice.fancyDes()
+    else:
+      OrigamiHeadOffice.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -56,7 +66,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    Hallway5.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

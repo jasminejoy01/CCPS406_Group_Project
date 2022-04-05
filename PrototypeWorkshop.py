@@ -3,22 +3,24 @@
 Room#23: The Prototyping Lab"
 """
 import Item as I
+import Item2 as I2
 import utils
+import Hallway1
 
-print("You're in the Prototyping Lab.")
+#print("You're in the Prototyping Lab.")
 
 utils.roomsvisited[23] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+copperwire = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
+    'copperwire': [copperwire  , None]
 }
 
 def basicDes():
@@ -38,7 +40,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    Hallway1.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -78,7 +80,10 @@ def use(obj):
 def take(obj):
     lst = itemsInhere()
     if obj in lst:
-        itemdictionary[obj][0].take()
+          if obj == "copperwire":
+            I2.PrototypeWorkshop.item_add()
+          else:
+            itemdictionary[obj][0].take()
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
 

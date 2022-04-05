@@ -5,21 +5,22 @@ Room#21: Head of Origami Office.
 
 import Item as I
 import utils
+import Hallway4
 
-print("You're in the Head of Origami Office.")
+#print("You're in the Head of Origami Office.")
 
 utils.roomsvisited[21] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+OrigamiKey = I.Item("", True, False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-
+  'OrigamiKey' : [OrigamiKey, None]
 }
 
 def basicDes():
@@ -32,8 +33,8 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    utils.x = utils.x
     utils.y = utils.y - 1
+    Hallway4.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

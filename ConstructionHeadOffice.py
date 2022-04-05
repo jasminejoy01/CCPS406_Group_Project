@@ -5,16 +5,17 @@ Room#13: The Office of the Head of Contruction Bots.
 
 import Item as I
 import utils
+import Hallway3
 
-print("You're in the Head of Contruction Office.")
+#print("You're in the Head of Contruction Office.")
 
 utils.roomsvisited[13] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -35,8 +36,8 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.x = utils.x
     utils.y = utils.y + 1
+    Hallway3.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

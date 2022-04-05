@@ -5,8 +5,9 @@ Room#15: Security Office
 
 import Item as I
 import utils
+import Hallway5
 
-print("You're in the Security Office.")
+#print("You're in the Security Office.")
 
 utils.roomsvisited[15] = 1
 
@@ -33,7 +34,7 @@ def movewest():
 
 def movenorth():
     utils.x = utils.x - 1
-    utils.y = utils.y + 0
+    Hallway5.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -96,4 +97,3 @@ def removeInventory(obj):
         (utils.inventory).remove(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))
-        

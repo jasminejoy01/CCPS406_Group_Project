@@ -4,16 +4,18 @@ Room#6: Outside space between the storage building and main lab
 """
 import Item as I
 import utils
+import OrigamiBotStorage
+import OutdoorsMiddle
 
-print("You've stepped into the South corridoors outside.")
+#print("You've stepped into the South corridoors outside.")
 
 utils.roomsvisited[6] = 1
 
 ## Items in Room
 ##################
 
-#name, islocked, canTake, inInventory, description, interactable, useText, unlockText
-nullItem = I.Item("", False, False, False, "", False, "", "")
+#name, canTake, inInventory, description, interactable, useText
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -31,8 +33,8 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    utils.x = utils.x
     utils.y = utils.y - 1
+    OutdoorsMiddle.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -44,7 +46,10 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.y = utils.y
+    if utils.advanced:
+      OrigamiBotStorage.fancyDes()
+    else:
+      OrigamiBotStorage.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

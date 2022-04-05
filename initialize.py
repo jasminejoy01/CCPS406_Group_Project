@@ -26,7 +26,7 @@ roomdict = { # [desc, xcoord, ycoord, code]
   45: ["Origami Head's Office"      , 4, 5, "OrigamiHeadOffice"],
   50: ["Bot testing:Obstacle course", 5, 0, "BotTestingObstacle"],
   51: ["Prototype Workshop"         , 5, 1, "PrototypeWorkshop"],
-  52: ["3D Printing Lab"            , 5, 2, "PrintingLab"],
+  52: ["3D Printing Lab"            , 5, 2, "3DPrintingLab"],
   53: ["Creator's Office"           , 5, 3, "CreatorOffice"],
   54: ["Server Room"                , 5, 4, "Server"]
 }

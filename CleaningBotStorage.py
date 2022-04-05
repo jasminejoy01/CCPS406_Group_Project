@@ -32,21 +32,19 @@ def fancyDes():
 
 def movewest():
     if utils.cheat == True or terminal2.locked == False:
-        utils.x = utils.x + 1
-        utils.y = utils.y + 0
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        if utils.advanced == True:
-            OutdoorsNorth.fancyDes()
-        else:
-            OutdoorsNorth.basicDes()
+      utils.x = utils.x + 1
+      if utils.advanced:
+        OutdoorsNorth.fancyDes()
+      else:
+        OutdoorsNorth.basicDes()
     else:
-        print("The door is locked.")
-        terminal2.use()
-        movewest()
-        
+      print("The door is locked.")
+    utils.x = utils.x + 1
+    utils.y = utils.y + 0
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
     #print("You're moving outdoors!")
 
 def movenorth():

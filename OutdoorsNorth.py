@@ -49,10 +49,8 @@ def fancyDes():
 
 def movewest():
     utils.x = utils.x + 1
-    if utils.advanced:
-      Greenspace.fancyDes()
-    else:
-      Greenspace.basicDes()
+    Greenspace.basicDes()
+    #print(utils.x, utils.y)
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
@@ -73,10 +71,7 @@ def movesouth():
 
 def moveeast():
     utils.x = utils.x - 1
-    if utils.advanced:
-      CleaningBotStorage.fancyDes()
-    else:
-      CleaningBotStorage.basicDes()
+    utils.y = utils.y + 0
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

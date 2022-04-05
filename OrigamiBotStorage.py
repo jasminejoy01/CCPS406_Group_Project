@@ -6,6 +6,7 @@ Room#3: Storage for Origami Bots.
 import Item as I
 import utils
 import OutdoorsSouth
+import oriBot as o
 
 #print("You're in the Origami Bot Storage.")
 filename = 'OrigamiBotStorage'
@@ -17,9 +18,11 @@ utils.roomsvisited[3] = 1
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
+origamiBot = o.oriBot()
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+   'terminal':  [terminal1 , None ],
+  'origamibot': [origamiBot, None]
 }
 
 def basicDes():

@@ -15,7 +15,7 @@ itemshere = []## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
+nullItem = I.Item("", False, False, "", False, "")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
@@ -48,7 +48,7 @@ def movesouth():
     elif utils.GPS == False and utils.disguise == False:
         print("Your GPS is off, but you still need a disguise to leave the building.\n Go back in the Storage Closet and find a disguise so that you won't be spotted when you leave.")
     else:
-        print("You can't exit the game yet! Turn off your GPS tracker and put on a disguise.")
+        print("Congrats! You're exiting the Game!")
 
 def moveeast():
     print("Woops! Can't go that way!")

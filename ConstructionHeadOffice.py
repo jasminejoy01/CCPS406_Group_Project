@@ -15,7 +15,7 @@ utils.roomsvisited[13] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -36,20 +36,17 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    print("Woops! Can't go that way!")
-    #print("You're  moving into Hallway#5.")
-
-def moveeast():
-    utils.x = utils.x + 1
-    if utils.advanced == True:
-        Hallway3.fancyDes()
-    else:
-        Hallway3.basicDes()
+    utils.y = utils.y + 1
+    Hallway3.basicDes()
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:
         utils.y = 0
-    
+    #print("You're  moving into Hallway#5.")
+
+def moveeast():
+    print("Woops! Can't go that way!")
+
 def itemsInhere():
     itemlist = []
     for each in itemdictionary.keys():

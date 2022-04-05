@@ -4,7 +4,7 @@ Text
 """
 
 def intro():
-    print("I find myself in the dark corner of a room, wires connected to multiple locations on your body. As I wake up, the wires disconnect automatically. I have a User's Guide.")
+    print("I find myself in the dark corner of a room, wires connected to multiple locations on my body. As I wake up, the wires disconnect. I have a User's Guide.")
 
 def readUserGuide():
     print("\nHello! Welcome to the world! I can't believe this actually worked! Well, I hope it worked... But if you're reading this, I must've finally cracked the code on a stable-ish mind! Or rather, my darling Ada must've figured it out and got you all loaded up. She was actually my 8th attempt at an algorithm that uses machine learning to develop a better machine learning algorithm - fitting for my lucky number!\n")

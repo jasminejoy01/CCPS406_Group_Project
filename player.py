@@ -11,34 +11,3 @@ class Player(object):
     self.advanced = False  #Determines description complexity
     self.keys = []
     
-  def moveNorth(self, rooms):
-    if rooms[self.x][self.y].northDoor:
-      if not rooms[self.x][self.y + 1].locked:
-        self.y = self.y + 1
-        print(rooms[self.x][self.y].name)
-      else: print("I can't go that way yet")
-    else: print("There's no door that way")
-
-  def moveEast(self, rooms):
-    if rooms[self.x][self.y].eastDoor:
-      if not rooms[self.x + 1][self.y].locked:
-        self.x = self.x + 1
-        print(rooms[self.x][self.y].name)
-      else: print("I can't go that way yet")
-    else: print("There's no door that way")
-
-  def moveSouth(self, rooms):
-    if rooms[self.x][self.y].southDoor:
-      if not rooms[self.x][self.y - 1].locked:
-        self.y = self.y - 1
-        print(rooms[self.x][self.y].name)
-      else: print("I can't go that way yet")
-    else: print("There's no door that way")
-
-  def moveWest(self, rooms):
-    if rooms[self.x][self.y].westDoor:
-      if not rooms[self.x - 1 ][self.y].locked:
-        self.x = self.x - 1
-        print(rooms[self.x][self.y].name)
-      else: print("I can't go that way yet")
-    else: print("There's no door that way")

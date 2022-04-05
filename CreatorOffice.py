@@ -15,23 +15,30 @@ utils.advanced = True
 #print("You're in the Creator's Office.")
 filename = 'CreatorOffice'
 utils.roomsvisited[25] = 1
+ventOpen = False
 
 ## Items in Room
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
+bookshelf = I.Item("bookshelf", False, False, "The bookself has figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds.", False, "")
+desk = I.Item("desk", False, False, "The edges of the desk are decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments.", False, "")
+vent = I.Item("vent", False, False, "A old vent. The screws seem fairly loose.", True, "I try to pull on the screws... Seems like I might need a tool to open this.")
 
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
+  'bookshelf': [bookshelf, None],
+  'desk':      [desk, None],
+  'vent':      [vent, None]
 }
 
 def basicDes():
     print("There is a door to the East.")
 
 def fancyDes():
-    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. A tall bookshelf to the left stands with figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds. In the middle of the room is a large wooden desk, the edges decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments. In its center are a pair of large monitors and a softly glowing computer tower.\n Creator is <doing something> in this room.")
+    print("A dizzying array of scrap metal, gears, wires, and snack foods lie across the many cupboards that line the room. Cool air flows in from a vent on the wall. A tall bookshelf stands beside it. In the middle of the room is a large wooden desk. In its center are a pair of large monitors and a softly glowing computer tower.\n A woman with wild hair is fidgiting with some springs and gears.")
 
 def movewest():
     print("Woops! Can't go that way!")

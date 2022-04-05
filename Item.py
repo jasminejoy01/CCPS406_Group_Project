@@ -58,7 +58,7 @@ class Computer:
         tryingPassword = True
         password = input("Please enter the password: \n")
         while (self.islocked) and tryingPassword:
-            if password == "cw19928":
+            if password.lower() == "cw19928":
                 self.islocked = False
                 print("Welcome")
                 self.home()
@@ -72,8 +72,8 @@ class Computer:
         print(self.description)
 
     def home(self):
-        print("The screen is covered in files, some of which are 'Ada', 'To do', and 'Spare Key'")
-        file = (input("Which will you open?\n")).lower()
+        print("\nThe screen is covered in files, some of which are 'Ada', 'To do', and 'Spare Key'")
+        file = (input("Which should I open?\n")).lower()
         filesplit = file.split()
         if filesplit[0] == "chmod":
             print("Ha, tricky! But no - not allowed")
@@ -83,7 +83,7 @@ class Computer:
             self.home()
       
         elif "to do" in file or "todo" in file:
-            print("1. Check on AI project [reminder missed] \n2. Hide fun projects in office before Rin comes in from HQ and takes them again... I miss you, Rosie! [reminder snoozed] \n3. Find more things to put on to-do list [reminder missed]")
+            print("The to-do list opens. \n1. Check on AI project [reminder missed] \n2. Hide fun projects in office before Rin comes in from HQ and takes them again... I miss you, Rosie! [reminder snoozed] \n3. Find more things to put on to-do list [reminder missed]\n \nI close it and return to the home screen.")
             self.home()
         elif "spare key" in file:
             print("Downloading spare key to nearest wireless device....")

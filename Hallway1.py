@@ -37,7 +37,6 @@ def movewest():
     else:
       PrototypeWorkshop.basicDes()
     utils.x = utils.x + 1
-    utils.y = utils.y
     if utils.x < 0:
         utils.x = 0
     if utils.y < 0:

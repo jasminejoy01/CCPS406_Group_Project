@@ -170,12 +170,15 @@ def processLanguage(obj=None):
             if (verb == "exam") or (verb == "examine"):
                 __import__(where).examine(noun)
                 validCommand = True
-            if (verb == "take"):
+            if (verb == "take" or verb == "get"):
                 __import__(where).take(noun)
                 validCommand = True
+            if (verb == "open") and noun == "vent":
+              __import__(where).use(noun)
+              validCommand = True
             if (verb == "use") and noun != "key":
                 __import__(where).use(noun)
-
+              
                 #Puzzle 3: sweeping
                 if noun == "broom" and x == 3 and y == 1:
                   hasKey2 = False

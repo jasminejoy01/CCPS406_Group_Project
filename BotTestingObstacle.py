@@ -13,7 +13,7 @@ utils.roomsvisited[22] = 1
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
+nullItem = I.Item("", False, False, "", False, "")
 
 
 itemdictionary = { # [Item, isLocked]
@@ -35,13 +35,8 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    utils.x = utils.x + 0
-    utils.y = utils.y + 1
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
-    #print("Woops! Can't go that way!")
+    #print(utils.x, utils.y)
+    print("Woops! Can't go that way!")
 
 def moveeast():
     utils.x = utils.x - 1

@@ -34,107 +34,76 @@ def fancyDes():
 
 def movewest():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[26] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Server.basicDes()
-            utils.roomsvisited[26] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[26] = 1
+        Server.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[26] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Server.fancyDes()
-            utils.roomsvisited[26] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[26] = 1
+        Server.fancyDes()
 
 def movenorth():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway3.basicDes()
-            utils.roomsvisited[19] = 1
-        else:
-            print("The door is locked.")
+        utils.y = utils.y - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[19] = 1
+        Hallway3.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway3.fancyDes()
-            utils.roomsvisited[19] = 1
-        else:
-            print("The door is locked.")    
+        utils.y = utils.y - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[19] = 1
+        Hallway3.fancyDes()  
 
 def movesouth():
-    oriUnlocked = False  
-    for i in range(len(utils.PlayerKeys)):
-      if utils.PlayerKeys[i] == 4:
-        oriUnlocked = True
-    if not oriUnlocked and not utils.cheat:
-      print("I try to open a door marked 'Head of Origami Bots', but it's locked. It sounds like there's someone inside.")
-    else: 
-        if utils.advanced == True:
-            if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[21] == 1:
-                utils.y = utils.y + 1
-                if utils.x < 0:
-                    utils.x = 0
-                if utils.y < 0:
-                    utils.y = 0
-                OrigamiHeadOffice.basicDes()
-                utils.roomsvisited[21] = 1
-            else:
-                print("The door is locked.")
-        else:
-            if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[21] == 1:
-                utils.y = utils.y + 1
-                if utils.x < 0:
-                    utils.x = 0
-                if utils.y < 0:
-                    utils.y = 0
-                OrigamiHeadOffice.fancyDes()
-                utils.roomsvisited[21] = 1
-            else:
-                print("The door is locked.")    
-
+    if utils.advanced == True:
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[21] = 1
+        OrigamiHeadOffice.basicDes()
+    else:
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OrigamiHeadOffice.fancyDes()
+        utils.roomsvisited[21] = 1
+ 
 def moveeast():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway5.basicDes()
-            utils.roomsvisited[14] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[14] = 1
+        Hallway5.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway5.fancyDes()
-            utils.roomsvisited[14] = 1
-        else:
-            print("The door is locked.")
-
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[14] = 1
+        Hallway5.fancyDes()
+        
 
 def itemsInhere():
     itemlist = []

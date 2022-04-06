@@ -51,7 +51,7 @@ def movewest():
             utils.roomsvisited[1] = 1
             CleaningBotStorage.basicDes()
         else:
-            print("The door is locked.")
+            print("The door is locked. Use terminal to leave room.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x + 1
@@ -62,7 +62,7 @@ def movewest():
             CleaningBotStorage.fancyDes()
             utils.roomsvisited[1] = 1
         else:
-            print("The door is locked.")      
+            print("The door is locked. Use terminal to leave room.")      
 
 def movenorth():
     print("Woops! Can't go that way!")

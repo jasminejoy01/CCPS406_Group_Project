@@ -54,5 +54,3 @@ constructionChecker = False    #puzzle4.py
 constructionBotChecker = False    #puzzle4.py
 prototypeChecker = False      #puzzle4.py
 securityPuzzleCheck = False   # sequence of events, triggers programminglabOccupied = False
-
-print("Write a command")

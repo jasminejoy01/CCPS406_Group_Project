@@ -6,8 +6,10 @@ import Item as I
 import utils
 import Hallway2
 import text as T
+import os
 
-filename = 'PrintingLab'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

@@ -8,8 +8,10 @@ import Storage
 import Exit
 import Hallway5
 import text as T
+import os
 
-filename = 'Hallway6'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

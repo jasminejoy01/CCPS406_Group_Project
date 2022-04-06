@@ -7,9 +7,10 @@ import utils
 import BotTestingObstacle
 import Hallway1
 import text as T
+import os
 
-
-filename = 'BotTesting'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

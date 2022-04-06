@@ -8,9 +8,10 @@ import utils
 import Hallway4
 import puzzle6
 import text as T
+import os
 
-#print("You're in the Head of Origami Office.")
-filename = 'OrigamiHeadOffice'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 #utils.roomsvisited[21] = 1
 
 

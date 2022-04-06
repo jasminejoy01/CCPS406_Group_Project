@@ -9,9 +9,10 @@ import OutdoorsSouth
 import ConstructionBotStorage
 import BuildingEntranceExit
 import text as T
+import os
 
-
-filename = 'OutdoorsMiddle'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

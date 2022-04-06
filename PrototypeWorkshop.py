@@ -8,8 +8,10 @@ import utils
 import Hallway1
 import Puzzle4
 import text as T
+import os
 
-filename = 'PrototypeWorkshop'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

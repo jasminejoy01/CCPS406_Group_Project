@@ -9,8 +9,10 @@ import BotTesting
 import BuildingEntranceExit
 import Hallway2
 import text as T
+import os
 
-filename = 'Hallway1'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

@@ -7,9 +7,10 @@ import utils
 import os
 import Hallway6
 import text as T
+import os
 
-#print("The ultimate goal.")
-filename = 'Exit'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 itemshere = []## Items in Room
 ##################

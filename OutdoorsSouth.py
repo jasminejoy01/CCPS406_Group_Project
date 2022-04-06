@@ -7,9 +7,10 @@ import utils
 import OrigamiBotStorage
 import OutdoorsMiddle
 import text as T
+import os
 
-
-filename = 'OutdoorsSouth'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

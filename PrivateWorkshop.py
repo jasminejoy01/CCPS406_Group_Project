@@ -7,9 +7,11 @@ import Item2 as I2
 import utils
 import text as T
 import CleaningBotStorage
+import os
 
 #print("You're in the Private Workshop.")
-filename = 'PrivateWorkshop'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

@@ -7,10 +7,12 @@ import utils
 import Item2 as I2
 import Hallway3
 import text as T
+import os
 
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 utils.advanced = True
-filename = 'CreatorOffice'
 ventOpen = False
 
 ## Items in Room

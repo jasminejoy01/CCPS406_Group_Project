@@ -7,9 +7,10 @@ import utils
 import Hallway1
 import OutdoorsMiddle
 import text as T
+import os
 
-#print("You're in the building's side entrance.")
-filename = 'BuildingEntranceExit'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 #utils.roomsvisited[11] = 1
 
 ## Items in Room

@@ -8,8 +8,10 @@ import utils
 import PrivateWorkshop
 import OutdoorsNorth
 import text as T
+import os
 
-filename = 'CleaningBotStorage'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

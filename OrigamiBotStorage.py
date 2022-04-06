@@ -8,8 +8,10 @@ import utils
 import OutdoorsSouth
 import oriBot as o
 import text as T
+import os
 
-filename = 'OrigamiBotStorage'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

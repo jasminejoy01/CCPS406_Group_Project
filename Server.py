@@ -8,8 +8,10 @@ import utils
 import Hallway4
 import time
 import text as T
+import os
 
-filename = 'Server'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

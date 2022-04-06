@@ -6,8 +6,10 @@ import Item as I
 import utils
 import OutdoorsNorth
 import text as T
+import os
 
-filename = 'Greenspace'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

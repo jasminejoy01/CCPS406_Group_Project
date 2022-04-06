@@ -8,9 +8,10 @@ import utils
 import OutdoorsMiddle
 import Puzzle4
 import text as T
+import os
 
-#print("You're in the Construction Bot Storage.")
-filename = 'ConstructionBotStorage'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

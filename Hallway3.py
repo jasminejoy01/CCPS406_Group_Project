@@ -9,8 +9,10 @@ import Hallway2
 import ConstructionHeadOffice
 import Hallway4
 import text as T
+import os
 
-filename = 'Hallway3'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################

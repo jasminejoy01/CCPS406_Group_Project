@@ -8,8 +8,10 @@ import Greenspace
 import OutdoorsMiddle
 import CleaningBotStorage
 import text as T
+import os
 
-filename = 'OutdoorsNorth'
+filename = (os.path.basename(__file__))
+filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################
@@ -146,3 +148,5 @@ def removeInventory(obj):
         (utils.inventory).remove(obj)
     else:
         print("Hmm... {} is not in inventory!".format(obj))
+
+

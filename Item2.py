@@ -1,30 +1,16 @@
 import random
 import utils 
+import Item2 as I2
 
 class Workshop:
-    def item_add():
+    def item_add(objcheck):
         #item = ['NFC key', random.randint(0000,9999)]
-        item = 'NFCKey'
-        if item in utils.inventory:
-            x = 0
-            while x == 0:
-                value = input("There's something here... Wanna pick it up? Y/N\n")
-                if (value == 'Y') or (value == 'y'):
-                    print("Added {} to inventory.".format(item))
-                    utils.inventory[item] = 'PrivateWorkshop'
-                    x = 1
-                elif (value == 'N') or (value == 'n'):
-                    print(f"You refused to take the object.")
-                    x = 1
-                else:
-                    print("Error, invalid input... Type Y/N")
-                    continue
-                
-        else:
-            if (item not in utils.inventory):
+        if objcheck == False:
+            item = 'NFCKey'
+            if item not in utils.inventory:
                 x = 0
                 while x == 0:
-                    value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
+                    value = input("There's something here... Wanna pick it up? Y/N\n")
                     if (value == 'Y') or (value == 'y'):
                         print("Added {} to inventory.".format(item))
                         utils.inventory[item] = 'PrivateWorkshop'
@@ -36,7 +22,27 @@ class Workshop:
                         print("Error, invalid input... Type Y/N")
                         continue
             else:
-                print("There's nothing here... Keep walking")
+                if (item not in utils.inventory):
+                    x = 0
+                    while x == 0:
+                        value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")
+                        if (value == 'Y') or (value == 'y'):
+                            print("Added {} to inventory.".format(item))
+                            utils.inventory[item] = 'PrivateWorkshop'
+                            x = 1
+                        elif (value == 'N') or (value == 'n'):
+                            print(f"You refused to take the object.")
+                            x = 1
+                        else:
+                            print("Error, invalid input... Type Y/N")
+                            continue
+                else:
+                    print("There's nothing here... Keep walking")
+        else:
+            print("Use the computer to collect NFCKey.")
+                
+        
+            
 
 class Main_Building:
     def item_add():

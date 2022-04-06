@@ -1,12 +1,6 @@
 import random
 import utils 
 
-#Inventory = []
-# class Computer:
-#     birth_year = 1988
-#     initials = 'sample'  #change initials to what you want
-#     lucky_num = random.randint(000,999)
-
 class Workshop:
     def item_add():
         #item = ['NFC key', random.randint(0000,9999)]
@@ -143,7 +137,6 @@ class Origami_Office:
                     continue
         else:
             if (item not in utils.inventory):
-                
                 x = 0
                 while x == 0:
                     value = input(f"{item} is still in this room... Wanna pick it up? Y/N\n")

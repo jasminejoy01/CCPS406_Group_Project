@@ -8,14 +8,12 @@ import CreatorOffice
 import Hallway2
 import ConstructionHeadOffice
 import Hallway4
+import text as T
 
-#print("You're in the Hallway#3.")
 filename = 'Hallway3'
-#utils.roomsvisited[19] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
@@ -23,11 +21,12 @@ terminal1 = I.Terminal(1)
 itemdictionary = { # [Item, isLocked]
    'terminal':  [terminal1 , None ]
 }
-def basicDes():
-    print("[Hallway – Section 3] \n Written on the floor of this hallway is '#3'. \n To the North is [Hallway – Section #2]. \n To the South is [Hallway – Section #4]. \n To the West is a door with a sign that reads: \n Chief Operating Officer – Robotics \n Cordelia Weaver'. \n To the East is a door with a sign that reads: \n 'Head of Construction \n George Edifice'.")
 
+def basicDes():
+    T.Hallway3.basicDes()
+         
 def fancyDes():
-    print("[Hallway – Section 3] \n Written on the floor of this hallway is '#3'. \n To the North is [Hallway – Section #2]. \n To the South is [Hallway – Section #4]. \n To the West is [Chief Operating Officer – Robotics] \n To the East is [Head of Construction]")
+    T.Hallway3.fancyDes()
 
 
 def movewest():

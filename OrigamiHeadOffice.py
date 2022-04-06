@@ -7,6 +7,7 @@ import Item as I
 import utils
 import Hallway4
 import puzzle6
+import text as T
 
 #print("You're in the Head of Origami Office.")
 filename = 'OrigamiHeadOffice'
@@ -27,10 +28,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There is a door to the West.")
-
+    T.OrigamiHeadOffice.basicDes()
+         
 def fancyDes():
-    print("")
+    T.OrigamiHeadOffice.fancyDes()
 
 def movewest():
     print("Woops! Can't go that way!")

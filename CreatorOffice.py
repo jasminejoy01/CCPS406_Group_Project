@@ -6,20 +6,15 @@ import Item as I
 import utils
 import Item2 as I2
 import Hallway3
+import text as T
 
-## Turn off GPS: 
 
-
-# Advanced descriptions turn on
 utils.advanced = True
-#print("You're in the Creator's Office.")
 filename = 'CreatorOffice'
-#utils.roomsvisited[25] = 1
 ventOpen = False
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 bookshelf = I.Item("bookshelf", False, False, "The bookself has figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds.", False, "")
@@ -28,19 +23,19 @@ vent = I.Item("vent", False, False, "A old vent. The screws seem fairly loose.",
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
   'bookshelf': [bookshelf, None],
   'desk':      [desk, None],
   'vent':      [vent, None],
   'terminal':  [terminal1 , None ]
 }
 
+# Advanced descriptions turn on
 def basicDes():
-    print("[Creator's Office] \n Upon entering the room, a wave of familiarity overloads my thought process. This room feels similar to the room I've woken up in, but looks nothing alike. \n There are cupboards and shelves that line the walls of the room; they're filled with everything from scrap metal, gears, wires, and a multitude of snack foods. \n To my left is a tall bookshelf with a vent beside it.\n There is a large wooden desk in the middle of the room. \n On the desk is a pair of large monitors and a computer tower with a soft glow. \n To the East is the door that leads back into [Hallway - Section 3]")
+    T.CreatorOffice.basicDes()
     I2.CreatorOffice.GPS()
 
 def fancyDes():
-    print("[Creator's Office] \n The Creator is still here doing her work. When I walk in, she looks at me with a smile, but reminds me that she's very busy with something. \n The Creator's office is very unique compared to the other offices; is it because she's in a higher position, or perhaps she's spent more time making her room more unique than the other staff members? \n To the East is [Hallway - Section 3]")
+    T.CreatorOffice.fancyDes()
     I2.CreatorOffice.GPS()
 
 def movewest():
@@ -54,27 +49,21 @@ def movesouth():
 
 def moveeast():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway3.basicDes()
-            utils.roomsvisited[19] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        Hallway3.basicDes()
+        utils.roomsvisited[19] = 1
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[19] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway3.fancyDes()
-            utils.roomsvisited[19] = 1
-        else:
-            print("The door is locked.")  
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        Hallway3.fancyDes()
+        utils.roomsvisited[19] = 1
 
 def itemsInhere():
     itemlist = []
@@ -106,22 +95,24 @@ def examine(obj):
         print("Hmm... {} doesn't seem to be in this room!".format(obj))
 
 def use(self, obj):
-    if obj == "vent" and 'screwdriver' in utils.inventory.keys():
-      print("I use the screwdriver, and the vent pops open!")
-      self.ventOpen = True
+    if obj == "vent":
+        if 'screwdriver' in utils.inventory.keys():
+            print("I use the screwdriver, and the vent pops open!")
+            self.ventOpen = True
+        else:
+            print("I need a screwdriver to unscrew this vent!")
     else:
-      lst = itemsInhere()
-      lst2 = itemsInInventory()
-      #print(lst2)
-      if obj in lst and obj not in lst2:
-          itemdictionary[obj][0].use()
-      elif obj in lst2 and obj not in lst:
-          where = utils.inventory[obj]
-          __import__(where).use(obj)
-      elif obj in lst and obj in lst2:
-          itemdictionary[obj][0].use()
-      else:
-          print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
+        lst = itemsInhere()
+        lst2 = itemsInInventory()
+        if obj in lst and obj not in lst2:
+            itemdictionary[obj][0].use()
+        elif obj in lst2 and obj not in lst:
+            where = utils.inventory[obj]
+            __import__(where).use(obj)
+        elif obj in lst and obj in lst2:
+            itemdictionary[obj][0].use()
+        else:
+            print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj):
     lst = itemsInhere()

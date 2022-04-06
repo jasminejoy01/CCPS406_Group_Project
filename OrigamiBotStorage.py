@@ -7,16 +7,13 @@ import Item as I
 import utils
 import OutdoorsSouth
 import oriBot as o
+import text as T
 
-#print("You're in the Origami Bot Storage.")
 filename = 'OrigamiBotStorage'
-#utils.roomsvisited[3] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
 origamiBot = o.oriBot()
 
@@ -26,10 +23,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Abstract Solutions Storage Bay] \n Despite it's unique exterior, the inside of this storage bay is identical to the one for Housekeeping. \n The shelves line the walls and they're full of different machine parts. A single origamibot lies on the table.")
-
+    T.OrigamiBotStorage.basicDes()
+         
 def fancyDes():
-    print("[Abstract Solutions Storage Bay] \n Coming back, I realize how intricate these machine parts are on the shelves; they're all capable of folding in different directions. \n What interesting pieces of technology.")
+    T.OrigamiBotStorage.fancyDes()
 
 def movewest():
     if utils.advanced == True:

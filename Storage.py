@@ -7,16 +7,12 @@ import Item as I
 import utils
 import Item2 as I2
 import Hallway6
+import text as T
 
-#print("You're in the Storage Room.")
 filename = 'Storage'
-#utils.roomsvisited[7] = 1
-# Put on disguise:  I2.StorageCloset.disguise()
-
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 terminal1 = I.Terminal(1)
 
@@ -26,42 +22,39 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("There's a lost and found box full of odd hats and coats. There is a door to the South.")
-
+    T.Storage.basicDes()
+    I2.Lost_Found.item_add()
+    I2.StorageCloset.disguise()
+         
 def fancyDes():
-    print("")
+    T.Storage.fancyDes()
+    I2.Lost_Found.item_add()
+    I2.StorageCloset.disguise()
 
 def movewest():
     print("Woops! Can't go that way!")
-
 
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[8] = 1
-            Hallway6.basicDes()
-        else:
-            print("The door is locked.")
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[8] = 1
+        Hallway6.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[8] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway6.fancyDes()
-            utils.roomsvisited[8] = 1
-        else:
-            print("The door is locked.")    
-
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        Hallway6.fancyDes()
+        utils.roomsvisited[8] = 1
+  
 def moveeast():
     print("Woops! Can't go that way!")
 

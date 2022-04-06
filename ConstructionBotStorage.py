@@ -7,30 +7,25 @@ import Item as I
 import utils
 import OutdoorsMiddle
 import Puzzle4
+import text as T
 
 #print("You're in the Construction Bot Storage.")
 filename = 'ConstructionBotStorage'
 
-
-
-
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
   'terminal':  [terminal1     , None ]    
 }
 
 def basicDes():
-    print("[Construction Bot Storage] \n The layout of this building is organized a little differently than the Housekeeping storage. \n The shelves  are in the centre of the room, and there are racks lined up against the walls; all of them stocked with different types of construction material. ")
-
+    T.ConstructionBotStorage.basicDes()
+         
 def fancyDes():
-    print("[Construction Bot Storage] \n I never noticed how much wooden furniture is used in this building; all the shelves and racks are made up of different types of wood. \n Anything and everything in this room is made up of a beautiful combination of different colored wood. \n What a unique feature. ")
+    T.ConstructionBotStorage.fancyDes()
 
 def movewest():
     if utils.constructionBotChecker == False:

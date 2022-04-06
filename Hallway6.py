@@ -7,14 +7,12 @@ import utils
 import Storage
 import Exit
 import Hallway5
+import text as T
 
-#print("You're in the Hallway#6.")
 filename = 'Hallway6'
-#utils.roomsvisited[8] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 terminal1 = I.Terminal(1)
 
@@ -24,10 +22,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Hallway – Section 6] \n I've reached the other end of the Hallway. \n To the North is a door with a sign that reads: \n 'Lost and Found / Storage' \n To the South is another Guard Desk, similar to the one I saw earlier. There appears to be two Security Guards, both sitting behind the desk monitoring different sets of monitors. \n To the West is [Hallway – Section #5].")
-
+    T.Hallway6.basicDes()
+         
 def fancyDes():
-    print("[Hallway – Section 6] \n To the North is [Lost and Found / Storage]' \n To the South is [Security Checkpoint] \n To the West is [Hallway – Section #5].")
+    T.Hallway6.fancyDes()
 
 def movewest():  
     if utils.advanced == True:

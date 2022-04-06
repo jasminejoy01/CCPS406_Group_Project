@@ -7,16 +7,13 @@ import utils
 import Greenspace
 import OutdoorsMiddle
 import CleaningBotStorage
+import text as T
 
-#print("You've stepped outside into the North corridoors.")
-#utils.roomsvisited[4] = 1
 filename = 'OutdoorsNorth'
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
@@ -24,80 +21,68 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[North Garden Pathway] \n As I exit the building I see many people walking around, all wearing a similar uniform; the crest on their arms reads: 'NASA'. \n There are tall walls that surround the North of the pathway; cameras are stationed on the edges of the walls, facing inside and outside. Logic states that the tall walls surround all the buildings. \n The path to the South streches far; people and other robots can be seen walking in and out of the various buildings. \n The path to the East leads to the door I came from. Above the door reads a sign: 'Housekeeping Storage Bay' \n The path to the West leads to an area filled with benches where people are sitting together in groups. This area looks different compared to the others to the South, but I can't reason why..")
-
+    T.OutdoorNorth.basicDes()
+          
 def fancyDes():
-    print("[North Garden Pathway] \n There are still many employees walking around the pathway. \n The path stretches south, people and other robots can be seen walking in and out of the various buildings. \n The path to the East leads to [Housekeeping Storage Bay]. \n The path to the West leads to [Outdoor Break Area].")
+    T.OutdoorNorth.fancyDes()
 
 def movewest():
     if utils.advanced == True:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[10] = 1
-            Greenspace.basicDes()
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[10] = 1
+        Greenspace.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[10] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[10] = 1
-            Greenspace.fancyDes()
-        else:
-            print("The door is locked.")    
-
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[10] = 1
+        Greenspace.fancyDes()
+  
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
     if utils.advanced == True:
-
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsMiddle.basicDes()
-            utils.roomsvisited[5] = 1
-
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OutdoorsMiddle.basicDes()
+        utils.roomsvisited[5] = 1
     else:
-
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsMiddle.fancyDes()
-            utils.roomsvisited[5] = 1
-
-
+        utils.y = utils.y + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        OutdoorsMiddle.fancyDes()
+        utils.roomsvisited[5] = 1
+   
 def moveeast():    
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            CleaningBotStorage.basicDes()
-            utils.roomsvisited[1] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        CleaningBotStorage.basicDes()
+        utils.roomsvisited[1] = 1
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            CleaningBotStorage.fancyDes()
-            utils.roomsvisited[1] = 1
-        else:
-            print("The door is locked.") 
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        CleaningBotStorage.fancyDes()
+        utils.roomsvisited[1] = 1
+
 def itemsInhere():
     itemlist = []
     for each in itemdictionary.keys():

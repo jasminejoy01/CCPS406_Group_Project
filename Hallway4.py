@@ -8,14 +8,13 @@ import Server
 import OrigamiHeadOffice
 import Hallway5
 import Hallway3
+import text as T
 
-#print("You're in the Hallway#4.")
+
 filename = 'Hallway4'
-#utils.roomsvisited[20] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
@@ -25,12 +24,11 @@ itemdictionary = { # [Item, isLocked]
   'terminal':  [terminal1     , None ]    
 }
 
-
 def basicDes():
-    print("[Hallway – Section 4] \n I've reached the corner for this hallway, written on the floor is '#4'. \n To the North is [Hallway – Section #3]. \n To the South is a door with a sign that reads: \n 'Head of Abstract Solutions \n Ori Yami'. \n To the West is a door that reads: \n 'Server Room'. \n To the East, I see the hallway extending. There are more doors along the hallway, and it appears that the hallway turns another time to the right.")
-
+    T.Hallway4.basicDes()
+         
 def fancyDes():
-    print(" [Hallway - Section 4] \n I've reached the corner for this hallway, written on the floor is '#4'. \n To the North is [Hallway – Section #3]. \n To the South is [Head of Abstract Solutions]. \n To the West is [Server Room]. \n To the East is [Hallway - Section 5].")
+    T.Hallway4.fancyDes()
 
 def movewest():
     if utils.advanced == True:

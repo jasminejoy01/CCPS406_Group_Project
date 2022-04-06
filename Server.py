@@ -7,14 +7,12 @@ import Item2 as I2
 import utils
 import Hallway4
 import time
+import text as T
 
-#print("You're in the Server room.")
 filename = 'Server'
-#utils.roomsvisited[26] = 1
 
 ## Items in Room
 ##################
-
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
@@ -22,12 +20,12 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Server Room] \n There is nothing in this room except many large glass boxes, all containing flashing lights, and wires pouring in and out of the shelves of lights. \n One thing to note of this room is the amount of ventilation that's been designed; I reason that these large glass boxes must create a large amount of heat. \n To the East is the door that leads back into [Hallway - Section 4]")
+    T.ServerRoom.basicDes()
     if utils.securityPuzzleCheck == False:
         I2.ServerRoom.smokealarm()
 
 def fancyDes():
-    print("[Server Room] \n The most boring room in the building; bland, colorless (minus the blinking red and green lights), and uninteresting. \n There are ribbons hanging from the vents above the room; they're flying in rythym to the air current. \n To the East is the door that leads back into [Hallway - Section 4] \n  I see a panel I haven't noticed before; There's a wire labeled Smoke Alarm.")
+    T.ServerRoom.basicDes()
     if utils.securityPuzzleCheck == False:
         I2.ServerRoom.smokealarm()
 

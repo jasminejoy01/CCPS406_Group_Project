@@ -5,14 +5,12 @@ Room#12: Programming Lab"
 import Item as I
 import utils
 import Hallway2
+import text as T
 
-#print("You're in the Programming Lab.")
 filename = 'ProgrammingLab'
-#utils.roomsvisited[12] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
@@ -23,12 +21,11 @@ itemdictionary = { # [Item, isLocked]
   'computer':  [ computer  , True ]
 }
 
-
 def basicDes():
-    print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. The only other features that this room has are the red and white lights that are placed all over the ceiling. \n There are many NASA staff scattered throughout the room, all of them glued to their computer screens. \n To the West is the door that leads back into [Hallway - Section 2]")
-
+    T.ProgrammingLab.basicDes()
+         
 def fancyDes():
-    print("")
+    T.ProgrammingLab.fancyDes()
 
 def movewest():
     if utils.programminglabOccupied == False:
@@ -37,30 +34,23 @@ def movewest():
     else:
         print("You need to vacate the Programming Lab to access a computer.")
 
-    terminal1.locked = False
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[18] = 1
-            Hallway2.basicDes()
-        else:
-            print("The door is locked.")
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[18] = 1
+        Hallway2.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[18] = 1
-            Hallway2.fancyDes()
-        else:
-            print("The door is locked.")
-
+        utils.x = utils.x + 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        utils.roomsvisited[18] = 1
+        Hallway2.fancyDes()
+ 
 def movenorth():
     print("Woops! Can't go that way!")
 

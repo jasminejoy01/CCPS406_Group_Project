@@ -7,14 +7,12 @@ import Item as I
 import utils
 import Hallway5
 import time
+import text as T
 
-#print("You're in the Security Office.")
 filename = 'Security'
-#utils.roomsvisited[15] = 1
 
 ## Items in Room
 ##################
-
 #name, islocked, canTake, inInventory, description, interactable, useText, unlockText
 #nullItem = I.Item("", False, False, False, "", False, "", "")
 terminal1 = I.Terminal(1)
@@ -24,10 +22,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("Here is a door to the North.")
-
+    T.Security.basicDes()
+         
 def fancyDes():
-    print("")
+    T.Security.fancyDes()
 
 def movewest():
     print("Woops! Can't go that way!")

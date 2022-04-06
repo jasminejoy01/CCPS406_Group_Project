@@ -5,14 +5,12 @@ Room#24: 3D Printing Lab
 import Item as I
 import utils
 import Hallway2
+import text as T
 
-#print("You're in the 3D Printing Lab.")
 filename = 'PrintingLab'
-#utils.roomsvisited[24] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
@@ -22,11 +20,11 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[3D Printing Lab] \n I walk into a very bright room with plenty of tables and chairs organized all throughout. \n The sun is coming in through the large windows that touch both the ceiling and the floor. \n On each of the tables is a 3D Printer accompanied by clear plastic bins underneath them, containing discarded printing projects. \n At the other end of the room, behind thick walls of glass, sits 3D Printers that are almost as tall as the room itself. \n To the East is the door that leads back into [Hallway - Section 2]")
-
+    T.PrintingLab.basicDes()
+         
 def fancyDes():
-    print("[3D Printing Lab] \n The bright yellow sun is still beaming in through the tall, wall length windows. \n At the other end of the room, the massive 3D Printers are still slowly buzzing away, working on their project. \n In the clear plastic bins below each table, I notice all the differently colored discarded projects; when I first came in here I could have sworn all these pieces were gray… \n To the East is [Hallway - Section 2]")
-
+    T.PrintingLab.fancyDes()
+    
 def movewest():
     print("Woops! Can't go that way!")
 
@@ -38,27 +36,21 @@ def movesouth():
 
 def moveeast():
     if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway2.basicDes()
-            utils.roomsvisited[18] = 1
-        else:
-            print("The door is locked.")
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        Hallway2.basicDes()
+        utils.roomsvisited[18] = 1
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[18] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway2.fancyDes()
-            utils.roomsvisited[18] = 1
-        else:
-            print("The door is locked.")    
+        utils.x = utils.x - 1
+        if utils.x < 0:
+            utils.x = 0
+        if utils.y < 0:
+            utils.y = 0
+        Hallway2.fancyDes()
+        utils.roomsvisited[18] = 1
 
 def itemsInhere():
     itemlist = []

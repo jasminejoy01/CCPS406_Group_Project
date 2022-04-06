@@ -5,17 +5,15 @@ Room#1: Private Workshop
 import Item as I
 import Item2 as I2
 import utils
+import text as T
 import CleaningBotStorage
 
 #print("You're in the Private Workshop.")
 filename = 'PrivateWorkshop'
-#utils.roomsvisited[0] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
-#nullItem = I.Item("", False, False, "", False, "")
 computer1 = I.Computer("computer", False, False, "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk.", True, "")
 keyboard = I.Item("keyboard", False, False, "A beat up old keyboard. There's a note sitcking out from under it.", True, "A beat up old keyboard. There's a note sitcking out from under it.",)
 note = I.Item("note", True, False, "It reads: 'If I forget again: Initials, year of birth, lucky number. No commas or spaces. PS: create a better password.'", True, "It reads: 'If I forget again: Initials Birth year Lucky number, no spaces. PS: create a better password.'")
@@ -25,8 +23,7 @@ desk = I.Item("desk", False, False, "On the desk sits a computer and keyboard.",
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , False],
-   'computer':  [computer1 , None],
+   'computer':  [computer1 , None ],
    'keyboard':  [keyboard  , None ],               
    'note':      [note      , None ],
    'trash':     [trash     , None ],
@@ -36,17 +33,16 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Private Workshop] \n I find myself in the dark corner of a room, wires connected to multiple parts of my body. As I boot up, the wires disconnect automatically and the monitor’s bright lights slowly fade away. \n Nearby is a desk with a computer setup and some paper scattered around. \n Next to the desk is a trash bin with some crumpled pieces of paper inside. \n On the West side of the room is a closed door with light shining in from the other side.")
+    T.PrivateWorkshop.basicDes()
           
 def fancyDes():
-    print("[Private Workshop] \n I'm back in the same dark room where I woke up from. \n I never noticed how dark it actually is in this room, I'd better turn on the lights. \n After turning the lights on, I notice that the computer is still on, and the small metal trash bin sits beside the desk. The notes inside the bin are different colors; a bright pink and a vibrant orange. \n On the West is the door that leads to [Housekeeping Storage Bay].")
+    T.PrivateWorkshop.fancyDes()
 
 def movewest():
-    #if 'NFCKey' not in utils.inventory.keys():
-    #    I2.Workshop.item_add()
+    if 'NFCKey' not in utils.inventory.keys():
+        I2.Workshop.item_add()
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -70,18 +66,13 @@ def movewest():
         else:
             print("The door is locked.")      
 
-    #print("You're moving to Cleaning Bot Storage", utils.x, utils.y)
-
 def movenorth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def moveeast():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def itemsInhere():

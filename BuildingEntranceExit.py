@@ -6,6 +6,7 @@ import Item as I
 import utils
 import Hallway1
 import OutdoorsMiddle
+import text as T
 
 #print("You're in the building's side entrance.")
 filename = 'BuildingEntranceExit'
@@ -23,11 +24,11 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Main Facility Entrance] (Before cleaning the dirt) \n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
-  
+    T.BuildingEntranceExit.basicDes()
+     
 def fancyDes():
-    print("[Main Facility Entrance] (After cleaning the dirt) \n I'm back near the Security Checkpoint for the Storage Bays. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
-  
+    T.BuildingEntranceExit.fancyDes()
+
 def movewest():
     clean = False  
     for i in range(len(utils.PlayerKeys)):

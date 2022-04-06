@@ -8,14 +8,12 @@ import Hallway1
 import PrintingLab
 import ProgrammingLab
 import Hallway3
+import text as T
 
-#print("You're in the Hallway#2.")
 filename = 'Hallway2'
-#utils.roomsvisited[18] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 terminal1 = I.Terminal(1)
 
@@ -24,12 +22,11 @@ itemdictionary = { # [Item, isLocked]
   'terminal':  [terminal1     , None ]    
 }
 
-
 def basicDes():
-    print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is a door with a sign that reads: \n 'Prototype Workshop' \n To the East is a door with a sign that reads: \n 'Programming Lab'")
-
+    T.Hallway2.basicDes()
+         
 def fancyDes():
-    print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n It's written in a rounded font, a lot different than the way '#1' is written, and is filled in with multiple colors as opposed to just White. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is [Prototype Workshop]. \n To the East is [Programming Lab].")
+    T.Hallway2.fancyDes()
 
 def movewest():
     if utils.advanced == True:

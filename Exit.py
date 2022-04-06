@@ -6,14 +6,13 @@ import Item as I
 import utils
 import os
 import Hallway6
+import text as T
 
 #print("The ultimate goal.")
 filename = 'Exit'
-#utils.roomsvisited[9] = 1
 
 itemshere = []## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 
@@ -22,10 +21,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    print("[Building Exit] \n Identical to the other Security Checkpoint I walked through earlier, there is a guard desk in between two metal gates, with a set of monitors displaying different moving images. \n There is a guard sitting at the desk, and there is a window that faces out to the Security Checkpoint. \n To the North is the door that leads back into [Hallway - Section 6].")
-
+    T.Exit.basicDes()
+         
 def fancyDes():
-    print("[Building Exit] \n The vacant Security Checkpoint still sits here, with the same guard sitting at the desk. \n His face is glued to the monitors. \n To the North is [Hallway - Section 6].")
+    T.Exit.fancyDes()
 
 def movewest():
     print("Woops! Can't go that way!")

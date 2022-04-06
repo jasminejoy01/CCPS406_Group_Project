@@ -8,28 +8,25 @@ import PrototypeWorkshop
 import BotTesting
 import BuildingEntranceExit
 import Hallway2
+import text as T
 
-#print("You're in the Hallway#1.")
 filename = 'Hallway1'
-#utils.roomsvisited[17] = 1
 
 ## Items in Room
 ##################
-
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
   'terminal':  [terminal1     , None ]   
-
 }
 
 def basicDes():
-    print("[Hallway – Section 1] \n I'm in the Main Hallway inside of the large building complex. Written on the floors of the hallway is '#1' \n To the North is a door with a sign that reads: \n 'Robotics Testing Facility'. \n To the South is the rest of the Hallway, it appears to turn to the left at the end of the hall. \n To the West is a door with a sign that reads: \n 'Prototype Workshop'. \n To the East is the Guard Desk that I entered the building from. The Security Guard is at her desk.")
-
+    T.Hallway1.basicDes()
+         
 def fancyDes():
-    print("[Hallway – Section 1] \n I'm in the Main Hallway inside the large building complex. Written on the floors of the hallway is '#1' \n The #1 is written in a large, blocky looking font, painted all white. \n To the North is [Robotics Testing Facility]. \n To the South is [Hallway - Section 2]. \n To the West is [Prototype Workshop]. \n To the East is the [Security Checkpoint] I entered from.")
+    T.Hallway1.fancyDes()
 
 def movewest():
     if utils.advanced == True:

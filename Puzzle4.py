@@ -42,7 +42,6 @@ def consbot():
     else:
         print("This door needs the construction head's key to open")
 
-
 def breakbot():
     print("You start breaking every prototype you see")
     print("As you leave the room, you see a panicked Construction Head leave his office\nNow's your chance!")
@@ -56,19 +55,3 @@ def breakbotcheck():
     else:
         print("Current Location: Prototype Workshop")
         
-'''
-puzzle4()
-time.sleep(1)
-breakbotcheck()
-time.sleep(1)
-consbot()
-time.sleep(1)
-constructionchecker()
-time.sleep(1)
-breakbotcheck()
-time.sleep(1)
-constructionchecker()
-time.sleep(1)
-constructionchecker()
-time.sleep(1)
-puzzle4()'''

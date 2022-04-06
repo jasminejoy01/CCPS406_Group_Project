@@ -7,34 +7,31 @@ import Item2 as I2
 import utils
 import PrivateWorkshop
 import OutdoorsNorth
+import text as T
 
-#print("You're in the Cleaning Bot Storage.")
 filename = 'CleaningBotStorage'
-#utils.roomsvisited[1] = 1
 
 ## Items in Room
 ##################
-
-#name,  canTake, inInventory, description, interactable, useText
+#name, canTake, inInventory, description, interactable, useText
 broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , False],
-   'broom':     [broom     , None ],
-  'terminal':  [terminal1     , None ]           
+   'broom'   :     [broom     , None ],
+   'terminal':     [terminal1 , None ]           
 }
 
 def basicDes():
-    print("[Housekeeping Storage Bay] \n This room is well lit and sparkling clean. There are robots connected to wires which feed into monitors on either side of them; a familiar sight. \n There are shelves and storage containers covering a majority of the room. They’re full of storage racks containing bleach, soap, and other types of cleaning supplies organized by product. \n There are brooms neatly stacked on a storage rack near the door to the West. \n Beside the door is another NFC Terminal identical to the first one found in the other room.")
-
+    T.CleaningBotStorage.basicDes()
+          
 def fancyDes():
-    print("[Housekeeping Storage Bay] \n Returning back to this room, I realize how much cleaner it is compared to the rest of the compound; not a speck of dust anywhere. \n There are shelves and storage containers covering a majority of the room. There's less items in here than when I had woken up. There are less brooms on the storage rack near the door, I remember which of the missing brooms was the one I took.")
-  
+    T.CleaningBotStorage.fancyDes()
+
 def movewest(): 
+    if 'broom' not in utils.inventory.keys():
+        I2.Main_Building.item_add()
     if utils.advanced == True:
-        if 'broom' not in utils.inventory.keys():
-            I2.Main_Building.item_add()
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0
@@ -42,11 +39,7 @@ def movewest():
             utils.y = 0
         OutdoorsNorth.basicDes()
         utils.roomsvisited[4] = 1
-
-    else:
-
-        if 'broom' not in utils.inventory.keys():
-            I2.Main_Building.item_add()
+    else:       
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0
@@ -56,14 +49,14 @@ def movewest():
         utils.roomsvisited[4] = 1  
 
 def movenorth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def moveeast():
+    if 'broom' not in utils.inventory.keys():
+        I2.Main_Building.item_add()
     if utils.advanced == True:
         utils.x = utils.x - 1
         if utils.x < 0:
@@ -72,9 +65,7 @@ def moveeast():
             utils.y = 0
         utils.roomsvisited[0] = 1
         PrivateWorkshop.basicDes()
-
     else:
-
         utils.x = utils.x - 1
         if utils.x < 0:
             utils.x = 0
@@ -83,7 +74,6 @@ def moveeast():
         utils.roomsvisited[0] = 1
         PrivateWorkshop.fancyDes()
   
-
 
 def itemsInhere():
     itemlist = []
@@ -107,7 +97,6 @@ def listItems():
     
 def examine(obj):
     lst = itemsInhere()
-    #print(obj)
     if obj in lst:
         if itemdictionary[obj][1] == True or itemdictionary[obj][1] == None:
             itemdictionary[obj][0].examine()

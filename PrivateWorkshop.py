@@ -40,7 +40,7 @@ def fancyDes():
 
 def movewest():
     if 'NFCKey' not in utils.inventory.keys():
-        I2.Workshop.item_add()
+        I2.Workshop.item_add(computer1.islocked)
     if utils.advanced == True:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x + 1
@@ -54,8 +54,6 @@ def movewest():
             print("The door is locked.")
     else:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            if 'NFCKey' not in utils.inventory.keys():
-                I2.Workshop.item_add()
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0

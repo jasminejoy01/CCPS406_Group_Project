@@ -205,7 +205,7 @@ def processLanguage(obj=None):
                 validCommand = True
                     
         #3-word commands
-        if len(splitCommand) >= 3:
+        if len(splitCommand) >= 3 and not validCommand:
             if (verb == "read" or verb == "exam" or verb == "examine"):
                 if "user" in splitCommand[1]:
                     T.readUserGuide()

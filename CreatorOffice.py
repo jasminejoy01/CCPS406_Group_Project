@@ -12,7 +12,7 @@ import os
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
 
-utils.advanced = True
+
 ventOpen = False
 
 ## Items in Room
@@ -66,6 +66,7 @@ def moveeast():
             utils.y = 0
         Hallway3.fancyDes()
         utils.roomsvisited[19] = 1
+    utils.advanced = True
 
 def itemsInhere():
     itemlist = []

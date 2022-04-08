@@ -23,17 +23,22 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    T.BuildingEntranceExit.basicDes()
+  if not checkClean():
+    T.BuildingEntranceExit.basicDes1()
+  else:
+    T.BuildingEntranceExit.basicDes2()
      
 def fancyDes():
     T.BuildingEntranceExit.fancyDes()
 
+def checkClean():
+  for i in range(len(utils.PlayerKeys)):
+    if utils.PlayerKeys[i] == 2:
+      return True
+  return False
+
 def movewest():
-    clean = False  
-    for i in range(len(utils.PlayerKeys)):
-      if utils.PlayerKeys[i] == 2:
-        clean = True
-    if not clean and not utils.cheat:
+    if not checkClean() and not utils.cheat:
       print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
     else:
         utils.x = utils.x + 1

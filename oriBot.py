@@ -15,9 +15,13 @@ class oriBot:
           self.inInventory = True
           self.awake = True
           utils.inventory[self.name] = filename
-          print("I set it on my shoulder. It's hard to tell, but it seems my new little friend is happy to come along for the ride")
+          if utils.disguise:
+            print("I put the tiny robot in my pocket.")
+          else:
+            print("I set it on my shoulder.")
+          print("It's hard to tell, but it seems my new little friend is happy to come along for the ride")
         else:
-            print("The origami bot is already on my shoulder.")
+            print("I already have the origami bot.")
 
   #For puzzle 7
     def use(self):

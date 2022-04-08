@@ -84,11 +84,15 @@ class OrigamiBotStorage:
         print("")
 
 class BuildingEntranceExit:
-    def basicDes():
-        print("[Main Facility Entrance] (Before cleaning the dirt) \n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
+    def basicDes1():
+        print("[Main Facility Entrance]\n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
+
+    def basicDes2():
+        print("[Main Facility Entrance]\n I'm at the Security Checkpoint. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
       
     def fancyDes():
-        print("[Main Facility Entrance] (After cleaning the dirt) \n I'm back near the Security Checkpoint for the Storage Bays. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
+        print("[Main Facility Entrance]\n I'm back near the Security Checkpoint for the Storage Bays. There's a bored-looking guard sitting behind a desk, idly filling out a sudoku book. She hardly looks up as I pass. The tiled floor still seems reletively clean.")
+
 
 class ProgrammingLab:
     def basicDes():

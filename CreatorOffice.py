@@ -13,8 +13,6 @@ filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
 
 
-ventOpen = False
-
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
@@ -85,13 +83,17 @@ def examine(obj):
     else:
         print("Hmm... {} doesn't seem to be in this room!".format(obj))
 
-def use(self, obj):
-    if obj == "vent":
+def use(obj):
+    if obj == "vent" or obj == "screwdriver":
+      if not utils.ventOpen:
         if 'screwdriver' in utils.inventory.keys():
             print("I use the screwdriver, and the vent pops open!")
-            self.ventOpen = True
+            utils.ventOpen = True
         else:
             print("I need a screwdriver to unscrew this vent!")
+      else:
+        print("The vent is already open.")
+        
     else:
         lst = itemsInhere()
         lst2 = itemsInInventory()

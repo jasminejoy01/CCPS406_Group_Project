@@ -14,6 +14,7 @@ inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
 disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
+ventOpen = initialize.ventOpen
 
 origamiHeadChecker = initialize.origamiHeadChecker
 puzzle4 = initialize.puzzle4

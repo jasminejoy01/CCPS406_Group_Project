@@ -33,7 +33,7 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():  
-    if utils.advanced == True:
+    if not utils.advanced:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
             utils.y = utils.y + 1
             if utils.x < 0:

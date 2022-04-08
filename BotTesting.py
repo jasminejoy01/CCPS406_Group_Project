@@ -11,15 +11,16 @@ import os
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
+blockedDoor = True
 
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
+blockage = I.Item("blockage", False, False, "Some sort of massive, heavy machinery. It's card to tell what it does.", True, "")
 screwdriver = I.Item("screwdriver", True, False, "A well-worn screwdriver", True, "")
 
 itemdictionary = { # [Item, isLocked]
-  'terminal':    [terminal1  , None ],
+  'blockage':    [blockage  , None ],
   'screwdriver': [screwdriver,  None]
 }
 
@@ -30,38 +31,34 @@ def fancyDes():
     T.BotTesting.fancyDes()
 
 def movewest():
-    if utils.advanced == True:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-          utils.x = 0
-        if utils.y < 0:
-          utils.y = 0
+  if not blockedDoor:
+    utils.x = utils.x + 1
+    if utils.x < 0:
+      utils.x = 0
+    if utils.y < 0:
+      utils.y = 0
+    utils.roomsvisited[22] = 1
+    if not utils.advanced:
         BotTestingObstacle.basicDes()
-        utils.roomsvisited[22] = 1
     else:
-        utils.x = utils.x + 1
         BotTestingObstacle.fancyDes()
+  else:
+    print("There is a blockage in front of the door.")
   
 def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    if utils.advanced == True:
-        utils.y = utils.y + 1
-        Hallway1.basicDes()
-        utils.roomsvisited[17] = 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
+    utils.roomsvisited[17] = 1
+    if utils.x < 0:
+      utils.x = 0
+    if utils.y < 0:
+      utils.y = 0
+    utils.y = utils.y + 1
+    if not utils.advanced:
+      Hallway1.basicDes()
     else:
-        utils.y = utils.y + 1
-        Hallway1.fancyDes()
-        utils.roomsvisited[17] = 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
+      Hallway1.fancyDes()
 
 def moveeast():
     print("Woops! Can't go that way!")

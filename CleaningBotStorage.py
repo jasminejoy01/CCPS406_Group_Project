@@ -17,11 +17,9 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'broom'   :     [broom     , None ],
-   'terminal':     [terminal1 , None ]           
+   'broom'   :     [broom     , None ]     
 }
 
 def basicDes():
@@ -31,24 +29,18 @@ def fancyDes():
     T.CleaningBotStorage.fancyDes()
 
 def movewest(): 
-    if 'broom' not in utils.inventory.keys():
+  if 'broom' not in utils.inventory.keys():
         I2.Main_Building.item_add()
-    if utils.advanced == True:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        OutdoorsNorth.basicDes()
-        utils.roomsvisited[4] = 1
-    else:       
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
+  utils.x = utils.x + 1
+  if utils.x < 0:
+    utils.x = 0
+  if utils.y < 0:
+    utils.y = 0  
+  utils.roomsvisited[4] = 1
+  if not utils.advanced:
+        OutdoorsNorth.basicDes()       
+  else:       
         OutdoorsNorth.fancyDes()
-        utils.roomsvisited[4] = 1  
 
 def movenorth():
     print("Woops! Can't go that way!")
@@ -57,24 +49,18 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    if 'broom' not in utils.inventory.keys():
+  if 'broom' not in utils.inventory.keys():
         I2.Main_Building.item_add()
-    if utils.advanced == True:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[0] = 1
-        PrivateWorkshop.basicDes()
-    else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[0] = 1
-        PrivateWorkshop.fancyDes()
+  utils.x = utils.x - 1
+  if utils.x < 0:
+    utils.x = 0
+  if utils.y < 0:
+    utils.y = 0  
+  utils.roomsvisited[0] = 1
+  if not utils.advanced:
+      PrivateWorkshop.basicDes()
+  else:
+      PrivateWorkshop.fancyDes()
   
 
 def itemsInhere():

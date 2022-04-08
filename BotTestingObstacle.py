@@ -15,23 +15,22 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+
 }
 
 def basicDes():
     T.BotTestingObstacleCourse.basicDes()
     if utils.puzzle4 == False:
         Puzzle4.puzzle4()
-        utils.puzzle4 == True
+        utils.puzzle4 = True
          
 def fancyDes():
     T.BotTestingObstacleCourse.fancyDes()
     if utils.puzzle4 == False:
         Puzzle4.puzzle4()
-        utils.puzzle4 == True
+        utils.puzzle4 = True
         
 def movewest():
     print("Woops! Can't go that way!")
@@ -44,28 +43,16 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():  
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            BotTesting.basicDes()
-            utils.roomsvisited[16] = 1
-        else:
-            print("The door is locked.")
+    utils.x = utils.x - 1
+    if utils.x < 0:
+      utils.x = 0
+    if utils.y < 0:
+      utils.y = 0
+    utils.roomsvisited[16] = 1
+    if not utils.advanced:
+      BotTesting.basicDes()   
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[16] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            BotTesting.fancyDes()
-            utils.roomsvisited[16] = 1
-        else:
-            print("The door is locked.") 
+      BotTesting.fancyDes()
 
 def itemsInhere():
     itemlist = []

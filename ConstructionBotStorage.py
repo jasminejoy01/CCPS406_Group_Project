@@ -16,10 +16,8 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 
-itemdictionary = { # [Item, isLocked]
-  'terminal':  [terminal1     , None ]    
+itemdictionary = { # [Item, isLocked]    
 }
 
 def basicDes():
@@ -32,29 +30,16 @@ def movewest():
     if utils.constructionBotChecker == False:
         Puzzle4.consbot()
         utils.constructionBotChecker == True
-        
-    if utils.advanced == True:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[5] = 1
-            OutdoorsMiddle.basicDes()
-        else:
-            print("The door is locked.")
+    utils.x = utils.x + 1
+    if utils.x < 0:
+      utils.x = 0
+    if utils.y < 0:
+      utils.y = 0
+    utils.roomsvisited[5] = 1    
+    if not utils.advanced:
+      OutdoorsMiddle.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[5] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[5] = 1
-            OutdoorsMiddle.fancyDes()
-        else:
-            print("The door is locked.")    
+      OutdoorsMiddle.fancyDes()  
 
 
 def movenorth():

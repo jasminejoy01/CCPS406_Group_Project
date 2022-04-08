@@ -20,12 +20,10 @@ filename = filename.replace(".py", "")
 
 #name, canTake, inInventory, description, interactable, useText
 OrigamiKey = I.Item("", True, False,  "", False, "")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'OrigamiKey' : [OrigamiKey, None],
-  'terminal':  [terminal1     , None ]  
+  'OrigamiKey' : [OrigamiKey, None]
 }
 
 def basicDes():
@@ -46,7 +44,7 @@ def movenorth():
     if 'OrigamiKey' not in utils.inventory.keys():
         I2.Origami_Office.item_add()
         
-    if utils.advanced == True:
+    if not utils.advanced:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
             utils.y = utils.y - 1
             if utils.x < 0:

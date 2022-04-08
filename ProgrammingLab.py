@@ -30,13 +30,14 @@ def fancyDes():
     T.ProgrammingLab.fancyDes()
 
 def movewest():
+    #This should not be in movewest! This doesn't make sense here!
     if utils.programminglabOccupied == False:
         computer.getSchedule()
         utils.origamiHeadChecker == False
     else:
         print("You need to vacate the Programming Lab to access a computer.")
 
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0

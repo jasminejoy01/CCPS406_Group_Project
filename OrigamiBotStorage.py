@@ -31,7 +31,7 @@ def fancyDes():
     T.OrigamiBotStorage.fancyDes()
 
 def movewest():
-    if utils.advanced == True:
+    if not utils.advanced:
         if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[6] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:

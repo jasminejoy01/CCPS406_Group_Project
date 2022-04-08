@@ -40,7 +40,7 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:
             utils.x = 0

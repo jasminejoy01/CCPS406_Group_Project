@@ -22,13 +22,11 @@ nullItem = I.Item("", False, False, "", False, "")
 bookshelf = I.Item("bookshelf", False, False, "The bookself has figurines, sticky notes, and cups of colourful pens and markers between the many textbooks, novels, notebooks and boxes it holds.", False, "")
 desk = I.Item("desk", False, False, "The edges of the desk are decorated with binders sitting on stacks of loose papers, scissors, and a variety of measuring instruments.", False, "")
 vent = I.Item("vent", False, False, "A old vent. The screws seem fairly loose.", True, "I try to pull on the screws... Seems like I might need a tool to open this.")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
   'bookshelf': [bookshelf, None],
   'desk':      [desk, None],
   'vent':      [vent, None],
-  'terminal':  [terminal1 , None ]
 }
 
 # Advanced descriptions turn on
@@ -38,7 +36,6 @@ def basicDes():
 
 def fancyDes():
     T.CreatorOffice.fancyDes()
-    I2.CreatorOffice.GPS()
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -50,23 +47,14 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    if utils.advanced == True:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        Hallway3.basicDes()
-        utils.roomsvisited[19] = 1
-    else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        Hallway3.fancyDes()
-        utils.roomsvisited[19] = 1
-    utils.advanced = True
+  utils.x = utils.x - 1
+  if utils.x < 0:
+    utils.x = 0
+  if utils.y < 0:
+    utils.y = 0  
+  utils.roomsvisited[19] = 1
+  Hallway3.fancyDes()
+  utils.advanced = True
 
 def itemsInhere():
     itemlist = []

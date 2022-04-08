@@ -40,15 +40,13 @@ def movenorth():
     #print("You're moving into Hallway6!")
 
 def movesouth():
-    if utils.GPS == False and utils.disguise == True:
-        print("Congrats! You're exiting the Game!")
-        os.remove('save.py')
-    elif utils.GPS == True and utils.disguise == True:
-        print("Your disguise is great, but they can still find you because your GPS tracker is on.\n You need to find your Creator to turn off your GPS tracker.")
-    elif utils.GPS == False and utils.disguise == False:
-        print("Your GPS is off, but you still need a disguise to leave the building.\n Go back in the Storage Closet and find a disguise so that you won't be spotted when you leave.")
+    if not utils.disguise:
+      print("The guard at the desk sighs loudly, and mutters, 'Another buggy bot...', before speaking up. 'No, I know you probably think there's a mess out there, but you have to stay here.'")
+    elif not utils.GPS:
+        print("The guard at the security desk speaks up. 'Excuse me, I'm picking up a tracking signal from you. Did you forget to put down one of those origamibots? People are always forgetting those lil guys in their pockets. I'm afraid I can't let you leave while I'm stick picking up a tracking signal.")
     else:
-        print("Congrats! You're exiting the Game!")
+        print("The guard unlocks the door for you. 'Alright, you're all clear to go. Have a good day, now.'")
+        print("I finally made it outside, into the fresh air of the outside world. There are so many possibilities ahead, so much to explore. I can't wait to start \n \n \nTHE END")
 
 def moveeast():
     print("Woops! Can't go that way!")

@@ -17,11 +17,9 @@ filename = filename.replace(".py", "")
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'terminal':  [terminal1     , None ]    
 }
 
 def basicDes():
@@ -38,25 +36,16 @@ def movewest():
     if not clean and not utils.cheat:
       print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
     else:
-        if utils.advanced == True:
-
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
+        utils.x = utils.x + 1
+        if utils.x < 0:
+          utils.x = 0
+        if utils.y < 0:
+          utils.y = 0
+        utils.roomsvisited[17] = 1
+        if not utils.advanced:
             Hallway1.basicDes()
-            utils.roomsvisited[17] = 1
-
         else:
-
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
             Hallway1.fancyDes()
-            utils.roomsvisited[17] = 1
 
 def movenorth():
     #print(utils.x, utils.y)
@@ -67,25 +56,16 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-    if utils.advanced == True:
-
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
+    utils.x = utils.x - 1
+    if utils.x < 0:
+        utils.x = 0
+    if utils.y < 0:
+        utils.y = 0
+    utils.roomsvisited[5] = 1
+    if not utils.advanced:
         OutdoorsMiddle.basicDes()
-        utils.roomsvisited[5] = 1
-
     else:
-
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OutdoorsMiddle.fancyDes()
-        utils.roomsvisited[5] = 1
 
 
 def itemsInhere():

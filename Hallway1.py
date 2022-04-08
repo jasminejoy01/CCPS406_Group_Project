@@ -31,7 +31,7 @@ def fancyDes():
     T.Hallway1.fancyDes()
 
 def movewest():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0
@@ -49,7 +49,7 @@ def movewest():
         PrototypeWorkshop.fancyDes()
 
 def movenorth():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.y = utils.y - 1
         if utils.x < 0:
             utils.x = 0
@@ -67,7 +67,7 @@ def movenorth():
         BotTesting.fancyDes()  
 
 def movesouth():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:
             utils.x = 0
@@ -85,7 +85,7 @@ def movesouth():
         utils.roomsvisited[18] = 1
  
 def moveeast():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x - 1
         if utils.x < 0:
             utils.x = 0

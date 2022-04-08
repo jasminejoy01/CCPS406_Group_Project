@@ -16,10 +16,8 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -29,7 +27,7 @@ def fancyDes():
     T.Hallway5.fancyDes()
 
 def movewest():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0
@@ -50,25 +48,10 @@ def movenorth():
     print("Woops! Can't go that way!") 
 
 def movesouth():
-    if utils.advanced == True:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[15] = 1
-        Security.basicDes()
-    else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        Security.fancyDes()
-        utils.roomsvisited[15] = 1
+    print("Only guards are allowed in the security office. I'd definitely be noticed.")
  
 def moveeast():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x - 1
         if utils.x < 0:
             utils.x = 0

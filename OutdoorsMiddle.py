@@ -21,7 +21,7 @@ nullItem = I.Item("", False, False, "", False, "")
 terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-  'terminal':  [terminal1 , None ]
+  'terminal':   [terminal1, True]
 }
 
 def basicDes():
@@ -31,7 +31,7 @@ def fancyDes():
     T.OutdoorMiddle.fancyDes()
 
 def movewest():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
             utils.x = 0
@@ -49,7 +49,7 @@ def movewest():
         BuildingEntranceExit.fancyDes()
  
 def movenorth():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.y = utils.y - 1
         if utils.x < 0:
             utils.x = 0
@@ -67,7 +67,7 @@ def movenorth():
         OutdoorsNorth.fancyDes()
  
 def movesouth():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:
             utils.x = 0
@@ -85,7 +85,7 @@ def movesouth():
         OutdoorsSouth.fancyDes()
 
 def moveeast():
-    if utils.advanced == True:
+    if not utils.advanced:
         utils.x = utils.x - 1
         if utils.x < 0:
             utils.x = 0

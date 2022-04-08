@@ -16,11 +16,11 @@ blockedDoor = True
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-blockage = I.Item("blockage", False, False, "Some sort of massive, heavy machinery. It's card to tell what it does.", True, "")
+machinery = I.Item("machinery", False, False, "Some sort of massive, heavy machinery. It's hard to tell what it does.", True, "")
 screwdriver = I.Item("screwdriver", True, False, "A well-worn screwdriver", True, "I'm not sure what to do with this")
 
 itemdictionary = { # [Item, isLocked]
-  'blockage':    [blockage  , None ],
+  'machinery':    [machinery  , None ],
   'screwdriver': [screwdriver,  None]
 }
 

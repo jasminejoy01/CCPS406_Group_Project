@@ -1,4 +1,3 @@
-import random
 import utils 
 import Item2 as I2
 
@@ -269,7 +268,7 @@ class StorageCloset:
     def disguise():
         Lost_Found.item_add()
         print("Description about disguising.")
-        utils.disgsuise = False
+        utils.disgsuise = True
 
 class Check_Inventory:
     def check():
@@ -278,14 +277,14 @@ class Check_Inventory:
 class ServerRoom:
     def smokealarm():
         item = 'wire'
-        if utils.programminglabOccupied == True:
+        if utils.programminglabOccupied:
             if item in utils.inventory.keys():
                 print("Using copper wire to set off the smoke alarm in Progrmaming Lab.")
-                utils.inventory.keys(item).use()
-                utils.securityPuzzleCheck == True
+                utils.securityPuzzleCheck = True
+                print("The fire alarm blares to life. I hear groaning as people shuffle into the hallway.")
             else:
                 print("Grab a copper wire from Prototype Workshop!")
-                utils.securityPuzzleCheck == False
+                utils.securityPuzzleCheck = False
             
         
         

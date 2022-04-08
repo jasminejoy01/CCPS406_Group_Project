@@ -15,6 +15,7 @@ cheat = initialize.cheat
 disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
 ventOpen = initialize.ventOpen
+EMgate = initialize.EMgate
 
 origamiHeadChecker = initialize.origamiHeadChecker
 puzzle4 = initialize.puzzle4

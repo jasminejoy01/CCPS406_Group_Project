@@ -66,6 +66,9 @@ def movenorth():
 
 
 def movesouth():
+  if utils.EMgate:
+    print("I shouldn't try to leave yet. The electromagnetic security gate is still up. I'd be fried!")
+  else:
     if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:

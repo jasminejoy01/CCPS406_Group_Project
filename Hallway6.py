@@ -29,41 +29,20 @@ def fancyDes():
 
 def movewest():  
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[14] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[14] = 1
         Hallway5.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[14] = 1
         Hallway5.fancyDes()
 
 def movenorth(): 
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[7] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[7] = 1
         Storage.basicDes()
-
     else:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[7] = 1
         Storage.fancyDes()
 
 
@@ -72,22 +51,12 @@ def movesouth():
     print("I shouldn't try to leave yet. The electromagnetic security gate is still up. I'd be fried!")
   else:
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[9] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[9] = 1
         Exit.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         Exit.fancyDes()
-        utils.roomsvisited[9] = 1
 
 def moveeast():
     print("Woops! Can't go that way!")

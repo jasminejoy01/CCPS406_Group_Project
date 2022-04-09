@@ -30,23 +30,12 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[6] = 1 
     if not utils.advanced:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsSouth.basicDes()
-            utils.roomsvisited[6] = 1
+      OutdoorsSouth.basicDes()
     else:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            OutdoorsSouth.fancyDes()
-            utils.roomsvisited[6] = 1 
-
+      OutdoorsSouth.fancyDes()
 
 def movenorth():
     print("Woops! Can't go that way!")

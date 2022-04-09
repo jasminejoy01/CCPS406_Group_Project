@@ -33,80 +33,42 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[25] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[25] = 1
         CreatorOffice.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[25] = 1
         CreatorOffice.fancyDes()
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[18] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[18] = 1
         Hallway2.basicDes()
     else:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[18] = 1
         Hallway2.fancyDes()  
 
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[20] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[20] = 1
         Hallway4.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         Hallway4.fancyDes()
-        utils.roomsvisited[20] = 1
  
 def moveeast():
   if not terminal1.locked:
+    utils.x = utils.x - 1
+    utils.roomsvisited[13] = 1
     os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[13] = 1
         ConstructionHeadOffice.basicDes()
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[13] = 1
         ConstructionHeadOffice.fancyDes()
+  else:
+    print("I don't have the key for this door.")
         
 
 def itemsInhere():

@@ -30,21 +30,11 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[10] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[10] = 1
         Greenspace.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[10] = 1
         Greenspace.fancyDes()
   
 def movenorth():
@@ -52,41 +42,21 @@ def movenorth():
 
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[5] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OutdoorsMiddle.basicDes()
-        utils.roomsvisited[5] = 1
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OutdoorsMiddle.fancyDes()
-        utils.roomsvisited[5] = 1
    
 def moveeast():    
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[1] = 1
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        CleaningBotStorage.basicDes()
-        utils.roomsvisited[1] = 1
+      CleaningBotStorage.basicDes()
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        CleaningBotStorage.fancyDes()
-        utils.roomsvisited[1] = 1
+      CleaningBotStorage.fancyDes()
 
 def itemsInhere():
     itemlist = []

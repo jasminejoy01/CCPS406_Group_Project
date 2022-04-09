@@ -32,78 +32,38 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[24] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[24] = 1
         PrintingLab.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[24] = 1
         PrintingLab.fancyDes()
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[17] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[17] = 1
         Hallway1.basicDes()
     else:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[17] = 1
         Hallway1.fancyDes()  
 
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[19] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[19] = 1
         Hallway3.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         Hallway3.fancyDes()
-        utils.roomsvisited[19] = 1
  
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[12] = 1
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[12] = 1
         ProgrammingLab.basicDes()
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[12] = 1
         ProgrammingLab.fancyDes()
 
 def itemsInhere():

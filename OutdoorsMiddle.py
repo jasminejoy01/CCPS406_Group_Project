@@ -32,78 +32,38 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[11] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[11] = 1
         BuildingEntranceExit.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[11] = 1
         BuildingEntranceExit.fancyDes()
  
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[4] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[4] = 1
-        OutdoorsNorth.basicDes()
-    else: 
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[4] = 1
-        OutdoorsNorth.fancyDes()
+      OutdoorsNorth.basicDes()
+    else:
+      OutdoorsNorth.fancyDes()
  
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[6] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[6] = 1
-        OutdoorsSouth.basicDes()
+      OutdoorsSouth.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[6] = 1
-        OutdoorsSouth.fancyDes()
+      OutdoorsSouth.fancyDes()
 
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[2] = 1
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[2] = 1
-        ConstructionBotStorage.basicDes()
+      ConstructionBotStorage.basicDes()
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[2] = 1
         ConstructionBotStorage.fancyDes()
 
 def itemsInhere():

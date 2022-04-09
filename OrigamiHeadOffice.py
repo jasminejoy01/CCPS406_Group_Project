@@ -41,10 +41,6 @@ def movenorth():
         utils.origamiHeadChecker = True
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
     utils.roomsvisited[20] = 1
     if not utils.advanced:
       Hallway4.basicDes()

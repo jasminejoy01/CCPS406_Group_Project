@@ -33,82 +33,43 @@ def fancyDes():
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[26] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[26] = 1
         Server.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[26] = 1
         Server.fancyDes()
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[19] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[19] = 1
         Hallway3.basicDes()
     else:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[19] = 1
         Hallway3.fancyDes()  
 
 def movesouth():
   if not terminal1.locked:
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[21] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[21] = 1
         OrigamiHeadOffice.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OrigamiHeadOffice.fancyDes()
-        utils.roomsvisited[21] = 1
+  else:
+    print("The office is locked.")
  
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[14] = 1
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[14] = 1
         Hallway5.basicDes()
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[14] = 1
         Hallway5.fancyDes()
         
-
 def itemsInhere():
     itemlist = []
     for each in itemdictionary.keys():

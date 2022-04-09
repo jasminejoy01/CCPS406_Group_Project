@@ -32,21 +32,11 @@ def movewest():
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    utils.roomsvisited[5] = 1
     if not utils.advanced:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[5] = 1
         OutdoorsMiddle.basicDes()
     else:
-        utils.y = utils.y - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[5] = 1
         OutdoorsMiddle.fancyDes()  
 
 def movesouth():
@@ -54,23 +44,12 @@ def movesouth():
 
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[3] = 1
     if not utils.advanced:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OrigamiBotStorage.basicDes()
-        utils.roomsvisited[3] = 1
     else:
-        utils.x = utils.x - 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         OrigamiBotStorage.fancyDes()
-        utils.roomsvisited[3] = 1
- 
 
 def itemsInhere():
     itemlist = []

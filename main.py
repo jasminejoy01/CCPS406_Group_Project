@@ -105,8 +105,10 @@ def processLanguage(obj=None):
             if verb == "exit":
                 utils.exitgame(currentroomdict)
                 validCommand = True
-            if verb == "inventory":
-                print(utils.inventory)
+            if verb == "inventory" or verb == "i":
+                items = str(utils.inventory.keys())
+                items = items.replace("'", "")
+                print("I have:",items[11:-2])
                 validCommand = True
             if verb == "gamemap":
                 T.gamemap()
@@ -159,6 +161,8 @@ def processLanguage(obj=None):
             #object interactions
             noun = splitCommand[1]
             noun = noun.replace(" ", "")
+            if noun == "bin":
+              noun = "trash"
             where = library(str(x), str(y))
             if verb == "read":
                 if "user" in command:
@@ -167,16 +171,16 @@ def processLanguage(obj=None):
                 if 'paper' == noun or 'note' == noun:
                     __import__(where).use(noun)
                     validCommand = True
-            if (verb == "exam") or (verb == "examine"):
+            elif (verb == "exam") or (verb == "examine"):
                 __import__(where).examine(noun)
                 validCommand = True
-            if (verb == "take" or verb == "get"):
+            elif (verb == "take" or verb == "get"):
                 __import__(where).take(noun)
                 validCommand = True
-            if (verb == "open") and noun == "vent":
+            elif (verb == "open") and noun == "vent":
               __import__(where).use(noun)
               validCommand = True
-            if (verb == "use") and noun != "key":
+            elif (verb == "use") and noun != "key":
                 __import__(where).use(noun)
               
                 #Puzzle 3: sweeping
@@ -194,10 +198,6 @@ def processLanguage(obj=None):
             if (verb == "speak to" or verb == "speak with"):
                 where = library(str(x), str(y))
                 __import__(where).speakTo(noun)
-                validCommand = True
-            if verb == "read" and ("paper" == noun or "note" == noun):
-                where = library(str(x), str(y))
-                __import__(where).use(noun)
                 validCommand = True
             if ("item" in command or "items" in command) and ("room" in command or "rooms" in command):
                 where = library(str(x), str(y))

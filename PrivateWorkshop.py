@@ -41,10 +41,8 @@ def fancyDes():
     T.PrivateWorkshop.fancyDes()
 
 def movewest():
-    if 'NFCKey' not in utils.inventory.keys():
-        I2.Workshop.item_add(computer1.islocked)
     if not utils.advanced:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
+        if utils.cheat or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -53,9 +51,9 @@ def movewest():
             utils.roomsvisited[1] = 1
             CleaningBotStorage.basicDes()
         else:
-            print("The door is locked. Use terminal to leave room.")
+            print("The door is locked. Use the terminal to leave the room.")
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[1] == 1:
+        if utils.cheat or terminal1.locked == False or utils.roomsvisited[1] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -64,7 +62,7 @@ def movewest():
             CleaningBotStorage.fancyDes()
             utils.roomsvisited[1] = 1
         else:
-            print("The door is locked. Use terminal to leave room.")      
+            print("The door is locked. Use the terminal to leave the room.")      
 
 def movenorth():
     print("Woops! Can't go that way!")

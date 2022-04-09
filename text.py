@@ -84,11 +84,14 @@ class OrigamiBotStorage:
         print("[Abstract Solutions Storage Bay] \n Coming back, I realize how intricate these machine parts are on the shelves; they're all capable of folding in different directions. \n What interesting pieces of technology, I wonder what they can be utilized for.")
 
 class BuildingEntranceExit:
-    def basicDes():
-        print("[Main Facility Entrance] (Before cleaning the dirt) \n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
+    def basicDes1():
+        print("[Main Facility Entrance]\n I'm standing near the Security Checkpoint, there is a security guard at the desk watching the screens in front of her. \n Looking around, I see that there are trails of dirt and debris following the path that the employees take to go in and out of the building.") 
+
+    def basicDes2():
+        print("[Main Facility Entrance]\n I'm at the Security Checkpoint. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
       
     def fancyDes():
-        print("[Main Facility Entrance] (After cleaning the dirt) \n I'm back near the Security Checkpoint for the Storage Bays. The same security guard is at the desk watching the screens in front of her. \n There are no heavy trails of dirt on the path of the employees, I suspect that she won't bother me about having to clean anything before continuing past.")
+        print("[Main Facility Entrance]\n I'm back near the Security Checkpoint for the Storage Bays. There's a bored-looking guard sitting behind a desk, idly filling out a sudoku book. She hardly looks up as I pass. The tiled floor still seems reletively clean.")
 
 class ProgrammingLab:
     def basicDes():
@@ -112,11 +115,17 @@ class BotTestingObstacleCourse:
         print("[Robotics Testing Facility – Obstacle Course] \n The beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed. \n The beams and platforms all around the room have different colors marked on them as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines.\n The Red colored paths look like they have the most difficult obstacles to get through. \n To the East is [Robotics Testing Facility - Basic Functions]")
 
 class PrototypeWorkshop:
-    def basicDes():
-        print("[Prototype Workshop] \n This room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables. \n The robots in this room look like they're a mixture of the other models I've seen on the compound. \n Near the door on the table is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state. \n To the East is [Hallway - Section 1]")
-    
-    def fancyDes():
-        print("[Prototype Workshop] \n This room is still filled with many colorful spare parts and tools. \n The bins have a dizzying array of different colored wires, printing material, and spare parts. \n I only notice now that 'Construction 1.6 Prototype' is made up of mismatched coloured parts. \n To the East is [Hallway - Section 1]")
+    def basicDes1():
+        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nOn one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state.\nAcross the room, a burly man seems to be working on something. His jacket is draped over his chair. \nTo the East is the door that leads back into [Hallway - Section 1]")
+
+    def basicDes2():
+        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nThe large man is hunched over the Construction prototype, delicately reassembling it. His jacket is unattended, draped over a chair.\nTo the East is the door that leads back into [Hallway - Section 1]")
+  
+    def fancyDes1():
+        print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nA robot labled 'Construction 1.6 Prototype' lies still on a table. It is made up of mismatched coloured parts. A burly man is carefully working on some new project, wires and circuitry spilling over the table in front of him. His jacket is drapped across his chair. \nTo the East is [Hallway - Section 1]")
+
+    def fancyDes2():
+      print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nThe man I now recognize must be Dr.George Ediface carefully cradles his prototype, working with surprising delicacy to reassemble it. His jacket is unattended, draped over a chair.\nTo the East is [Hallway - Section 1]")
     
 class PrintingLab:
     def basicDes():
@@ -148,10 +157,10 @@ class OrigamiHeadOffice:
     
 class Security:
     def basicDes():
-        print("[Security] \n A room filled with monitors, all showing a different moving image on the screen. \n There are three employees sitting inside, matching uniform with the Security employee I cleaned up for on the way here.  \n They're all too busy watching the screen to take notice of me. \n There is a large glowing button with a label underneath: \n 'Barrier: ACTIVE'. \n Past the guards and the monitors is a large window, it's facing towards a Security Checkpoint. \n To the North is [Hallway - Section 5].")
+        print("[Security] \n A room filled with monitors, all showing a different moving image on the screen. \n There are three employees sitting inside, matching uniform with the Security employee I cleaned up for on the way here.  \n They're all too busy watching the screen to take notice of me. \n There is a large glowing button with text on the other side of it. \n Past the guards and the monitors is a large window, it's facing towards a Security Checkpoint. \n To the North is [Hallway - Section 5].")
     
     def fancyDes():
-        print("")
+        print("[Security] \n The security office is still staffed by three guards paying close attention to their monitors. \n Looking through the window, I see the Security Checkpoint with the slouched over guard.")
     
 class Storage:
     def basicDes():

@@ -188,14 +188,12 @@ def processLanguage(obj=None):
               
                 #Puzzle 3: sweeping
                 if noun == "broom" and x == 3 and y == 1:
-                  hasKey2 = False
                   for i in range(len(utils.PlayerKeys)):
-                    if utils.PlayerKeys[i] == 2:
-                      hasKey2 = True
+                    if utils.cleanHall:
                       print("'Those things sure do love sweeping...' the guard says to herself.")
-                  if not hasKey2:
+                  if not utils.cleanHall:
                     print("The guard carefully inspects my work. 'Well I've certainly seen better, but I suppose it's passable. You may proceed.''")
-                    utils.PlayerKeys.append(2)
+                    utils.cleanHall = True
                 validCommand = True
               
             if (verb == "speak to" or verb == "speak with"):

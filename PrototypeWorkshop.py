@@ -9,6 +9,7 @@ import Hallway1
 import Puzzle4
 import text as T
 import os
+import player
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -17,12 +18,12 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 wire = I.Item("wire", False, False, "A piece of copper wire, highly conductive", False, "I push the copper wire into the pannel")
-terminal1 = I.Terminal(1)
+constructionKey = I.Item("Dr. Ediface's key card", True, False,  "A well-worn key card. It doesn't look like much.", False, "I'm not sure what to do with this")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
     'wire':       [wire  , None],
-    'terminal':  [terminal1 , None ]
+    'Dr. Ediface\'s key card' : [constructionKey, None]
 }
 
 def basicDes():
@@ -99,6 +100,10 @@ def use(obj):
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj):
+  if obj == "key":
+      itemdictionary['constructionKey'][0].take(filename)
+      player.keys.append(1)
+  else:
     lst = itemsInhere()
     if obj in lst:
           if obj == "copperwire":

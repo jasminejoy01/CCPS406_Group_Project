@@ -56,3 +56,4 @@ prototypeChecker = False      #puzzle4.py
 securityPuzzleCheck = False   # sequence of events, triggers programminglabOccupied = False
 ventOpen = False
 EMgate = True
+cleanHall = False

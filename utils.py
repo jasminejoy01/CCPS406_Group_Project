@@ -16,6 +16,7 @@ disguise = initialize.disguise
 programminglabOccupied = initialize.programminglabOccupied
 ventOpen = initialize.ventOpen
 EMgate = initialize.EMgate
+cleanHall = initialize.cleanHall
 
 origamiHeadChecker = initialize.origamiHeadChecker
 puzzle4 = initialize.puzzle4

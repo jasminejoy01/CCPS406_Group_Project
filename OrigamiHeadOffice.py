@@ -9,6 +9,7 @@ import Hallway4
 import puzzle6
 import text as T
 import os
+import player
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -19,11 +20,11 @@ filename = filename.replace(".py", "")
 ##################
 
 #name, canTake, inInventory, description, interactable, useText
-OrigamiKey = I.Item("", True, False,  "", False, "")
+origamiKey = I.Item("Dr. Yami's key card", True, False,  "A pristene key card with an elegant origami crane printed onto it.", False, "I'm not sure what to do with this")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'OrigamiKey' : [OrigamiKey, None]
+  'Dr. Yami\'s key card' : [origamiKey, None]
 }
 
 def basicDes():
@@ -97,11 +98,15 @@ def use(obj):
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].take(filename)
+    if obj == "key":
+      itemdictionary['origamiKey'][0].take(filename)
+      player.keys.append(3)
     else:
-        print("Hmm... {} can't be taken out of this room!".format(obj))
+      lst = itemsInhere()
+      if obj in lst:
+          itemdictionary[obj][0].take(filename)
+      else:
+          print("Hmm... {} can't be taken out of this room!".format(obj))
 
 def unlock(obj):
     lst = itemsInhere()

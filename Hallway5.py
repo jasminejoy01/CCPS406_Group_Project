@@ -27,6 +27,7 @@ def fancyDes():
     T.Hallway5.fancyDes()
 
 def movewest():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
@@ -51,6 +52,7 @@ def movesouth():
     print("Only guards are allowed in the security office. I'd definitely be noticed.")
  
 def moveeast():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.x = utils.x - 1
         if utils.x < 0:

@@ -40,22 +40,13 @@ def movenorth():
     print("Woops! Can't go that way!")
 
 def movesouth():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y + 1
+    utils.roomsvisited[8] = 1
     if not utils.advanced:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[8] = 1
         Hallway6.basicDes()
     else:
-        utils.y = utils.y + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
         Hallway6.fancyDes()
-        utils.roomsvisited[8] = 1
   
 def moveeast():
     print("Woops! Can't go that way!")

@@ -31,10 +31,7 @@ def movewest():
         Puzzle4.consbot()
         utils.constructionBotChecker == True
     utils.x = utils.x + 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
+    os.system('cls' if os.name == 'nt' else 'clear')
     utils.roomsvisited[5] = 1    
     if not utils.advanced:
       OutdoorsMiddle.basicDes()

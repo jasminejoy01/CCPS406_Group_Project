@@ -41,28 +41,14 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x - 1
+    utils.roomsvisited[20] = 1
     if not utils.advanced:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.basicDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")
+      Hallway4.basicDes() 
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.x = utils.x - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.fancyDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")  
+      Hallway4.fancyDes()
+
 
 def itemsInhere():
     itemlist = []

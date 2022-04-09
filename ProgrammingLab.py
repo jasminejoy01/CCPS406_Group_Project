@@ -31,27 +31,12 @@ def fancyDes():
 
 def movewest():
     #This should not be in movewest! This doesn't make sense here!
-    if utils.programminglabOccupied == False:
-        computer.getSchedule()
-        utils.origamiHeadChecker == False
-    else:
-        print("You need to vacate the Programming Lab to access a computer.")
-
+    os.system('cls' if os.name == 'nt' else 'clear')
+    utils.x = utils.x + 1
+    utils.roomsvisited[18] = 1
     if not utils.advanced:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[18] = 1
         Hallway2.basicDes()
     else:
-        utils.x = utils.x + 1
-        if utils.x < 0:
-            utils.x = 0
-        if utils.y < 0:
-            utils.y = 0
-        utils.roomsvisited[18] = 1
         Hallway2.fancyDes()
  
 def movenorth():

@@ -31,12 +31,9 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
+    os.system('cls' if os.name == 'nt' else 'clear')
     Hallway6.basicDes()
     utils.y = utils.y - 1
-    if utils.x < 0:
-        utils.x = 0
-    if utils.y < 0:
-        utils.y = 0
     #print("You're moving into Hallway6!")
 
 def movesouth():

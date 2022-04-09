@@ -29,14 +29,9 @@ def fancyDes():
     T.CleaningBotStorage.fancyDes()
 
 def movewest(): 
-  if 'broom' not in utils.inventory.keys():
-        I2.Main_Building.item_add()
   utils.x = utils.x + 1
-  if utils.x < 0:
-    utils.x = 0
-  if utils.y < 0:
-    utils.y = 0  
   utils.roomsvisited[4] = 1
+  os.system('cls' if os.name == 'nt' else 'clear')
   if not utils.advanced:
         OutdoorsNorth.basicDes()       
   else:       
@@ -49,14 +44,9 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
-  if 'broom' not in utils.inventory.keys():
-        I2.Main_Building.item_add()
-  utils.x = utils.x - 1
-  if utils.x < 0:
-    utils.x = 0
-  if utils.y < 0:
-    utils.y = 0  
+  utils.x = utils.x - 1 
   utils.roomsvisited[0] = 1
+  os.system('cls' if os.name == 'nt' else 'clear')
   if not utils.advanced:
       PrivateWorkshop.basicDes()
   else:

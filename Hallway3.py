@@ -32,6 +32,7 @@ def fancyDes():
 
 
 def movewest():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
@@ -50,6 +51,7 @@ def movewest():
         CreatorOffice.fancyDes()
 
 def movenorth():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.y = utils.y - 1
         if utils.x < 0:
@@ -68,6 +70,7 @@ def movenorth():
         Hallway2.fancyDes()  
 
 def movesouth():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:
@@ -87,6 +90,7 @@ def movesouth():
  
 def moveeast():
   if not terminal1.locked:
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.x = utils.x - 1
         if utils.x < 0:

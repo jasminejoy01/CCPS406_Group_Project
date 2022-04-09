@@ -33,11 +33,8 @@ def fancyDes():
 def movewest():
   if not blockedDoor:
     utils.x = utils.x + 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
     utils.roomsvisited[22] = 1
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         BotTestingObstacle.basicDes()
     else:
@@ -50,11 +47,8 @@ def movenorth():
 
 def movesouth():
     utils.roomsvisited[17] = 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
     utils.y = utils.y + 1
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
       Hallway1.basicDes()
     else:

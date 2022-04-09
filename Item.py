@@ -117,3 +117,15 @@ class Terminal:
 
   def examine(self):
     print("The terminal reads \n\'LOCKED\'")
+
+class Computer2:
+  #Computer in programming lab
+  def __init__(self):
+    self.name = "computer"
+
+  def use(self):
+    if not utils.programminglabOccupied:
+        #computer.getSchedule()
+        utils.origamiHeadChecker = False
+    else:
+        print("There are no computers available in this lab. You'll need to get someone to leave...")

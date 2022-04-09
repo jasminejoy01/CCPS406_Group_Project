@@ -44,11 +44,8 @@ def movesouth():
 
 def moveeast():  
     utils.x = utils.x - 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
     utils.roomsvisited[16] = 1
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
       BotTesting.basicDes()   
     else:

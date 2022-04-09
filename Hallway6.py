@@ -28,6 +28,7 @@ def fancyDes():
     T.Hallway6.fancyDes()
 
 def movewest():  
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.x = utils.x + 1
         if utils.x < 0:
@@ -46,6 +47,7 @@ def movewest():
         Hallway5.fancyDes()
 
 def movenorth(): 
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.y = utils.y - 1
         if utils.x < 0:
@@ -69,6 +71,7 @@ def movesouth():
   if utils.EMgate:
     print("I shouldn't try to leave yet. The electromagnetic security gate is still up. I'd be fried!")
   else:
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         utils.y = utils.y + 1
         if utils.x < 0:

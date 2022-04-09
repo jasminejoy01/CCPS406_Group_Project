@@ -32,15 +32,9 @@ def fancyDes():
 def movewest():
     if utils.constructionChecker == False:
         Puzzle4.constructionchecker()
-        utils.constructionChecker == True
-        
-    if 'ConstructionKeyCard' in utils.inventory.keys():
-        I2.Construc_Headoff.item_add()
+        utils.constructionChecker = True
     utils.x = utils.x + 1
-    if utils.x < 0:
-      utils.x = 0
-    if utils.y < 0:
-      utils.y = 0
+    os.system('cls' if os.name == 'nt' else 'clear')
     utils.roomsvisited[19] = 1        
     if not utils.advanced:
       Hallway3.basicDes()

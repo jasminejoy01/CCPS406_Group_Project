@@ -36,36 +36,20 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    
     if utils.origamiHeadChecker == False: 
         puzzle6.main()
-        utils.origamiHeadChecker == True
-     
-    if 'OrigamiKey' not in utils.inventory.keys():
-        I2.Origami_Office.item_add()
-        
+        utils.origamiHeadChecker = True
+    os.system('cls' if os.name == 'nt' else 'clear')
+    utils.y = utils.y - 1
+    if utils.x < 0:
+      utils.x = 0
+    if utils.y < 0:
+      utils.y = 0
+    utils.roomsvisited[20] = 1
     if not utils.advanced:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.basicDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")
+      Hallway4.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[20] == 1:
-            utils.y = utils.y - 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway4.fancyDes()
-            utils.roomsvisited[20] = 1
-        else:
-            print("The door is locked.")   
+      Hallway4.fancyDes()
 
 def movesouth():
     print("Woops! Can't go that way!")

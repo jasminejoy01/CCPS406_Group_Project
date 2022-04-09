@@ -16,11 +16,9 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 origamiBot = o.oriBot()
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ],
   'origamibot': [origamiBot, None]
 }
 
@@ -31,8 +29,8 @@ def fancyDes():
     T.OrigamiBotStorage.fancyDes()
 
 def movewest():
+    os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[6] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
@@ -40,19 +38,14 @@ def movewest():
                 utils.y = 0
             OutdoorsSouth.basicDes()
             utils.roomsvisited[6] = 1
-        else:
-            print("The door is locked.")
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[6] == 1:
             utils.x = utils.x + 1
             if utils.x < 0:
                 utils.x = 0
             if utils.y < 0:
                 utils.y = 0
             OutdoorsSouth.fancyDes()
-            utils.roomsvisited[6] = 1
-        else:
-            print("The door is locked.")   
+            utils.roomsvisited[6] = 1 
 
 
 def movenorth():

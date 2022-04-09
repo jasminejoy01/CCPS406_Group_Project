@@ -41,28 +41,16 @@ def fancyDes():
     T.PrivateWorkshop.fancyDes()
 
 def movewest():
-    if not utils.advanced:
-        if utils.cheat or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[1] = 1
-            CleaningBotStorage.basicDes()
-        else:
-            print("The door is locked. Use the terminal to leave the room.")
+    if utils.cheat or not terminal1.locked or utils.roomsvisited[1] == 1:
+      os.system('cls' if os.name == 'nt' else 'clear')
+      utils.x = utils.x + 1
+      utils.roomsvisited[1] = 1
+      if not utils.advanced:
+          CleaningBotStorage.basicDes()
+      else:
+          CleaningBotStorage.fancyDes()
     else:
-        if utils.cheat or terminal1.locked == False or utils.roomsvisited[1] == 1:
-            utils.x = utils.x + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            CleaningBotStorage.fancyDes()
-            utils.roomsvisited[1] = 1
-        else:
-            print("The door is locked. Use the terminal to leave the room.")      
+        print("The door is locked. Use the terminal to leave the room.")      
 
 def movenorth():
     print("Woops! Can't go that way!")

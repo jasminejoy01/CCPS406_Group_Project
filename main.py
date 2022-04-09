@@ -170,8 +170,12 @@ def processLanguage(obj=None):
                     __import__(where).use(noun)
                     validCommand = True
             elif (verb == "exam") or (verb == "examine"):
-                __import__(where).examine(noun)
-                validCommand = True
+                if "user" in splitCommand[1]:
+                    T.readUserGuide()
+                    validCommand = True
+                else:
+                  __import__(where).examine(noun)
+                  validCommand = True
             elif (verb == "take" or verb == "get"):
                 if not noun == "key" and noun in str(utils.inventory.keys()):
                   print("I already have that.")
@@ -212,7 +216,7 @@ def processLanguage(obj=None):
                     
         #3-word commands
         if len(splitCommand) >= 3 and not validCommand:
-            if (verb == "read" or verb == "exam" or verb == "examine"):
+            if verb == "read":
                 if "user" in splitCommand[1]:
                     T.readUserGuide()
                     validCommand = True

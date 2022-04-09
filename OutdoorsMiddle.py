@@ -18,10 +18,10 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
-terminal2 = I.Terminal(2)
+terminal3 = I.Terminal(3)
 
 itemdictionary = { # [Item, isLocked]
-  'terminal':   [terminal2, True]
+  'terminal':   [terminal3, True]
 }
 
 def basicDes():
@@ -58,7 +58,7 @@ def movesouth():
       OutdoorsSouth.fancyDes()
 
 def moveeast():
-  if not terminal2.locked or utils.cheat:
+  if not terminal3.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
     utils.roomsvisited[2] = 1

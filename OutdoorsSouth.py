@@ -15,10 +15,10 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
+terminal2 = I.Terminal(2)
 
 itemdictionary = { # [Item, isLocked]
-  'terminal':  [terminal1     , None ]    
+  'terminal':  [terminal2     , None ]    
 }
 
 def basicDes():
@@ -43,6 +43,7 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
+  if not terminal2.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
     utils.roomsvisited[3] = 1
@@ -50,6 +51,8 @@ def moveeast():
         OrigamiBotStorage.basicDes()
     else:
         OrigamiBotStorage.fancyDes()
+  else:
+    print("The door is locked. I'll have to unlock it by using the terminal.")
 
 def itemsInhere():
     itemlist = []

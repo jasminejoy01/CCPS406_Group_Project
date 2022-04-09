@@ -67,9 +67,7 @@ def processLanguage(obj=None):
           verb = splitCommand[0]
 
         #Helping the user
-        if "key" in command:
-          if len(utils.PlayerKeys) > 0:
-            print("I have a key. This will let me use a terminal")
+        
         
         #1-word commands
         if len(splitCommand) == 1: 
@@ -183,8 +181,15 @@ def processLanguage(obj=None):
             elif (verb == "open") and noun == "vent":
               __import__(where).use(noun)
               validCommand = True
-            elif (verb == "use") and noun != "key":
-                __import__(where).use(noun)
+            elif (verb == "use"):
+                validCommand = True
+                if "key" in command:
+                  if len(utils.PlayerKeys) > 0:
+                    print("I have a key. This will let me use a terminal")
+                  else:
+                    print("I don't have any keys")
+                else:
+                  __import__(where).use(noun)
               
                 #Puzzle 3: sweeping
                 if noun == "broom" and x == 3 and y == 1:

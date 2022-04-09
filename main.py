@@ -173,11 +173,11 @@ def processLanguage(obj=None):
                     utils.cleanHall = True
                 validCommand = True
               
-            if verb == "speak" or verb == "say":
+            #if verb == "speak" or verb == "say":
               #This needs a lot of work
-                where = library(str(x), str(y))
-                __import__(where).speakTo(noun)
-                validCommand = True
+             #   where = library(str(x), str(y))
+             #   __import__(where).speakTo(noun)
+            #    validCommand = True
             if ("item" in command or "items" in command) and ("room" in command or "rooms" in command):
                 where = library(str(x), str(y))
                 __import__(where).listItems()

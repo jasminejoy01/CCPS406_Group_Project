@@ -37,8 +37,10 @@ def movewest():
     utils.roomsvisited[25] = 1
     if not utils.advanced:
         CreatorOffice.basicDes()
+        CreatorOffice.creatorIntro()
     else:
         CreatorOffice.fancyDes()
+        CreatorOffice.meetAgain()
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')

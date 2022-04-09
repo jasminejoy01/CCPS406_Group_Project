@@ -125,7 +125,7 @@ class PrototypeWorkshop:
     def fancyDes1():
         print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nA robot labled 'Construction 1.6 Prototype' lies still on a table. It is made up of mismatched coloured parts. A burly man is carefully working on some new project, wires and circuitry spilling over the table in front of him. His jacket is drapped across his chair. \nTo the East is [Hallway - Section 1]")
 
-    def fanceDes2():
+    def fancyDes2():
       print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nThe man I now recognize must be Dr.George Ediface carefully cradles his prototype, working with surprising delicacy to reassemble it. His jacket is unattended, draped over a chair.\nTo the East is [Hallway - Section 1]")
     
 class PrintingLab:

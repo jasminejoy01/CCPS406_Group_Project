@@ -19,6 +19,7 @@ ventOpen = initialize.ventOpen
 EMgate = initialize.EMgate
 cleanHall = initialize.cleanHall
 georgeDistracted = initialize.georgeDistracted
+oriBotGPS = initialize.oriBotGPS
 
 #origamiHeadChecker = initialize.origamiHeadChecker
 #puzzle4 = initialize.puzzle4

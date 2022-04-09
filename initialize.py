@@ -58,3 +58,4 @@ ventOpen = False
 EMgate = True
 cleanHall = False
 georgeDistracted = False
+oriBotGPS = True

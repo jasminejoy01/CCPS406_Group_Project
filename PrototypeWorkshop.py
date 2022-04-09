@@ -19,21 +19,29 @@ filename = filename.replace(".py", "")
 #name, canTake, inInventory, description, interactable, useText
 wire = I.Item("wire", False, False, "A piece of copper wire, highly conductive", False, "I push the copper wire into the pannel")
 constructionKey = I.Item("Dr. Ediface's key card", True, False,  "A well-worn key card. It doesn't look like much.", False, "I'm not sure what to do with this")
+jacket = I.Item("jacket", False, False, "Some sort of lab coat. I can see a keycard in its pocket.", False, "")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
     'wire':       [wire  , None],
-    'Dr. Ediface\'s key card' : [constructionKey, None]
+    'Dr. Ediface\'s key card' : [constructionKey, None],
+    'jacket':     [jacket, None]
 }
 
 def basicDes():
-    T.PrototypeWorkshop.basicDes()
+    if not utils.georgeDistracted:
+      T.PrototypeWorkshop.basicDes1()
+    else:
+      T.PrototypeWorkshop.basicDes2()
     if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
         Puzzle4.breakbotcheck()
         utils.prototypeChecker == True
 
 def fancyDes():
-    T.PrototypeWorkshop.fancyDes()
+    if not utils.georgeDistracted:
+      T.PrototypeWorkshop.fancyDes1()
+    else:
+      T.PrototypeWorkshop.fancyDes2()
     if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
         Puzzle4.breakbotcheck()
         utils.prototypeChecker == True
@@ -100,16 +108,23 @@ def use(obj):
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj):
-  if obj == "key":
+  if "key" in obj:
+    obj = 'Dr. Ediface\'s key card'
+    if utils.georgeDistracted:
       itemdictionary['Dr. Ediface\'s key card'][0].take(filename)
       utils.PlayerKeys.append(2)
+    else:
+      print("I can't do that without being noticed. Maybe I can distract him...")
   else:
     lst = itemsInhere()
+    if obj == "copperwire":
+        obj = "wire"
     if obj in lst:
-          if obj == "copperwire":
-            I2.PrototypeWorkshop.item_add()
-          else:
-            itemdictionary[obj][0].take(filename)
+        print(obj, itemdictionary[obj][0].canTake)
+        if itemdictionary[obj][0].canTake:
+          itemdictionary[obj][0].take(filename)
+        else:
+          print("I can't take that.")
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
 

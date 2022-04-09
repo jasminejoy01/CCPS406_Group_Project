@@ -57,3 +57,4 @@ securityPuzzleCheck = False   # sequence of events, triggers programminglabOccup
 ventOpen = False
 EMgate = True
 cleanHall = False
+georgeDistracted = False

@@ -17,6 +17,7 @@ programminglabOccupied = initialize.programminglabOccupied
 ventOpen = initialize.ventOpen
 EMgate = initialize.EMgate
 cleanHall = initialize.cleanHall
+georgeDistracted = initialize.georgeDistracted
 
 origamiHeadChecker = initialize.origamiHeadChecker
 puzzle4 = initialize.puzzle4

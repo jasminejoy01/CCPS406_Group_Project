@@ -16,7 +16,7 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-broom = I.Item("broom", False, False, "an ordinary broom", True, "I'm sweeping")
+broom = I.Item("broom", True, False, "an ordinary broom", True, "I'm sweeping")
 
 itemdictionary = { # [Item, isLocked]
    'broom'   :     [broom     , None ]     

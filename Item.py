@@ -4,7 +4,7 @@ import time
 class Item:
     def __init__(self, name, canTake, inInventory, description, interactable, useText):
         self.name = name
-        self.canTake = True
+        self.canTake = canTake
         self.inInventory = False
         self.description = description
         self.interactable = True
@@ -40,7 +40,7 @@ class Computer:
       # islocked, description
       self.name = name
       self.islocked = True
-      self.canTake = True
+      self.canTake = False
       self.inInventory = False
       self.description = description
       self.interactable = True

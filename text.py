@@ -116,11 +116,17 @@ class BotTestingObstacleCourse:
         print("[Robotics Testing Facility – Obstacle Course]\nThe beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed.\nThe beams and platforms all  around the room have different colors marked on them, as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines.\nThe Red colored paths look like they have the most difficult paths to go through.\nTo the East is the door that leads back to [Robotics Testing Facility - Basic Functions]")
 
 class PrototypeWorkshop:
-    def basicDes():
-        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nOn one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state.\nTo the East is the door that leads back into [Hallway - Section 1]")
-    
-    def fancyDes():
-        print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nI only notice now the 'Construction 1.6 Prototype' is made up of mismatched coloured parts.\nTo the East is [Hallway - Section 1]")
+  def basicDes1():
+        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nOn one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state.\nAcross the room, a burly man seems to be working on something. His jacket is draped over his chair. \nTo the East is the door that leads back into [Hallway - Section 1]")
+
+  def basicDes2():
+    print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nThe large man is hunched over the Construction prototype, delicately reassembling it. His jacket is unattended, draped over a chair.\nTo the East is the door that leads back into [Hallway - Section 1]")
+  
+    def fancyDes1():
+        print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nA robot labled 'Construction 1.6 Prototype' lies still on a table. It is made up of mismatched coloured parts. A burly man is carefully working on some new project, wires and circuitry spilling over the table in front of him. His jacket is drapped across his chair. \nTo the East is [Hallway - Section 1]")
+
+    def fanceDes2():
+      print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nThe man I now recognize must be Dr.George Ediface carefully cradles his prototype, working with surprising delicacy to reassemble it. His jacket is unattended, draped over a chair.\nTo the East is [Hallway - Section 1]")
     
 class PrintingLab:
     def basicDes():

@@ -173,7 +173,7 @@ def processLanguage(obj=None):
                 __import__(where).examine(noun)
                 validCommand = True
             elif (verb == "take" or verb == "get"):
-                if noun in str(utils.inventory.keys()):
+                if not noun == "key" and noun in str(utils.inventory.keys()):
                   print("I already have that.")
                 else:
                   __import__(where).take(noun)

@@ -50,7 +50,7 @@ def movenorth():
         Hallway3.fancyDes()  
 
 def movesouth():
-  if not terminal1.locked:
+  if not terminal1.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
     utils.roomsvisited[21] = 1

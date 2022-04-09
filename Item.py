@@ -107,16 +107,16 @@ class Terminal:
     self.locked = True;
 
   def use(self):
-    for i in range(len(utils.PlayerKeys)):
-      if utils.PlayerKeys[i] == self.key:
-        self.locked = False;
-        print("I scanned my key and the door clicked open.")
-      elif self.key == 1: 
-        print("It seems to require an NFC key that I don't have yet.")
-      elif self.key > 1:
-        print("It look's like I'll need a key from this deparment's head to unlock it.")
     if len(utils.PlayerKeys) == 0:
       print("It seems to require an NFC key that I don't have yet.")
+    else:
+      for i in range(len(utils.PlayerKeys)):
+        if utils.PlayerKeys[i] == self.key:
+          self.locked = False;
+          print("I scanned my key and the door clicked open.")
+      if self.locked:
+        print("It look's like I'll need a key from this deparment's head to unlock it.")
+
 
   def examine(self):
     print("The terminal reads \n\'LOCKED\'")

@@ -99,8 +99,8 @@ def use(obj):
  
 def take(obj):
     if obj == "key":
-      itemdictionary['origamiKey'][0].take(filename)
-      player.keys.append(3)
+      itemdictionary['Dr. Yami\'s key card'][0].take(filename)
+      utils.PlayerKeys.append(2)
     else:
       lst = itemsInhere()
       if obj in lst:

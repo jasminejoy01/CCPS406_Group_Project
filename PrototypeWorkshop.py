@@ -101,8 +101,8 @@ def use(obj):
  
 def take(obj):
   if obj == "key":
-      itemdictionary['constructionKey'][0].take(filename)
-      player.keys.append(1)
+      itemdictionary['Dr. Ediface\'s key card'][0].take(filename)
+      utils.PlayerKeys.append(2)
   else:
     lst = itemsInhere()
     if obj in lst:

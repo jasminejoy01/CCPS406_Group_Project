@@ -59,7 +59,7 @@ def movesouth():
         Hallway4.fancyDes()
  
 def moveeast():
-  if not terminal1.locked:
+  if not terminal1.locked or utils.cheat:
     utils.x = utils.x - 1
     utils.roomsvisited[13] = 1
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -68,7 +68,7 @@ def moveeast():
     else:
         ConstructionHeadOffice.fancyDes()
   else:
-    print("I don't have the key for this door.")
+    print("The door is locked.")
         
 
 def itemsInhere():

@@ -111,8 +111,11 @@ def take(obj):
   if "key" in obj:
     obj = 'Dr. Ediface\'s key card'
     if utils.georgeDistracted:
-      itemdictionary['Dr. Ediface\'s key card'][0].take(filename)
-      utils.PlayerKeys.append(2)
+      if 2 in utils.PlayerKeys:
+        print("I already have the card")
+      else:
+        itemdictionary['Dr. Ediface\'s key card'][0].take(filename)
+        utils.PlayerKeys.append(2)
     else:
       print("I can't do that without being noticed. Maybe I can distract him...")
   else:

@@ -66,102 +66,66 @@ def processLanguage(obj=None):
         if len(splitCommand)>0:
           verb = splitCommand[0]
 
-        #Helping the user
-        
-        
-        #1-word commands
-        if len(splitCommand) == 1: 
-            x = utils.x
-            y = utils.y
-            if (verb == "n") | (verb == "north"):
-                where = library(str(x), str(y))
-                __import__(where).movenorth()
-                validCommand = True
-            if (verb == "e") | (verb == "east"):
-                where = library(str(x), str(y))
-                __import__(where).moveeast()
-                validCommand = True
-            if (verb == "s") | (verb == "south"):
-                where = library(str(x), str(y))
-                __import__(where).movesouth()
-                validCommand = True
-            if (verb == "w") | (verb == "west"):
-                where = library(str(x), str(y))
-                __import__(where).movewest()
-                validCommand = True
-            if (verb == "look" and utils.advanced == False):
-                where = library(str(x), str(y))
-                __import__(where).basicDes()
-                validCommand = True
-            if (verb == "look" and utils.advanced == True):
-                where = library(str(x), str(y))
-                __import__(where).fancyDes()
-                validCommand = True
-            if verb == "help":
-                T.help()
-                validCommand = True
-            if verb == "exit":
-                utils.exitgame(currentroomdict)
-                validCommand = True
-            if verb == "inventory" or verb == "i":
-                items = str(utils.inventory.keys())
-                items = items.replace("'", "")
-                print("I have:",items[11:-2])
-                validCommand = True
-            if verb == "gamemap":
-                T.gamemap()
-                validCommand = True
-            if verb == "cheat":
-                utils.cheat = True
-                print("Awesome! All doors have been unlocked!")
-                validCommand = True
-  
-        #2-word commands
-        if len(splitCommand) >= 2:
-            x = utils.x
-            y = utils.y
-            if command == "where am i":
-                locate = whereami(str(x), str(y))
-                print("You are currently in", locate, ".")
-                validCommand = True
-            if command == "look around" and not utils.advanced:
-              where = library(str(x), str(y))
-              __import__(where).basicDes()
+        #Movement
+          x = utils.x
+          y = utils.y
+          where = library(str(x), str(y))
+          if "north" in command or verb == "n":
+              __import__(where).movenorth()
               validCommand = True
-            if command == "look around" and utils.advanced:
-              where = library(str(x), str(y))
-              __import__(where).fancyDes()
+          if "east" in command or verb == "e":
+              __import__(where).moveeast()
               validCommand = True
-            if command == "game map":
-                T.gamemap()
-                validCommand = True
-            if "north" in command:
-                where = library(str(x), str(y))
-                __import__(where).movenorth()
-                validCommand = True
-            if "east" in command:
-                where = library(str(x), str(y))
-                __import__(where).moveeast()
-                validCommand = True
-            if "south" in command:
-                where = library(str(x), str(y))
-                __import__(where).movesouth()
-                validCommand = True
-            if "west" in command:
-                where = library(str(x), str(y))
-                __import__(where).movewest()
-                validCommand = True
-            if command == "look again":
-                where = library(str(x), str(y))
-                __import__(where).fancyDes()
-                validCommand = True
+          if "south" in command or verb == "s":
+              __import__(where).movesouth()
+              validCommand = True
+          if "west" in command or verb == "w":
+              __import__(where).movewest()
+              validCommand = True
 
-            #object interactions
+        #Player tools
+          if "look" in command: #Check if "look at [obj]", else print room des.
+            if "at" in command and len(splitCommand)>2:
+              if "user" in command:
+                    T.readUserGuide()
+                    validCommand = True
+              else:
+                  noun = splitCommand[2]
+                  __import__(where).examine(noun)
+                  validCommand = True
+            else:
+              if utils.advanced:
+                  __import__(where).fancyDes()
+              else:
+                  __import__(where).basicDes()
+
+          elif "help" in command:
+                  T.help()
+                  validCommand = True
+          elif "exit" in command:
+                  utils.exitgame(currentroomdict)
+                  validCommand = True
+          elif "inventory" in command or command == "i":
+                  items = str(utils.inventory.keys())
+                  items = items.replace("'", "")
+                  print("I have:",items[11:-2])
+                  validCommand = True
+          elif "gamemap" in command:
+                  T.gamemap()
+                  validCommand = True
+          elif "cheat" in command:
+                  utils.cheat = True
+                  print("Awesome! All doors have been unlocked!")
+                  validCommand = True
+    
+          #2-word commands
+
+          #object interactions
+          elif len(splitCommand)>1:
+            verb = splitCommand[0]
             noun = splitCommand[1]
-            noun = noun.replace(" ", "")
             if noun == "bin":
               noun = "trash"
-            where = library(str(x), str(y))
             if verb == "read":
                 if "user" in command:
                     T.readUserGuide()
@@ -169,15 +133,17 @@ def processLanguage(obj=None):
                 if 'paper' == noun or 'note' == noun:
                     __import__(where).use(noun)
                     validCommand = True
-            elif (verb == "exam") or (verb == "examine"):
-                if "user" in splitCommand[1]:
+            elif verb == "exam" or verb == "examine":
+                if noun == "user":
                     T.readUserGuide()
                     validCommand = True
                 else:
                   __import__(where).examine(noun)
                   validCommand = True
-            elif (verb == "take" or verb == "get"):
-                if not noun == "key" and noun in str(utils.inventory.keys()):
+            elif verb == "take" or verb == "get":
+                if "key" in noun:
+                  print("placeholder")
+                elif noun in str(utils.inventory.keys()):
                   print("I already have that.")
                 else:
                   __import__(where).take(noun)

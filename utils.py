@@ -7,9 +7,10 @@ roomsvisited = initialize.visited
 x = initialize.x
 y = initialize.x
 
+#Game flags
 GPS = initialize.GPS
 advanced = initialize.advanced  #Determines description complexity
-PlayerKeys = initialize.PlayerKeys #Creator's key
+PlayerKeys = initialize.PlayerKeys #1 = Creator's key, 2 = Origami, 3 = Construction
 inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
 disguise = initialize.disguise
@@ -19,12 +20,12 @@ EMgate = initialize.EMgate
 cleanHall = initialize.cleanHall
 georgeDistracted = initialize.georgeDistracted
 
-origamiHeadChecker = initialize.origamiHeadChecker
-puzzle4 = initialize.puzzle4
-constructionChecker = initialize.constructionChecker
-constructionBotChecker = initialize.constructionBotChecker
-prototypeChecker = initialize.prototypeChecker
-securityPuzzleCheck = initialize.securityPuzzleCheck
+#origamiHeadChecker = initialize.origamiHeadChecker
+#puzzle4 = initialize.puzzle4
+#constructionChecker = initialize.constructionChecker
+#constructionBotChecker = initialize.constructionBotChecker
+#prototypeChecker = initialize.prototypeChecker
+#securityPuzzleCheck = initialize.securityPuzzleCheck
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")

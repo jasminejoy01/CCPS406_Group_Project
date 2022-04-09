@@ -30,7 +30,6 @@ itemdictionary = { # [Item, isLocked]
 # Advanced descriptions turn on
 def basicDes():
     T.CreatorOffice.basicDes()
-    I2.CreatorOffice.GPS()
 
 def fancyDes():
     T.CreatorOffice.fancyDes()

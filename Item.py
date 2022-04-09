@@ -110,11 +110,10 @@ class Terminal:
     if len(utils.PlayerKeys) == 0:
       print("It seems to require an NFC key that I don't have yet.")
     else:
-      for i in range(len(utils.PlayerKeys)):
-        if utils.PlayerKeys[i] == self.key:
-          self.locked = False;
+      if self.key in utils.PlayerKeys:
           print("I scanned my key and the door clicked open.")
-      if self.locked:
+          self.locked = False
+      else:
         print("It look's like I'll need a key from this deparment's head to unlock it.")
 
 

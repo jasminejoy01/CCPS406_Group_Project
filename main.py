@@ -120,7 +120,7 @@ def processLanguage(obj=None):
     
           #2-word commands
 
-          #object interactions
+        #Object interactions
           elif len(splitCommand)>1:
             verb = splitCommand[0]
             noun = splitCommand[1]
@@ -141,17 +141,19 @@ def processLanguage(obj=None):
                   __import__(where).examine(noun)
                   validCommand = True
             elif verb == "take" or verb == "get":
-                if "key" in noun:
-                  print("placeholder")
-                elif noun in str(utils.inventory.keys()):
+                items = str(utils.inventory.keys())
+                items = items.replace("'", "")
+                items = items[11:-2]
+                if noun in items:
+                  print(str(utils.inventory.keys()))
                   print("I already have that.")
                 else:
                   __import__(where).take(noun)
                 validCommand = True
-            elif (verb == "open") and noun == "vent":
+            elif verb == "open" and noun == "vent":
               __import__(where).use(noun)
               validCommand = True
-            elif (verb == "use"):
+            elif verb == "use":
                 validCommand = True
                 if "key" in command:
                   if len(utils.PlayerKeys) > 0:
@@ -171,7 +173,8 @@ def processLanguage(obj=None):
                     utils.cleanHall = True
                 validCommand = True
               
-            if (verb == "speak to" or verb == "speak with"):
+            if verb == "speak" or verb == "say":
+              #This needs a lot of work
                 where = library(str(x), str(y))
                 __import__(where).speakTo(noun)
                 validCommand = True
@@ -180,29 +183,9 @@ def processLanguage(obj=None):
                 __import__(where).listItems()
                 validCommand = True
                     
-        #3-word commands
-        if len(splitCommand) >= 3 and not validCommand:
-            if verb == "read":
-                if "user" in splitCommand[1]:
-                    T.readUserGuide()
-                    validCommand = True
-                if splitCommand[1] == "sticky" and splitCommand[2] == "notes":
-                    where = library(str(x), str(y))
-                    __import__(where).examine(obj)
-                    validCommand = True
-            if (splitCommand[0] == "look"):
-              if "user" in command:
-                    T.readUserGuide()
-                    validCommand = True
-              else:
-                noun = splitCommand[1]
-                noun = noun.replace(" ", "")
-                where = library(str(x), str(y))
-                __import__(where).use(noun)
-                validCommand = True
-        if len(splitCommand) == 0 or not validCommand:
+          if len(splitCommand) == 0 or not validCommand:
             print("Please input a valid command")
-            command = input(" ")
+            command = input("")
             
 while True:
     if os.path.exists('save.py') == True:

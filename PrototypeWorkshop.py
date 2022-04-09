@@ -33,9 +33,9 @@ def basicDes():
       T.PrototypeWorkshop.basicDes1()
     else:
       T.PrototypeWorkshop.basicDes2()
-    if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
-        Puzzle4.breakbotcheck()
-        utils.prototypeChecker == True
+#    if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
+#        Puzzle4.breakbotcheck()
+#        utils.prototypeChecker == True
 
 def fancyDes():
     if not utils.georgeDistracted:

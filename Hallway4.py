@@ -50,6 +50,8 @@ def movenorth():
         Hallway3.fancyDes()  
 
 def movesouth():
+  if 4 in utils.PlayerKeys:
+    terminal4.locked = False
   if not terminal4.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1

@@ -7,59 +7,57 @@ headstat = []
 
 #call function when interacting with room computer
 # in programming lab or just call it when entering room
-def setSchedule():
-    x=0
-    while x == 0:
-        value = input("Welcome!\nWhose schedule would you like to access?\n1. The Creator\n2. Head of Construction\n3. Head of Origami\n0. Exit\n")
-        if value == '1':
-            print("Admin Access Required")
-            time.sleep(1)
-        elif value == '2':
-            print("Admin Access Required")
-            time.sleep(1)
-        elif value == '3':
-            print("...")
-            time.sleep(1)
-            print("Access to schedule #3 granted")
-            time.sleep(1)
-            print("Current schedule: Work\nUpcoming schedule: Meditation ")
-            y=0
-            while y == 0:
-                v = input("Switch to meditation? Y/N")
-                time.sleep(1)
-                print("Remember to change it now")
-                if (v == 'Y') or (v=='y'):
-                    print("You hear the Origami Head grumbling and stomping out of their office...\nI think it's safe to go in there now")
-                    headstat.append('1')
-                    y = 1
-                    x = 1
-                elif (v == 'N') or (v == 'n'):
-                    print("I need to change it")
-                else:
-                    print("Cmon... That's not even an option")
-        elif value == '0':
-            x = 1
-            print("You've exited the scheduler")
-        else:
-            print("Error; invalid input")
-
-
-#from puzzle6 import headstat
-
-#Call when player position == origami head office position
-def origamiheadchecker():
-    if '1' not in headstat:
-        print("The Head seems to still be in the office\nSeems they'll only leave when the schedule is set to Meditation")
-        print("I gotta change their schedule... Maybe I can do that at the programming lab?")
-        #Place player back to room prior to this one
-        #lock em out
-    elif '1' in headstat:
-        print("You got a key!")
-        inventory.append('this key')
-        #Add key to inventory function to maeve's inventory
-
-#tester ignore
-def main():
-    origamiheadchecker()
-    setSchedule()
-    origamiheadchecker()
+class scheduler:
+  def __init__(self):
+    self.name = "computer"
+    self.canTake = False
+    self.inInventory = False
+    self.description = "This computer appears to be signed in under the name 'Mae Na'"
+    self.interactable = True
+    self.useText = ""
+    self.islocked = False
+  
+  def examine(self):
+    print("This computer appears to be signed in under the name 'Mae Na'")
+    print("The desktop background is a picture of a cherry tree in bloom.")
+  
+  def use(self):
+    print("There's a minimized tab. I open it.")
+    self.setSchedule()
+    
+  def setSchedule(self):
+      x=0
+      while x == 0:
+          value = input("Welcome!\nWhose schedule would you like to access?\1. Dr. Cordelia Weaver\2. Dr. George Ediface\3. Dr. Omi Yami\0. Exit\n")
+          if value == '1':
+              print("Admin Access Required")
+              time.sleep(1)
+          elif value == '2':
+              print("Admin Access Required")
+              time.sleep(1)
+          elif value == '3':
+              print("...")
+              time.sleep(1)
+              print("Access to schedule #3 granted")
+              time.sleep(1)
+              print("Upcoming event: Lead meditation in the garden, tomorrow at noon.")
+              y=0
+              while y == 0:
+                  v = input("Switch event time to now? [y/n]")
+                  if v.lower() == 'y':
+                      time.sleep(1)
+                      print("You hear a feminine voice grumbling and rushing out of their office, '...can't respect a simple schedule...'\nI think it's safe to go in there now")
+                      utils.PlayerKeys.append(4)
+                      y = 1
+                      x = 1
+                  elif (v == 'N') or (v == 'n'):
+                      print("I leave the computer.")
+                      y = 1
+                  else:
+                      print("Please choose: [y/n]")
+          elif value == '0':
+              x = 1
+              print("You've exited the scheduler")
+          else:
+              print("Error; invalid input")
+  

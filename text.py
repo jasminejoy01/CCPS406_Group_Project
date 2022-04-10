@@ -108,10 +108,10 @@ class ProgrammingLab:
 
 class BotTesting:
     def basicDes():
-        print("[Robotics Testing Facility - Basic Functions] \n I find myself in a large and spacious area with tables scattered throughout the room; it appears as if there are multiple workstations with varying activities. \n To the west is a door with a sign above it, though I can't read it because there is heavy machinery blocking my view.  \n To the East is [Hallway - Section 1]")
+        print("[Robotics Testing Facility - Basic Functions] \n I find myself in a large and spacious area with tables scattered throughout the room; it appears as if there are multiple workstations with varying activities. \n To the west is a door with a sign above it, though I can't read it because there is heavy machinery blocking my view.  \n To the South is [Hallway - Section 1]")
     
     def fancyDes():
-        print("[Robotics Testing Facility – Basic Functions] \n I'm back inside the Robotics Testing Facility, the room that has all the types of tests placed on different tables. \n To the West is [Bot Testing - Obstacle Course] \n To the East is [Hallway - Section 1]")
+        print("[Robotics Testing Facility – Basic Functions] \n I'm back inside the Robotics Testing Facility, the room that has all the types of tests placed on different tables. \n To the West is [Bot Testing - Obstacle Course] \n To the South is [Hallway - Section 1]")
     
 class BotTestingObstacleCourse:
     def basicDes():

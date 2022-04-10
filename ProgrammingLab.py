@@ -9,6 +9,7 @@ import text as T
 import os
 import room
 import Terminal as term
+import Puzzle6
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -18,11 +19,11 @@ filename = filename.replace(".py", "")
 #name, canTake, inInventory, description, interactable, useText
 #nullItem = I.Item("", False, False, "", False, "")
 terminal1 = term.Terminal(1)
-computer = I.Item("", False, False, "", False, "Hmm.. let's see if I can access people's schedules here... ")
+computer = Puzzle6.scheduler()
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],  
-  'computer':  [ computer  , True ]
+  'computer':  [ computer  , None]
 }
 
 def basicDes():

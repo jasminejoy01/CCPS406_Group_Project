@@ -10,6 +10,7 @@ import CleaningBotStorage
 import text as T
 import os
 import room
+import Terminal as term
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -17,7 +18,7 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
+terminal1 = term.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
    'terminal':  [terminal1 , None ]

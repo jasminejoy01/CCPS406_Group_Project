@@ -2,7 +2,6 @@
 """
 Room#2: Storage for Construction Bots
 """
-
 import Item as I
 import utils
 import OutdoorsMiddle

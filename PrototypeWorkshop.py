@@ -3,7 +3,6 @@
 Room#23: The Prototyping Lab"
 """
 import Item as I
-import Item2 as I2
 import utils
 import Hallway1
 import text as T

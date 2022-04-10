@@ -9,6 +9,7 @@ import OutdoorsMiddle
 import text as T
 import os
 import room
+import Terminal as term
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -16,7 +17,7 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal2 = I.Terminal(2)
+terminal2 = term.Terminal(2)
 
 itemdictionary = { # [Item, isLocked]
   'terminal':  [terminal2     , None ]    

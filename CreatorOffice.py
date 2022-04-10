@@ -4,7 +4,6 @@ Room#25: Creator's Office
 """
 import Item as I
 import utils
-import Item2 as I2
 import Hallway3
 import text as T
 import os

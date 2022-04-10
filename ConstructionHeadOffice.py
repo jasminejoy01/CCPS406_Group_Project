@@ -4,7 +4,6 @@ Room#13: The Office of the Head of Contruction Bots.
 """
 
 import Item as I
-import Item2 as I2
 import utils
 import Hallway3
 import text as T

@@ -11,6 +11,7 @@ import Hallway3
 import text as T
 import os
 import room
+import Terminal as term
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -19,7 +20,7 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
-terminal4 = I.Terminal(4)#Will be unlocked when Dr Yami leaves her office
+terminal4 = term.Terminal(4)#Will be unlocked when Dr Yami leaves her office
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],

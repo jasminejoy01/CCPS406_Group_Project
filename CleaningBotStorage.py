@@ -3,7 +3,6 @@
 Room#2: Storage for Cleaning Bots
 """
 import Item as I
-import Item2 as I2
 import utils
 import PrivateWorkshop
 import OutdoorsNorth

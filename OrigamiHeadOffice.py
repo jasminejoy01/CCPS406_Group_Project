@@ -2,7 +2,6 @@
 """
 Room#21: Head of Origami Office.
 """
-import Item2 as I2
 import Item as I
 import utils
 import Hallway4

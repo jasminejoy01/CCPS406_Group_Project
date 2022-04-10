@@ -3,7 +3,6 @@
 Room#26: Server room
 """
 import Item as I
-import Item2 as I2
 import utils
 import Hallway4
 import time
@@ -16,10 +15,8 @@ filename = filename.replace(".py", "")
 
 ## Items in Room
 ##################
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():

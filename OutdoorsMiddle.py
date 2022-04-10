@@ -11,6 +11,7 @@ import BuildingEntranceExit
 import text as T
 import os
 import room
+import Terminal as term
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -19,7 +20,7 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
-terminal3 = I.Terminal(3)
+terminal3 = term.Terminal(3)
 
 itemdictionary = { # [Item, isLocked]
   'terminal':   [terminal3, True]

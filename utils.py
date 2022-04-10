@@ -2,8 +2,6 @@ import sys
 import initialize
 import os
 
-
-
 x = initialize.x
 y = initialize.x
 

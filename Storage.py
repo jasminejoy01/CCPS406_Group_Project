@@ -4,7 +4,6 @@ Room#7: Storage room
 """
 import Item as I
 import utils
-import Item2 as I2
 import Hallway6
 import text as T
 import os
@@ -25,13 +24,9 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     T.Storage.basicDes()
-    I2.Lost_Found.item_add()
-    I2.StorageCloset.disguise()
          
 def fancyDes():
     T.Storage.fancyDes()
-    I2.Lost_Found.item_add()
-    I2.StorageCloset.disguise()
 
 def movewest():
     print("Woops! Can't go that way!")

@@ -64,7 +64,7 @@ def use(obj):
  
 def take(obj):
   if "key" in obj:
-    obj = 'Dr. Yami\'s key card'
+      obj = 'Dr. Yami\'s key card'
       if 2 in utils.PlayerKeys:
         print("I already have the card")
       else:

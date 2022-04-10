@@ -27,6 +27,14 @@ oriBotGPS = initialize.oriBotGPS
 #constructionBotChecker = initialize.constructionBotChecker
 #prototypeChecker = initialize.prototypeChecker
 #securityPuzzleCheck = initialize.securityPuzzleCheck
+def inInventory(obj):
+  items = str(inventory.keys())
+  items = items.replace("'", "")
+  if obj in items[11:-2]:
+    return True
+  else:
+    return False
+
 
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")

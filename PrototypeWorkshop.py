@@ -6,7 +6,7 @@ import Item as I
 import Item2 as I2
 import utils
 import Hallway1
-import Puzzle4
+#import Puzzle4
 import text as T
 import os
 import player
@@ -71,13 +71,10 @@ def itemsInhere():
     return itemlist
 
 def itemsInInventory():
-    inventorylist = []
-    if len(utils.inventory) == 0 : 
-        return inventorylist
-    else:
-        for each in utils.inventory.keys():
-            inventorylist.append(each)
-        return inventorylist
+    inventorylist = [] 
+    for each in utils.inventory.keys():
+      inventorylist.append(each)
+    return inventorylist
     
 def listItems():
     lst = itemsInhere()
@@ -130,17 +127,3 @@ def take(obj):
           print("I can't take that.")
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
-
-def unlock(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].unlock()
-    else:
-        print("Hmm... {} cannot be unlocked!".format(obj))
-
-def removeInventory(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        (utils.inventory).remove(obj)
-    else:
-        print("Hmm... {} is not in inventory!".format(obj))

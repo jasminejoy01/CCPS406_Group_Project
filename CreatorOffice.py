@@ -57,13 +57,10 @@ def itemsInhere():
     return itemlist
 
 def itemsInInventory():
-    inventorylist = []
-    if len(utils.inventory) == 0 : 
-        return inventorylist
-    else:
-        for each in utils.inventory.keys():
-            inventorylist.append(each)
-        return inventorylist
+    inventorylist = [] 
+    for each in utils.inventory.keys():
+      inventorylist.append(each)
+    return inventorylist
     
 def listItems():
     lst = itemsInhere()
@@ -109,26 +106,6 @@ def take(obj):
         itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
-
-def unlock(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].unlock()
-    else:
-        print("Hmm... {} cannot be unlocked!".format(obj))
-
-def removeInventory(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        (utils.inventory).remove(obj)
-    else:
-        print("Hmm... {} is not in inventory!".format(obj))
-
-def speakTo(person):
-    if person == 'creator':
-        I2.CreatorOffice.GPS()
-    else:
-        print("Hmm... {} isn't someone in this room!".format(person))
 
 def creatorIntro():
   print("\nSuddenly, she looks up.\n'Hm? Oh - OH! Standard cleaning bots are programmed to stay away from my room so you must be-!' She covers her mouth and stands up. Quickly, she hurries over to me. In a lowered voice, she says 'I was sure I set a reminder to come check on you. Poor Ada must've had a tough time... But here you are! You came to see me!")

@@ -24,9 +24,13 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     T.OrigamiBotStorage.basicDes()
+    if not utils.inInventory("origamiBot"):
+      print("A single origamiBot sits out on a table.")
          
 def fancyDes():
     T.OrigamiBotStorage.fancyDes()
+    if not utils.inInventory("origamiBot"):
+      print("A single origamiBot sits out on a table.")
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -53,13 +57,10 @@ def itemsInhere():
     return itemlist
 
 def itemsInInventory():
-    inventorylist = []
-    if len(utils.inventory) == 0 : 
-        return inventorylist
-    else:
-        for each in utils.inventory.keys():
-            inventorylist.append(each)
-        return inventorylist
+    inventorylist = [] 
+    for each in utils.inventory.keys():
+      inventorylist.append(each)
+    return inventorylist
     
 def listItems():
     lst = itemsInhere()
@@ -95,17 +96,3 @@ def take(obj):
         itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
-
-def unlock(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].unlock()
-    else:
-        print("Hmm... {} cannot be unlocked!".format(obj))
-
-def removeInventory(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        (utils.inventory).remove(obj)
-    else:
-        print("Hmm... {} is not in inventory!".format(obj))

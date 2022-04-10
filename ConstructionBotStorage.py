@@ -6,7 +6,7 @@ Room#2: Storage for Construction Bots
 import Item as I
 import utils
 import OutdoorsMiddle
-import Puzzle4
+#import Puzzle4
 import text as T
 import os
 
@@ -27,9 +27,9 @@ def fancyDes():
     T.ConstructionBotStorage.fancyDes()
 
 def movewest():
-    if utils.constructionBotChecker == False:
-        Puzzle4.consbot()
-        utils.constructionBotChecker == True
+#    if utils.constructionBotChecker == False:
+#        Puzzle4.consbot()
+#        utils.constructionBotChecker == True
     utils.x = utils.x + 1
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.roomsvisited[5] = 1    
@@ -55,13 +55,10 @@ def itemsInhere():
     return itemlist
 
 def itemsInInventory():
-    inventorylist = []
-    if len(utils.inventory) == 0 : 
-        return inventorylist
-    else:
-        for each in utils.inventory.keys():
-            inventorylist.append(each)
-        return inventorylist
+    inventorylist = [] 
+    for each in utils.inventory.keys():
+      inventorylist.append(each)
+    return inventorylist
     
 def listItems():
     lst = itemsInhere()
@@ -97,17 +94,3 @@ def take(obj):
         itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))
-
-def unlock(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].unlock()
-    else:
-        print("Hmm... {} cannot be unlocked!".format(obj))
-
-def removeInventory(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        (utils.inventory).remove(obj)
-    else:
-        print("Hmm... {} is not in inventory!".format(obj))

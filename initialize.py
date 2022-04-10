@@ -1,4 +1,4 @@
-import numpy
+#import numpy
 import text as T
 
 roomdict = { # [desc, xcoord, ycoord, code]

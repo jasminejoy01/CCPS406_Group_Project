@@ -73,18 +73,18 @@ def processLanguage(obj=None):
           if "north" in command or verb == "n":
               __import__(where).movenorth()
               validCommand = True
-          if "east" in command or verb == "e":
+          elif "east" in command or verb == "e":
               __import__(where).moveeast()
               validCommand = True
-          if "south" in command or verb == "s":
+          elif "south" in command or verb == "s":
               __import__(where).movesouth()
               validCommand = True
-          if "west" in command or verb == "w":
+          elif "west" in command or verb == "w":
               __import__(where).movewest()
               validCommand = True
 
         #Player tools
-          if "look" in command: #Check if "look at [obj]", else print room des.
+          elif "look" in command: #Check if "look at [obj]", else print room des.
             if "at" in command and len(splitCommand)>2:
               if "user" in command:
                     T.readUserGuide()
@@ -141,11 +141,7 @@ def processLanguage(obj=None):
                   __import__(where).examine(noun)
                   validCommand = True
             elif verb == "take" or verb == "get":
-                items = str(utils.inventory.keys())
-                items = items.replace("'", "")
-                items = items[11:-2]
-                if noun in items:
-                  print(str(utils.inventory.keys()))
+                if utils.inInventory(noun):
                   print("I already have that.")
                 else:
                   __import__(where).take(noun)

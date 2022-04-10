@@ -78,7 +78,7 @@ def take(obj):
   if "key" in obj:
     obj = 'Dr. Ediface\'s key card'
     if utils.georgeDistracted:
-      if 3 in utils.PlayerKeys:
+      if utils.inInventory(obj):
         print("I already have the card")
       else:
         itemdictionary['Dr. Ediface\'s key card'][0].take(filename)

@@ -46,7 +46,6 @@ def exitgame(roomcodes):
             #arr = roomsvisited.tolist()
             
             arraylist = ['## rooms visited\n', 
-                         'visited =', str(roomsvisited)+"\n", 
                          '## current location\n', 
                          'x = ', str(initialize.x)+"\n" , 
                          'y = ', str(initialize.y)+"\n" , 

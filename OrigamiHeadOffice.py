@@ -37,9 +37,6 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    if utils.origamiHeadChecker == False: 
-        puzzle6.main()
-        utils.origamiHeadChecker = True
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
     if not utils.advanced:
@@ -65,7 +62,7 @@ def use(obj):
 def take(obj):
   if "key" in obj:
       obj = 'Dr. Yami\'s key card'
-      if 2 in utils.PlayerKeys:
+      if utils.inInventory(obj):
         print("I already have the card")
       else:
         itemdictionary['Dr. Yami\'s key card'][0].take(filename)

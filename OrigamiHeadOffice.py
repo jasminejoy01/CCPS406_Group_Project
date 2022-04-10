@@ -17,10 +17,14 @@ filename = filename.replace(".py", "")
 
 #name, canTake, inInventory, description, interactable, useText
 origamiKey = I.Item("Dr. Yami's key card", True, False,  "A pristene key card with an elegant origami crane printed onto it.", False, "I'm not sure what to do with this")
+desk = I.Item("desk", False, False, "An elegane desk with crisp, clean edges. It has a single drawer.", False, "")
+drawer = I.Item("desk", True, False, "A drawer with a minimalist rectangular knob.", True, "I open the drawer. In it is a keycard with an origami crane printed onto it.")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
-  'Dr. Yami\'s key card' : [origamiKey, None]
+  'Dr. Yami\'s key card' : [origamiKey, None],
+  'desk' :                 [desk, None],
+  'drawer' :               [drawer, None]
 }
 
 def basicDes():
@@ -59,4 +63,12 @@ def use(obj):
     room.use(obj, itemdictionary)
  
 def take(obj):
+  if "key" in obj:
+    obj = 'Dr. Yami\'s key card'
+      if 2 in utils.PlayerKeys:
+        print("I already have the card")
+      else:
+        itemdictionary['Dr. Yami\'s key card'][0].take(filename)
+        utils.PlayerKeys.append(2)
+  else:
     room.take(obj, itemdictionary, filename)

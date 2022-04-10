@@ -4,6 +4,7 @@ schedule
 
 import time
 headstat = []
+import utils
 
 #call function when interacting with room computer
 # in programming lab or just call it when entering room
@@ -28,7 +29,7 @@ class scheduler:
   def setSchedule(self):
       x=0
       while x == 0:
-          value = input("Welcome!\nWhose schedule would you like to access?\1. Dr. Cordelia Weaver\2. Dr. George Ediface\3. Dr. Omi Yami\0. Exit\n")
+          value = input("Welcome!\nWhose schedule would you like to access?\n1. Dr. Cordelia Weaver\n2. Dr. George Ediface\n3. Dr. Omi Yami\0. Exit\n")
           if value == '1':
               print("Admin Access Required")
               time.sleep(1)

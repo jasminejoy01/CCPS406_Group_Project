@@ -28,15 +28,15 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
   if utils.alarmOn:
-    PrintingLab.basicDes1()
+    T.ProgrammingLab.basicDes2()
   else:
-    PrintingLab.basicDes2()
+    T.ProgrammingLab.basicDes2()
          
 def fancyDes():
   if utils.alarmOn:
-    PrintingLab.fancyDes2()
+    T.ProgrammingLab.fancyDes2()
   else:
-    PrintingLab.fancyDes2()
+    T.ProgrammingLab.fancyDes1()
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -62,6 +62,9 @@ def examine(obj):
     room.examine(obj, itemdictionary)
 
 def use(obj):
+  if obj == "computer" and not utils.alarmOn:
+    print("If I were to use a computer in front of all these people, they might realize I'm not a normal robot.")
+  else:
     room.use(obj, itemdictionary)
  
 def take(obj):

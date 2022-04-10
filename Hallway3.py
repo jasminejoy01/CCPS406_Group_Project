@@ -18,10 +18,10 @@ filename = filename.replace(".py", "")
 ##################
 #name, canTake, inInventory, description, interactable, useText
 nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
+terminal3 = I.Terminal(3)#Construction office terminal
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+   'terminal':  [terminal3 , None ]
 }
 
 def basicDes():
@@ -34,7 +34,6 @@ def fancyDes():
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[25] = 1
     if not utils.advanced:
         CreatorOffice.basicDes()
         CreatorOffice.creatorIntro()
@@ -45,7 +44,6 @@ def movewest():
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[18] = 1
     if not utils.advanced:
         Hallway2.basicDes()
     else:
@@ -54,16 +52,14 @@ def movenorth():
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
-    utils.roomsvisited[20] = 1
     if not utils.advanced:
         Hallway4.basicDes()
     else:
         Hallway4.fancyDes()
  
 def moveeast():
-  if not terminal1.locked or utils.cheat:
+  if not terminal3.locked or utils.cheat:
     utils.x = utils.x - 1
-    utils.roomsvisited[13] = 1
     os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         ConstructionHeadOffice.basicDes()

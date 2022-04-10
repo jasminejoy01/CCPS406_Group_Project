@@ -30,7 +30,6 @@ def fancyDes():
 
 def movewest(): 
   utils.x = utils.x + 1
-  utils.roomsvisited[4] = 1
   os.system('cls' if os.name == 'nt' else 'clear')
   if not utils.advanced:
         OutdoorsNorth.basicDes()       
@@ -45,7 +44,7 @@ def movesouth():
 
 def moveeast():
   utils.x = utils.x - 1 
-  utils.roomsvisited[0] = 1
+  #utils.roomvisited[0] = 1
   os.system('cls' if os.name == 'nt' else 'clear')
   if not utils.advanced:
       PrivateWorkshop.basicDes()

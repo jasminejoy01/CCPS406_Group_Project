@@ -42,10 +42,9 @@ def fancyDes():
     T.PrivateWorkshop.fancyDes()
 
 def movewest():
-    if utils.cheat or not terminal1.locked or utils.roomsvisited[1] == 1:
+    if utils.cheat or not terminal1.locked:
       os.system('cls' if os.name == 'nt' else 'clear')
       utils.x = utils.x + 1
-      utils.roomsvisited[1] = 1
       if not utils.advanced:
           CleaningBotStorage.basicDes()
       else:

@@ -13,8 +13,6 @@ import os
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
-#utils.roomsvisited[21] = 1
-
 
 ## Items in Room
 ##################
@@ -42,7 +40,6 @@ def movenorth():
         utils.origamiHeadChecker = True
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[20] = 1
     if not utils.advanced:
       Hallway4.basicDes()
     else:

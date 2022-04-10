@@ -2,6 +2,7 @@
 """
 Room#15: Security Office
 """
+#Not actually accessible to the player, might delete this file
 
 import Item as I
 import utils
@@ -17,10 +18,9 @@ filename = filename.replace(".py", "")
 ##################
 #name, islocked, canTake, inInventory, description, interactable, useText, unlockText
 #nullItem = I.Item("", False, False, False, "", False, "", "")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
+
 }
 
 def basicDes():
@@ -33,28 +33,14 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():  
+  if utils.cheat == True or terminal1.locked == False:
+    utils.y = utils.y + 1
     if not utils.advanced:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            utils.roomsvisited[14] = 1
-            Hallway5.basicDes()
-        else:
-            print("The door is locked.")
+      Hallway5.basicDes()
     else:
-        if utils.cheat == True or terminal1.locked == False or utils.roomsvisited[14] == 1:
-            utils.y = utils.y + 1
-            if utils.x < 0:
-                utils.x = 0
-            if utils.y < 0:
-                utils.y = 0
-            Hallway5.fancyDes()
-            utils.roomsvisited[14] = 1
-        else:
-            print("The door is locked.")   
+      Hallway5.fancyDes()
+  else:
+    print("The door is locked.")   
 
 def movesouth():
     print("Woops! Can't go that way!")

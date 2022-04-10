@@ -30,12 +30,8 @@ def fancyDes():
     T.ConstructionHeadOffice.fancyDes()
 
 def movewest():
-    if utils.constructionChecker == False:
-        Puzzle4.constructionchecker()
-        utils.constructionChecker = True
     utils.x = utils.x + 1
-    os.system('cls' if os.name == 'nt' else 'clear')
-    utils.roomsvisited[19] = 1        
+    os.system('cls' if os.name == 'nt' else 'clear')    
     if not utils.advanced:
       Hallway3.basicDes()
     else:
@@ -46,7 +42,6 @@ def movenorth():
 
 def movesouth():
     print("Woops! Can't go that way!")
-    #print("You're  moving into Hallway#5.")
 
 def moveeast():
     print("Woops! Can't go that way!")

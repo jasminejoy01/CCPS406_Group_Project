@@ -192,7 +192,7 @@ while True:
         utils.x = save.x
         utils.y = save.y
         utils.inventory = save.inventory
-        utils.roomsvisited = save.visited
+        #utils.roomsvisited = save.visited
         utils.disguise = save.disguise
         utils.programminglabOccupied = save.programminglabOccupied
         os.remove('save.py')

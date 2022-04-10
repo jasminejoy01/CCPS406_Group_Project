@@ -11,7 +11,6 @@ import os
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
-#utils.roomsvisited[11] = 1
 
 ## Items in Room
 ##################
@@ -36,7 +35,6 @@ def movewest():
       print("The guard at the desk stops me before I can get to the hall. \n 'What are you doing?' she yells, 'Don't you see how filty this room is? I swear, they're so proud of their fancy cleaning bots, you'd think they'd recognize when a job needs doing.''")
     else:
         utils.x = utils.x + 1
-        utils.roomsvisited[17] = 1
         os.system('cls' if os.name == 'nt' else 'clear')
         if not utils.advanced:
             Hallway1.basicDes()
@@ -44,16 +42,13 @@ def movewest():
             Hallway1.fancyDes()
 
 def movenorth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def moveeast():
     utils.x = utils.x - 1
-    utils.roomsvisited[5] = 1
     os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
         OutdoorsMiddle.basicDes()

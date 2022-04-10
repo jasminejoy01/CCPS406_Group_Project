@@ -33,7 +33,6 @@ def fancyDes():
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[11] = 1
     if not utils.advanced:
         BuildingEntranceExit.basicDes()
     else:
@@ -42,7 +41,7 @@ def movewest():
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[4] = 1
+    #utils.roomvisited[4] = 1
     if not utils.advanced:
       OutdoorsNorth.basicDes()
     else:
@@ -51,7 +50,6 @@ def movenorth():
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
-    utils.roomsvisited[6] = 1
     if not utils.advanced:
       OutdoorsSouth.basicDes()
     else:
@@ -61,7 +59,6 @@ def moveeast():
   if not terminal3.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[2] = 1
     if not utils.advanced:
       ConstructionBotStorage.basicDes()
     else:

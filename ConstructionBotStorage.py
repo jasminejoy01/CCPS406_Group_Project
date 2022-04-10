@@ -27,12 +27,8 @@ def fancyDes():
     T.ConstructionBotStorage.fancyDes()
 
 def movewest():
-#    if utils.constructionBotChecker == False:
-#        Puzzle4.consbot()
-#        utils.constructionBotChecker == True
     utils.x = utils.x + 1
-    os.system('cls' if os.name == 'nt' else 'clear')
-    utils.roomsvisited[5] = 1    
+    os.system('cls' if os.name == 'nt' else 'clear') 
     if not utils.advanced:
       OutdoorsMiddle.basicDes()
     else:

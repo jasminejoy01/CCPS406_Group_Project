@@ -17,11 +17,8 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-  'terminal':  [terminal1     , None ]   
 }
 
 def basicDes():
@@ -33,7 +30,6 @@ def fancyDes():
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[23] = 1
     if not utils.advanced:
         PrototypeWorkshop.basicDes()
     else:
@@ -42,7 +38,6 @@ def movewest():
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[16] = 1
     if not utils.advanced:
         BotTesting.basicDes()
     else:
@@ -51,7 +46,6 @@ def movenorth():
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
-    utils.roomsvisited[18] = 1
     if not utils.advanced:
         Hallway2.basicDes()
     else:
@@ -60,7 +54,6 @@ def movesouth():
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[11] = 1
     if not utils.advanced:
         BuildingEntranceExit.basicDes()
     else:

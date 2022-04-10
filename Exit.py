@@ -15,10 +15,9 @@ filename = filename.replace(".py", "")
 itemshere = []## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-nullItem = I.Item("", False, False, "", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
-#   'nullItem': [nullItem  , None],
 }
 
 def basicDes():
@@ -34,7 +33,6 @@ def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
     Hallway6.basicDes()
     utils.y = utils.y - 1
-    #print("You're moving into Hallway6!")
 
 def movesouth():
     if not utils.disguise:

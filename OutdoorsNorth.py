@@ -21,6 +21,7 @@ terminal1 = I.Terminal(1)
 itemdictionary = { # [Item, isLocked]
    'terminal':  [terminal1 , None ]
 }
+terminal1.locked = False
 
 def basicDes():
     T.OutdoorNorth.basicDes()
@@ -31,7 +32,6 @@ def fancyDes():
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[10] = 1
     if not utils.advanced:
         Greenspace.basicDes()
     else:
@@ -43,7 +43,6 @@ def movenorth():
 def movesouth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
-    utils.roomsvisited[5] = 1
     if not utils.advanced:
         OutdoorsMiddle.basicDes()
     else:
@@ -52,7 +51,6 @@ def movesouth():
 def moveeast():    
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[1] = 1
     if not utils.advanced:
       CleaningBotStorage.basicDes()
     else:

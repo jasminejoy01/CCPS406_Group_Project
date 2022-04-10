@@ -33,7 +33,6 @@ def movewest():
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[5] = 1
     if not utils.advanced:
         OutdoorsMiddle.basicDes()
     else:
@@ -46,7 +45,6 @@ def moveeast():
   if not terminal2.locked or utils.cheat:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[3] = 1
     if not utils.advanced:
         OrigamiBotStorage.basicDes()
     else:

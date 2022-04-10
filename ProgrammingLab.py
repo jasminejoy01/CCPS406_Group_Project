@@ -30,10 +30,8 @@ def fancyDes():
     T.ProgrammingLab.fancyDes()
 
 def movewest():
-    #This should not be in movewest! This doesn't make sense here!
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[18] = 1
     if not utils.advanced:
         Hallway2.basicDes()
     else:

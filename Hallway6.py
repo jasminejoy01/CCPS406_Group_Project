@@ -30,7 +30,6 @@ def fancyDes():
 def movewest():  
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
-    utils.roomsvisited[14] = 1
     if not utils.advanced:
         Hallway5.basicDes()
     else:
@@ -39,7 +38,6 @@ def movewest():
 def movenorth(): 
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y - 1
-    utils.roomsvisited[7] = 1
     if not utils.advanced:
         Storage.basicDes()
     else:
@@ -52,7 +50,6 @@ def movesouth():
   else:
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.y = utils.y + 1
-    utils.roomsvisited[9] = 1
     if not utils.advanced:
         Exit.basicDes()
     else:

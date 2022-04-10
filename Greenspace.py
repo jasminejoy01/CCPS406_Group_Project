@@ -14,10 +14,8 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-terminal1 = I.Terminal(1)
 
 itemdictionary = { # [Item, isLocked]
-   'terminal':  [terminal1 , None ]
 }
 
 def basicDes():
@@ -38,7 +36,6 @@ def movesouth():
 def moveeast():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[4] = 1
     if not utils.advanced:
         OutdoorsNorth.basicDes()
     else:

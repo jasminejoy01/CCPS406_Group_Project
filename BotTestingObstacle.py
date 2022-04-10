@@ -36,7 +36,6 @@ def movewest():
     print("Woops! Can't go that way!")
 
 def movenorth():
-    #print(utils.x, utils.y)
     print("Woops! Can't go that way!")
 
 def movesouth():
@@ -44,7 +43,6 @@ def movesouth():
 
 def moveeast():  
     utils.x = utils.x - 1
-    utils.roomsvisited[16] = 1
     os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
       BotTesting.basicDes()   

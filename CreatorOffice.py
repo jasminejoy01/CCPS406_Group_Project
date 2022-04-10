@@ -45,7 +45,6 @@ def movesouth():
 
 def moveeast():
   utils.x = utils.x - 1
-  utils.roomsvisited[19] = 1
   os.system('cls' if os.name == 'nt' else 'clear')
   Hallway3.fancyDes()
   utils.advanced = True

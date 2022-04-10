@@ -33,18 +33,12 @@ def basicDes():
       T.PrototypeWorkshop.basicDes1()
     else:
       T.PrototypeWorkshop.basicDes2()
-#    if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
-#        Puzzle4.breakbotcheck()
-#        utils.prototypeChecker == True
 
 def fancyDes():
     if not utils.georgeDistracted:
       T.PrototypeWorkshop.fancyDes1()
     else:
       T.PrototypeWorkshop.fancyDes2()
-    if utils.prototypeChecker == False: # and utils.roomsvisited[23] == 1:
-        Puzzle4.breakbotcheck()
-        utils.prototypeChecker == True
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -58,7 +52,6 @@ def movesouth():
 def moveeast():   
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
-    utils.roomsvisited[17] = 1
     if not utils.advanced:
         Hallway1.basicDes()
     else:

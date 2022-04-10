@@ -2,7 +2,7 @@ import sys
 import initialize
 import os
 
-roomsvisited = initialize.visited
+
 
 x = initialize.x
 y = initialize.x
@@ -21,12 +21,6 @@ cleanHall = initialize.cleanHall
 georgeDistracted = initialize.georgeDistracted
 oriBotGPS = initialize.oriBotGPS
 
-#origamiHeadChecker = initialize.origamiHeadChecker
-#puzzle4 = initialize.puzzle4
-#constructionChecker = initialize.constructionChecker
-#constructionBotChecker = initialize.constructionBotChecker
-#prototypeChecker = initialize.prototypeChecker
-#securityPuzzleCheck = initialize.securityPuzzleCheck
 def inInventory(obj):
   items = str(inventory.keys())
   items = items.replace("'", "")

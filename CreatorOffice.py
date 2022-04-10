@@ -50,25 +50,14 @@ def moveeast():
   Hallway3.fancyDes()
   utils.advanced = True
 
-
-
 def listItems():
     print(itemdictionary.keys())
     
 def examine(obj):
-    lst = itemdictionary.keys()
-    #print(obj)
-    if obj in lst:
-        if itemdictionary[obj][1] == True or itemdictionary[obj][1] == None:
-            itemdictionary[obj][0].examine()
-    else:
-        print("Hmm... {} doesn't seem to be in this room!".format(obj))
- 
+    room.examine(obj, itemdictionary)
+
 def take(obj):
-    if obj in itemdictionary.keys():
-        itemdictionary[obj][0].take(filename)
-    else:
-        print("Hmm... {} can't be taken out of this room!".format(obj))
+    room.take(obj, itemdictionary)
 
 def use(obj):
     if obj == "vent" or obj == "screwdriver":

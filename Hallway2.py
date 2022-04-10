@@ -35,15 +35,10 @@ def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x + 1
     if not utils.advanced:
-      if utils.alarmOn:
-        T.PrintingLab.basicDes1()
-      else:
-        T.PrintingLab.basicDes2()
+      PrintingLab.basicDes()
     else:
-      if utils.alarmOn:
-        T.PrintingLab.fancyDes2()
-      else:
-        T.PrintingLab.fancyDes2()
+      PrintingLab.fancyDes()
+
 
 def movenorth():
     os.system('cls' if os.name == 'nt' else 'clear')

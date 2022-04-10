@@ -32,6 +32,7 @@ def fancyDes():
       print("One of the printers has a large tarp over it. It looks fairly secure, so I shouldn't bother with it.")
     else:
       print("It appears that a covering has been ripped off of one of the printers. It must've taken a lot of force.")
+
     
 def movewest():
     print("Woops! Can't go that way!")
@@ -43,6 +44,7 @@ def movesouth():
     print("Woops! Can't go that way!")
 
 def moveeast():
+    os.system('cls' if os.name == 'nt' else 'clear')
     utils.x = utils.x - 1
     if not utils.advanced:
         Hallway2.basicDes()

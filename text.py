@@ -116,10 +116,10 @@ class BotTestingObstacleCourse:
 
 class PrototypeWorkshop:
     def basicDes1():
-        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nOn one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state.\nAcross the room, a burly man seems to be working on something. His jacket is draped over his chair. \nTo the East is the door that leads back into [Hallway - Section 1]")
+        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of copper wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nOn one of the tables near the door is one of the more complete looking robots, there are papers beside it that read 'Construction 1.6 Prototype'; it looks fairly fragile in this state.\nAcross the room, a burly man seems to be working on something. His jacket is draped over his chair. \nTo the East is the door that leads back into [Hallway - Section 1]")
 
     def basicDes2():
-        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nThe large man is hunched over the Construction prototype, delicately reassembling it. His jacket is unattended, draped over a chair.\nTo the East is the door that leads back into [Hallway - Section 1]")
+        print("[Prototype Workshop]\nThis room is very cluttered; there are gears and bits of copper wire scattered everywhere on the floor, in storage containers, and on the tables.\nThe robots in this room look like they're a mixture of the other models I've seen on the compound.\nThe large man is hunched over the Construction prototype, delicately reassembling it. His jacket is unattended, draped over a chair.\nTo the East is the door that leads back into [Hallway - Section 1]")
   
     def fancyDes1():
         print("[Prototype Workshop]\nThis room is still filled with many colorful spare parts and tools.\nThe bins have a dizzying array of different colored wires, printing material, and spare parts.\nA robot labled 'Construction 1.6 Prototype' lies still on a table. It is made up of mismatched coloured parts. A burly man is carefully working on some new project, wires and circuitry spilling over the table in front of him. His jacket is drapped across his chair. \nTo the East is [Hallway - Section 1]")
@@ -143,10 +143,10 @@ class CreatorOffice:
 
 class ServerRoom:
     def basicDes():
-        print("[Server Room] \n There is nothing in this room except many large glass boxes, all containing flashing lights, and wires pouring in and out of the shelves of lights. \n One thing to note of this room is the amount of ventilation that's been designed; I reason that these large glass boxes must create a large amount of heat. \n To the East is the door that leads back into [Hallway - Section 4]")
+        print("[Server Room] \n This room is full of many large glass boxes, all containing flashing lights, and wires pouring in and out of the shelves of lights. \nThere's an electrical panel on the wall. It looks sensitive. \n To the East is the door that leads back into [Hallway - Section 4]")
     
     def fancyDes():
-        print("[Server Room] \n The most boring room in the building; bland, colorless (minus the blinking red and green lights), and uninteresting. \n There are ribbons hanging from the vents above the room; they're flying in rythym to the air current. \n To the East is the door that leads back into [Hallway - Section 4] \n  I see a panel I haven't noticed before; There's a wire labeled Smoke Alarm.")
+        print("[Server Room] \n The most boring room in the building; bland, colorless (minus the blinking red and green lights), and uninteresting. \n There are ribbons hanging from the vents above the room; they're flying in rythym to the air current. \nThere's an electrical panel on the wall. It looks sensitive. \n To the East is the door that leads back into [Hallway - Section 4]")
     
 class OrigamiHeadOffice:
     def basicDes():

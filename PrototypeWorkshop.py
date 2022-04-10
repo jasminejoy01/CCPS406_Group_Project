@@ -15,7 +15,7 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-wire = I.Item("wire", False, False, "A piece of copper wire, highly conductive", False, "I push the copper wire into the pannel")
+wire = I.Item("wire", True, False, "A piece of copper wire, highly conductive", False, "I push the copper wire into the pannel")
 constructionKey = I.Item("Dr. Ediface's key card", True, False,  "A well-worn key card. It doesn't look like much.", False, "I'm not sure what to do with this")
 jacket = I.Item("jacket", False, False, "Some sort of lab coat. I can see a keycard in its pocket.", False, "")
 

@@ -20,12 +20,10 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    T.ServerRoom.basicDes()
-
+  T.ServerRoom.basicDes()
 
 def fancyDes():
-    T.ServerRoom.basicDes()
-
+  T.ServerRoom.basicDes()
 
 def movewest():
     print("Woops! Can't go that way!")
@@ -49,10 +47,23 @@ def listItems():
     print(itemdictionary.keys())
     
 def examine(obj):
+  if "panel" in obj or "control" in obj or "electrical" in obj:
+    print("The panel labels controls for everything from lights to emergency alarms in every room. Not locks, unfortunately. I could probably use this for something else.")
+  else:
     room.examine(obj, itemdictionary)
 
 def use(obj):
+  if "panel" in obj or "wire" in obj or "copper" in obj or "control" in obj or "electrical" in obj:
+    if utils.inInventory("wire"):
+      print("I push my copper wire into the electrical panel, and sparks fly.")
+      print("I hear an alarm go off down the hall, and people complaining as they move out.")
+    elif "panel" in obj or "control" in obj or "electrical" in obj:
+      print("I could probably use something to short-circuit this.")
+    else:
+      room.use(obj, itemdictionary)
+  else:
     room.use(obj, itemdictionary)
+
  
 def take(obj):
     room.take(obj, itemdictionary, filename)

@@ -126,6 +126,8 @@ def processLanguage(obj=None):
             noun = splitCommand[1]
             if noun == "bin":
               noun = "trash"
+            if "copper wire" in command:
+              noun = "wire"
             if verb == "read":
                 if "user" in command:
                     T.readUserGuide()

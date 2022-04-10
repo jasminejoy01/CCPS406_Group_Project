@@ -21,13 +21,11 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     T.ServerRoom.basicDes()
-    if utils.securityPuzzleCheck == False:
-        I2.ServerRoom.smokealarm()
+
 
 def fancyDes():
     T.ServerRoom.basicDes()
-    if utils.securityPuzzleCheck == False:
-        I2.ServerRoom.smokealarm()
+
 
 def movewest():
     print("Woops! Can't go that way!")

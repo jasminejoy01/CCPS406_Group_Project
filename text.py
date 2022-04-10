@@ -74,7 +74,7 @@ class ConstructionHeadOffice:
         print("[Construction Head's Office] \n A spacious room with plenty of locked storage cabinets covering the walls of the room. \n There is a lone desk at the far end of the room with a computer and chair. \n Around the room are different types of containers, all holding rolled up sheets of paper. \n One such container is right beside the door; looking at the contents of the paper, it appears to be a design for a 'Moon Habitat'. \n To the West is [Hallway - Section 3]")
     
     def fancyDes():
-        print("[Construction Head's Office] \n The Construction Head's Office looks the same as when I had visited earlier. \n Looking around again, there's not much difference compared to when I first came, except it's clear that the Construction Head has a clear love for wooden items. \n His desk is wooden, his shelves are wooden; it appears that everything in here might have been built by them. \n To the West is [Hallway - Section 3]")
+        print("[Construction Head's Office] \n A spacious room with plenty of locked storage cabinets covering the walls of the room. \n There is a lone desk at the far end of the room with a computer and chair. \n Around the room are different types of containers, all holding rolled up sheets of paper. \n One such container is right beside the door; looking at the contents of the paper, it appears to be a design for a 'Moon Habitat'. \n To the West is [Hallway - Section 3]")
         
 class OrigamiBotStorage:
     def basicDes():
@@ -102,17 +102,17 @@ class ProgrammingLab:
 
 class BotTesting:
     def basicDes():
-        print("[Robotics Testing Facility - Basic Functions] \n I find myself in a large and spacious area with tables scattered throughout the room; it appears as if there are multiple workstations with varying activities. A screwdriver sits on one of them. \n To the west is a door with a sign above it, though I can't read it because there is heavy machinery blocking my view. \n There's a robot hooked up to a terminal nearby, much larger than me and the other robots I've seen. \n To the East is [Hallway - Section 1]")
+        print("[Robotics Testing Facility - Basic Functions] \n I find myself in a large and spacious area with tables scattered throughout the room; it appears as if there are multiple workstations with varying activities. \n To the west is a door with a sign above it, though I can't read it because there is heavy machinery blocking my view.  \n To the East is [Hallway - Section 1]")
     
     def fancyDes():
         print("[Robotics Testing Facility – Basic Functions] \n I'm back inside the Robotics Testing Facility, the room that has all the types of tests placed on different tables. \n To the West is [Bot Testing - Obstacle Course] \n To the East is [Hallway - Section 1]")
     
 class BotTestingObstacleCourse:
     def basicDes():
-        print("[Robotics Testing Facility – Obstacle Course] \n The lights in the room turn on after I step through the door; this room looks a lot bigger on the inside than it does on the outside.\n Looking around the room, there are areas that are sectioned off as if there are separate tasks in this room. \n There are beams and platforms organized all around the room, it appears to be a room for testing one's ability to move effectively. \n To the East is [Robotics Testing Facility - Basic Functions]")
+        print("[Robotics Testing Facility – Obstacle Course] \n The lights in the room turn on after I step through the door; this room looks a lot bigger on the inside than it does on the outside.\n Looking around the room, there are areas that are sectioned off as if there are separate tasks in this room. \n There are beams and platforms organized all around the room, it appears to be a room for testing one's ability to move effectively. There are screwdrivers laid out on a workbench. \n To the East is [Robotics Testing Facility - Basic Functions]")
     
     def fancyDes():
-        print("[Robotics Testing Facility – Obstacle Course] \n The beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed. \n The beams and platforms all around the room have different colors marked on them as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines.\n The Red colored paths look like they have the most difficult obstacles to get through. \n To the East is [Robotics Testing Facility - Basic Functions]")
+        print("[Robotics Testing Facility – Obstacle Course] \n The beams and platforms organized all around the room are still here, but there's so much more to this room than I originally noticed. \n The beams and platforms all around the room have different colors marked on them as if to indicate the varying levels of skills; there are paths with a Green line through it, some have Yellow lines, and a rare few have Red colored lines.\n The Red colored paths look like they have the most difficult obstacles to get through. There are screwdrivers laid out on a workbench.\n To the East is [Robotics Testing Facility - Basic Functions]")
 
 class PrototypeWorkshop:
     def basicDes1():
@@ -178,10 +178,10 @@ class Hallway1:
 
 class Hallway2:
     def basicDes():
-        print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is a door with a sign that reads: \n 'Prototype Workshop' \n To the East is a door with a sign that reads: \n 'Programming Lab'")
+        print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is a door with a sign that reads: \n '3D Printing Lab' \n To the East is a door with a sign that reads: \n 'Programming Lab'")
     
     def fancyDes():
-        print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is [Prototype Workshop]. \n To the East is [Programming Lab].")
+        print("[Hallway – Section 2] \n Written on the floor of this hallway is '#2'. \n To the North is [Hallway – Section 1]. \n To the South is [Hallway – Section 3]. \n To the West is a door with a sign that reads: \n '3D Printing Lab' \n To the East is a door with a sign that reads: \n 'Programming Lab'")
         
 class Hallway3:
     def basicDes():

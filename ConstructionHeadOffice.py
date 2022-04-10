@@ -51,25 +51,11 @@ def movesouth():
 def moveeast():
     print("Woops! Can't go that way!")
     
-def itemsInhere():
-    itemlist = []
-    for each in itemdictionary.keys():
-        itemlist.append(each)
-    return itemlist
-
-def itemsInInventory():
-    inventorylist = [] 
-    for each in utils.inventory.keys():
-      inventorylist.append(each)
-    return inventorylist
-    
 def listItems():
-    lst = itemsInhere()
-    for each in lst:
-        print(each)
+    print(itemdictionary.keys())
     
 def examine(obj):
-    lst = itemsInhere()
+    lst = itemdictionary.keys()
     #print(obj)
     if obj in lst:
         if itemdictionary[obj][1] == True or itemdictionary[obj][1] == None:
@@ -78,8 +64,8 @@ def examine(obj):
         print("Hmm... {} doesn't seem to be in this room!".format(obj))
 
 def use(obj):
-    lst = itemsInhere()
-    lst2 = itemsInInventory()
+    lst = itemdictionary.keys()
+    lst2 = utils.inventory.keys()
     #print(lst2)
     if obj in lst and obj not in lst2:
         itemdictionary[obj][0].use()
@@ -92,8 +78,7 @@ def use(obj):
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj):
-    lst = itemsInhere()
-    if obj in lst:
+    if obj in itemdictionary.keys():
         itemdictionary[obj][0].take(filename)
     else:
         print("Hmm... {} can't be taken out of this room!".format(obj))

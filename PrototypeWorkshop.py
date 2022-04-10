@@ -64,25 +64,11 @@ def moveeast():
     else:
         Hallway1.fancyDes()
 
-def itemsInhere():
-    itemlist = []
-    for each in itemdictionary.keys():
-        itemlist.append(each)
-    return itemlist
-
-def itemsInInventory():
-    inventorylist = [] 
-    for each in utils.inventory.keys():
-      inventorylist.append(each)
-    return inventorylist
-    
 def listItems():
-    lst = itemsInhere()
-    for each in lst:
-        print(each)
+    print(itemdictionary.keys())
     
 def examine(obj):
-    lst = itemsInhere()
+    lst = itemdictionary.keys()
     #print(obj)
     if obj in lst:
         if itemdictionary[obj][1] == True or itemdictionary[obj][1] == None:
@@ -91,8 +77,8 @@ def examine(obj):
         print("Hmm... {} doesn't seem to be in this room!".format(obj))
 
 def use(obj):
-    lst = itemsInhere()
-    lst2 = itemsInInventory()
+    lst = itemdictionary.keys()
+    lst2 = utils.inventory.keys()
     #print(lst2)
     if obj in lst and obj not in lst2:
         itemdictionary[obj][0].use()

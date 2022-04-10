@@ -50,31 +50,25 @@ def moveeast():
   Hallway3.fancyDes()
   utils.advanced = True
 
-def itemsInhere():
-    itemlist = []
-    for each in itemdictionary.keys():
-        itemlist.append(each)
-    return itemlist
 
-def itemsInInventory():
-    inventorylist = [] 
-    for each in utils.inventory.keys():
-      inventorylist.append(each)
-    return inventorylist
-    
+
 def listItems():
-    lst = itemsInhere()
-    for each in lst:
-        print(each)
+    print(itemdictionary.keys())
     
 def examine(obj):
-    lst = itemsInhere()
+    lst = itemdictionary.keys()
     #print(obj)
     if obj in lst:
         if itemdictionary[obj][1] == True or itemdictionary[obj][1] == None:
             itemdictionary[obj][0].examine()
     else:
         print("Hmm... {} doesn't seem to be in this room!".format(obj))
+ 
+def take(obj):
+    if obj in itemdictionary.keys():
+        itemdictionary[obj][0].take(filename)
+    else:
+        print("Hmm... {} can't be taken out of this room!".format(obj))
 
 def use(obj):
     if obj == "vent" or obj == "screwdriver":
@@ -88,8 +82,8 @@ def use(obj):
         print("The vent is already open.")
         
     else:
-        lst = itemsInhere()
-        lst2 = itemsInInventory()
+        lst = itemdictionary.keys()
+        lst2 = utils.inventory.keys()
         if obj in lst and obj not in lst2:
             itemdictionary[obj][0].use()
         elif obj in lst2 and obj not in lst:
@@ -99,13 +93,7 @@ def use(obj):
             itemdictionary[obj][0].use()
         else:
             print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
- 
-def take(obj):
-    lst = itemsInhere()
-    if obj in lst:
-        itemdictionary[obj][0].take(filename)
-    else:
-        print("Hmm... {} can't be taken out of this room!".format(obj))
+
 
 def creatorIntro():
   print("\nSuddenly, she looks up.\n'Hm? Oh - OH! Standard cleaning bots are programmed to stay away from my room so you must be-!' She covers her mouth and stands up. Quickly, she hurries over to me. In a lowered voice, she says 'I was sure I set a reminder to come check on you. Poor Ada must've had a tough time... But here you are! You came to see me!")

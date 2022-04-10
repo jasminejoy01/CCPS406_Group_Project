@@ -11,11 +11,13 @@ class Computer:
       self.description = "A fairly modern PC. Some sticky notes line the edges of the monitor. A keyboard sits in front of it on the desk."
       self.interactable = True
       self.useText = ""
+      self.islocked = True
             
     def use(self):
         tryingPassword = True
+        self.islocked = True
         password = input("Please enter the password: \n")
-        while tryingPassword:
+        while tryingPassword and self.islocked:
             if password.lower() == "cw19928":
                 self.islocked = False
                 print("Welcome")
@@ -47,7 +49,6 @@ class Computer:
             print("Downloading spare key to nearest wireless device....")
             time.sleep(1)
             utils.PlayerKeys.append(1)
-            
             print("Downloaded!")
             print("I have {}'s key!'".format(self.name))
             print("I'm done with the computer, so I log off.")

@@ -21,9 +21,17 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     T.PrintingLab.basicDes()
+    if utils.blockedDoor:
+      print("One of the printers has a large tarp over it. It looks fairly secure, so I shouldn't bother with it.")
+    else:
+      print("It appears that a covering has been ripped off of one of the printers. It must've taken a lot of force.")
          
 def fancyDes():
     T.PrintingLab.fancyDes()
+    if utils.blockedDoor:
+      print("One of the printers has a large tarp over it. It looks fairly secure, so I shouldn't bother with it.")
+    else:
+      print("It appears that a covering has been ripped off of one of the printers. It must've taken a lot of force.")
     
 def movewest():
     print("Woops! Can't go that way!")

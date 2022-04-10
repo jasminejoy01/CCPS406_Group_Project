@@ -24,9 +24,13 @@ itemdictionary = { # [Item, isLocked]
 
 def basicDes():
     T.Hallway6.basicDes()
+    if not utils.blockedDoor:
+      print("The construction bot is here, wearing... Is that a tarp? It has a hole cut in the middle to fit over the constructionBot's head like a poncho. It also has a hat.")
          
 def fancyDes():
     T.Hallway6.fancyDes()
+    if not utils.blockedDoor:
+      print("The construction bot is here, wearing... Is that a tarp? It has a hole cut in the middle to fit over the constructionBot's head like a poncho. It also has a large green sunhat.")
 
 def movewest():  
     os.system('cls' if os.name == 'nt' else 'clear')

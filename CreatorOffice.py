@@ -115,7 +115,7 @@ def creatorIntro():
 
 def meetAgain():
   print("Welcome back! I'm glad to see you again!")
-  if not utils.GPS and utils.oriBotGPS:
+  if not utils.GPS and utils.oriBotGPS and utils.hasOribot:
     print("And you made a friend! Does that mean you've met Omi? Odd, she's usually complaining about my creations. 'Necessity is the mother of invention', she says, 'Anything more is wasteful'. But why stop at necessity when you can have LIVING ROBOTS?!'")
     response = input("'Actually... ', my creator takes a closer look at the tiny robot on my shoulder, 'All this fluttering is highly unusual for one of her robots...'. She pauses, then gasps 'OH, can I take a look? Just real quick'.")
     if response == "yes" or response == "y" or "ok" in response or response == "sure":
@@ -129,3 +129,5 @@ def meetAgain():
         print("'That should do it. I wish both of you luck on your adventure. Hope to see you again!'")
     else: 
       print("Alright, just keep in mind you won't be able to leave together until that's done. Come back if you change your mind.")
+  elif not utils.blockedDoor:
+    print("Y'know, I've always has an admiration for George's inventions, the ConstructionBots. They're so adaptable, and so big that we don't even bother putting GPS's on them. I've always wanted to ride on one's shoulders. Ah, maybe someday.")

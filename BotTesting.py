@@ -12,27 +12,31 @@ import room
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
-blockedDoor = True
 
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
 machinery = I.Item("machinery", False, False, "Some sort of massive, heavy machinery. It's hard to tell what it does.", True, "")
-screwdriver = I.Item("screwdriver", True, False, "A well-worn screwdriver", True, "I'm not sure what to do with this")
+constructionBot = I.Item("constructionbot", False, False, "A bulky robot, clearly designed for lifting and moving heavy loads. It has a keycard scanner on it.", False, "")
+
 
 itemdictionary = { # [Item, isLocked]
   'machinery':    [machinery  , None ],
-  'screwdriver': [screwdriver,  None]
+  'constructionbot': [constructionBot, None]
 }
 
 def basicDes():
     T.BotTesting.basicDes()
+    if utils.blockedDoor:
+      print("There's a deactivated constructionBot as well.")
           
 def fancyDes():
     T.BotTesting.fancyDes()
+    if utils.blockedDoor:
+        print("There's a deactivated constructionBot as well.")
 
 def movewest():
-  if not blockedDoor:
+  if not utils.blockedDoor:
     utils.x = utils.x + 1
     os.system('cls' if os.name == 'nt' else 'clear')
     if not utils.advanced:
@@ -63,6 +67,13 @@ def examine(obj):
     room.examine(obj, itemdictionary)
 
 def use(obj):
+  if "key" in obj or obj == "constructionBot":
+    if 3 in utils.PlayerKeys:
+      print("I use the Construction keycard to activate the construction bot. It lifts itself up as it awakens, and take a look around the room. \nI point it toward the blockage, and with tremendous strength, the constructionBot pushes the machinery aside.")
+      utils.blockedDoor = False
+    else:
+      print("I don't have the right key for this.")
+  else:
     room.use(obj, itemdictionary)
  
 def take(obj):

@@ -24,7 +24,7 @@ def use(obj, itemdictionary):
     elif obj in lst and obj in lst2:
         itemdictionary[obj][0].use()
     else:
-        print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
+        print("Hmm... I can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
 def take(obj, itemdictionary, filename):
     if obj in itemdictionary.keys():

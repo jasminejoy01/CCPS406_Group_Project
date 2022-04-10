@@ -19,7 +19,9 @@ ventOpen = initialize.ventOpen
 EMgate = initialize.EMgate
 cleanHall = initialize.cleanHall
 georgeDistracted = initialize.georgeDistracted
+hasOribot = initialize.hasOribot
 oriBotGPS = initialize.oriBotGPS
+blockedDoor = initialize.blockedDoor
 
 def inInventory(obj):
   items = str(inventory.keys())

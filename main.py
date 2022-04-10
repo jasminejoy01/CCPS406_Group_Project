@@ -151,13 +151,13 @@ def processLanguage(obj=None):
               validCommand = True
             elif verb == "use":
                 validCommand = True
-                if "key" in command:
-                  if len(utils.PlayerKeys) > 0:
-                    print("I have a key. This will let me use a terminal")
-                  else:
-                    print("I don't have any keys")
-                else:
-                  __import__(where).use(noun)
+                #if "key" in command:
+                #  if len(utils.PlayerKeys) > 0:
+                #    print("I have a key. This will let me use a terminal")
+                #  else:
+                #    print("I don't have any keys")
+                #else:
+                __import__(where).use(noun)
               
                 #Puzzle 3: sweeping
                 if noun == "broom" and x == 3 and y == 1:

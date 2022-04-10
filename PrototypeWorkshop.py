@@ -83,7 +83,7 @@ def take(obj):
         print("I already have the card")
       else:
         itemdictionary['Dr. Ediface\'s key card'][0].take(filename)
-        utils.PlayerKeys.append(2)
+        utils.PlayerKeys.append(3)
     else:
       print("I can't do that without being noticed. Maybe I can distract him...")
   else:

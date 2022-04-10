@@ -53,3 +53,5 @@ EMgate = True
 cleanHall = False
 georgeDistracted = False
 oriBotGPS = True
+hasOribot = False
+blockedDoor = True

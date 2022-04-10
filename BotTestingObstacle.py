@@ -15,22 +15,17 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
+screwdriver = I.Item("screwdriver", True, False, "A well-worn screwdriver", True, "I'm not sure what to do with this")
 
 itemdictionary = { # [Item, isLocked]
-
+  'screwdriver': [screwdriver,  None]
 }
 
 def basicDes():
     T.BotTestingObstacleCourse.basicDes()
-    if utils.puzzle4 == False:
-        Puzzle4.puzzle4()
-        utils.puzzle4 = True
          
 def fancyDes():
     T.BotTestingObstacleCourse.fancyDes()
-    if utils.puzzle4 == False:
-        Puzzle4.puzzle4()
-        utils.puzzle4 = True
         
 def movewest():
     print("Woops! Can't go that way!")
@@ -48,6 +43,7 @@ def moveeast():
       BotTesting.basicDes()   
     else:
       BotTesting.fancyDes()
+    print("The construction bot seems to have left...")
 
 def listItems():
     print(itemdictionary.keys())

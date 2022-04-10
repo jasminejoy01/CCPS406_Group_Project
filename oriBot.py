@@ -9,6 +9,7 @@ class oriBot:
 
     def take(self, filename):
         if not self.inInventory:
+          utils.hasOribot = True
           if not self.awake:
             print("Oh! It woke up at my touch!")
           self.inInventory = True

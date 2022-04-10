@@ -8,6 +8,7 @@ import Item2 as I2
 import Hallway3
 import text as T
 import os
+import room
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -56,7 +57,7 @@ def examine(obj):
     room.examine(obj, itemdictionary)
 
 def take(obj):
-    room.take(obj, itemdictionary)
+    room.take(obj, itemdictionary, filename)
 
 def use(obj):
     if obj == "vent" or obj == "screwdriver":

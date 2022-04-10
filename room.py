@@ -26,7 +26,7 @@ def use(obj, itemdictionary):
     else:
         print("Hmm... {} can't use an object that's not in this room! You can check your inventory to look for items to use".format(obj))
  
-def take(obj, itemdictionary):
+def take(obj, itemdictionary, filename):
     if obj in itemdictionary.keys():
         itemdictionary[obj][0].take(filename)
     else:

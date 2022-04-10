@@ -71,4 +71,4 @@ def use(obj):
     room.use(obj, itemdictionary)
  
 def take(obj):
-    room.take(obj, itemdictionary)
+    room.take(obj, itemdictionary, filename)

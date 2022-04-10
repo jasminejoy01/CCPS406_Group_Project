@@ -6,10 +6,9 @@ import Item as I
 import Item2 as I2
 import utils
 import Hallway1
-#import Puzzle4
 import text as T
 import os
-#import player
+import room
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -88,4 +87,4 @@ def take(obj):
     else:
       print("I can't do that without being noticed. Maybe I can distract him...")
   else:
-    room.take(obj, itemdictionary)
+    room.take(obj, itemdictionary, filename)

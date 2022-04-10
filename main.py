@@ -167,13 +167,16 @@ def processLanguage(obj=None):
                   if not utils.cleanHall:
                     print("The guard carefully inspects my work. 'Well I've certainly seen better, but I suppose it's passable. You may proceed.''")
                     utils.cleanHall = True
-                validCommand = True
-              
-            #if verb == "speak" or verb == "say":
-              #This needs a lot of work
-             #   where = library(str(x), str(y))
-             #   __import__(where).speakTo(noun)
-            #    validCommand = True
+            elif (verb == "push" or verb == "break") and noun == "prototype" and x == 5 and y == 1:
+              validCommand = True
+              if not utils.georgeDistracted:
+                utils.georgeDistracted = True
+                print("I push the construction prototype off its table and it crashes loudly to the floor.")
+                print("The large man working across the room jumps out of his seat. He abandons whatever he was working on and immediately starts repairing the broken prototype.")
+                print("'Aw, poor thing,' he says, 'I'll fix you up.'")
+              else:
+                print("The prototype is being lovingly tended to. I couldn't do that now.")
+
             if ("item" in command or "items" in command) and ("room" in command or "rooms" in command):
                 where = library(str(x), str(y))
                 __import__(where).listItems()

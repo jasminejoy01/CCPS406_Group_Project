@@ -10,6 +10,7 @@ import BuildingEntranceExit
 import Hallway2
 import text as T
 import os
+import room
 
 filename = (os.path.basename(__file__))
 filename = filename.replace(".py", "")
@@ -69,4 +70,4 @@ def use(obj):
     room.use(obj, itemdictionary)
  
 def take(obj):
-    room.take(obj, itemdictionary)
+    room.take(obj, itemdictionary, filename)

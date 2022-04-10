@@ -26,10 +26,16 @@ itemdictionary = { # [Item, isLocked]
 }
 
 def basicDes():
-    T.ProgrammingLab.basicDes()
+  if utils.alarmOn:
+    PrintingLab.basicDes1()
+  else:
+    PrintingLab.basicDes2()
          
 def fancyDes():
-    T.ProgrammingLab.fancyDes()
+  if utils.alarmOn:
+    PrintingLab.fancyDes2()
+  else:
+    PrintingLab.fancyDes2()
 
 def movewest():
     os.system('cls' if os.name == 'nt' else 'clear')

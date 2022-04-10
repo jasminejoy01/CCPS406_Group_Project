@@ -12,7 +12,7 @@ PlayerKeys = initialize.PlayerKeys #1 = Creator's key, 2 = Origami, 3 = Construc
 inventory = initialize.inventory #Inventory list
 cheat = initialize.cheat
 disguise = initialize.disguise
-programminglabOccupied = initialize.programminglabOccupied
+alarmOn = initialize.alarmOn
 ventOpen = initialize.ventOpen
 EMgate = initialize.EMgate
 cleanHall = initialize.cleanHall

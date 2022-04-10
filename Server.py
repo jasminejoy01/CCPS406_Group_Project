@@ -57,6 +57,7 @@ def use(obj):
     if utils.inInventory("wire"):
       print("I push my copper wire into the electrical panel, and sparks fly.")
       print("I hear an alarm go off down the hall, and people complaining as they move out.")
+      utils.alarmOn = True
     elif "panel" in obj or "control" in obj or "electrical" in obj:
       print("I could probably use something to short-circuit this.")
     else:

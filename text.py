@@ -94,11 +94,17 @@ class BuildingEntranceExit:
         print("[Main Facility Entrance]\n I'm back near the Security Checkpoint for the Storage Bays. There's a bored-looking guard sitting behind a desk, idly filling out a sudoku book. She hardly looks up as I pass. The tiled floor still seems reletively clean.")
 
 class ProgrammingLab:
-    def basicDes():
+    def basicDes1():
         print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. The only other features that this room has are the 'FIRE' lights placed all over the ceiling. \n There are many NASA staff scattered throughout the room, all of them glued to their computer screens. \n To the West is [Hallway - Section 2]")
-    
-    def fancyDes():
+
+    def basicDes2():
+        print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. An emergency alarm rings loudly in this room. All programmers have left, and one computer is still logged in. \n To the West is [Hallway - Section 2]")
+
+    def fancyDes1():
         print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. \n I notice now that the different desks and computers have people's names on them; it also looks like a lot of the desks have been personalized, perhaps by their specific users. \n To the West is [Hallway - Section 2]")
+
+    def fancyDes2():
+        print("[Programming Lab] \n This room is filled with desks and computers as far as my eyes can see. \n The different desks and computers have people's names on them; it also looks like a lot of the desks have been personalized, perhaps by their specific users. An alarm rings loudly in this room, and all the programmers have evacutated. One computer is still logged in. \n To the West is [Hallway - Section 2]")
 
 class BotTesting:
     def basicDes():

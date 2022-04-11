@@ -15,11 +15,13 @@ filename = filename.replace(".py", "")
 ## Items in Room
 ##################
 #name, canTake, inInventory, description, interactable, useText
-
+hat = I.Item("hat", True, False, "A lovely red hat.", True, "I put on the hat")
+coat = I.Item("coat", True, False, "A light spring coat.", True, "I pull on the coat")
 
 itemdictionary = { # [Item, isLocked]
 #   'nullItem': [nullItem  , None],
- 
+  'hat':  [hat , None ],
+  'coat':  [coat, None]
 }
 
 def basicDes():

@@ -170,10 +170,10 @@ class Security:
     
 class Storage:
     def basicDes():
-        print("[Storage] \n A storage room; there are countless shelves that make up the room carrying different items. \n There are parts that look like they're for the 3D Printers, different bottles of 'Printing Filament', and they're accompanied by other electronics such as wires, chargers, and laptops. \n On the other shelves are articles of clothing, they don't look similar to the uniform any of the employees wear; there are different hats, coats, and a dress. \n To the South is [Hallway - Section 6].")
+        print("[Storage] \n A storage room; there are countless shelves that make up the room carrying different items. \n There are parts that look like they're for the 3D Printers, different bottles of 'Printing Filament', and they're accompanied by other electronics such as wires, chargers, and laptops. \n On the other shelves are articles of clothing, they don't look similar to the uniform any of the employees wear; there are different hats and coats. \n To the South is [Hallway - Section 6].")
     
     def fancyDes():
-        print("[Storage] \n There are a lot more clothes in here than I originally remember. \n The clothes follow no particular style or color; it looks like there are clothes here from older periods of time, each having their own problems such as holes or missing buttons, while other pieces of clothing look like it's brand new. \n Some of these clothing look like they would fit me. \n To the South is [Hallway - Section 6].")
+        print("[Storage] \n There are a lot more clothes in here than I originally remember. \n The clothes follow no particular style or color; it looks like there are clothes here from older periods of time, each having their own problems such as holes or missing buttons, while other pieces of clothing look like it's brand new. \n I'm particularily interested in the hat and coat. \n To the South is [Hallway - Section 6].")
 
 class Hallway1:
     def basicDes():
@@ -219,7 +219,7 @@ class Hallway6:
     
 class Exit:
     def basicDes():
-        print("[Building Exit] \n Identical to the other Security Checkpoint I walked through earlier, there is a guard desk between two metal gates, with a set of monitors displaying different moving images. \n There is a guard sitting at the desk, sitting in a slouched position and appears to be watching the screens. There's also a window facing out from the Security Office. \n To the North is [Hallway - Section 6].")
+        print("[Building Exit] \n The building's exit is a wide hall. A security guard sits behind a wall to the west, looking at me through a window. \n To the North is [Hallway - Section 6].")
     
     def fancyDes():
-        print("[Building Exit] \n The Security Checkpoint still sits here with the slouched over guard sitting at the desk. \n He's in the same position as when I had seen him earlier.. Are the monitors turned off? \n To the North is [Hallway - Section 6].")
+        print("[Building Exit] \n TThe building's exit is a wide hall. The only thing between me and the outside world is a set of metal doors. A guard sits to the west, looking at me through a window. He seems very old, and by the thickness of his glasses, his vision must be quite poor.\n To the North is [Hallway - Section 6].")

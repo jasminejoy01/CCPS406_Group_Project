@@ -151,6 +151,10 @@ def processLanguage(obj=None):
             elif verb == "open" and noun == "vent":
               __import__(where).use(noun)
               validCommand = True
+            elif verb == "wear" and (noun == "hat" or noun == "coat") and x == 2 and y == 3:
+              __import__(where).use(noun)
+              utils.disguise = True
+              validCommand = True
             elif verb == "use":
                 validCommand = True
                 #if "key" in command:

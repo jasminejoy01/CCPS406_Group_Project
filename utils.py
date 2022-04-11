@@ -45,8 +45,7 @@ def exitgame(roomcodes):
         if saveinput == 's':
             #arr = roomsvisited.tolist()
             
-            arraylist = ['## rooms visited\n', 
-                         '## current location\n', 
+            arraylist = ['## current location\n', 
                          'x = ', str(initialize.x)+"\n" , 
                          'y = ', str(initialize.y)+"\n" , 
                          'roomcodes = ', str(roomcodes)+"\n", 
@@ -55,15 +54,17 @@ def exitgame(roomcodes):
                          '## keys\n', 
                          'GPS = ', str(GPS)+"\n" ,
                          'advanced = ', str(advanced)+"\n" ,
-                         'PlayerKey1 = ', str(PlayerKeys)+"\n" ,
+                         'PlayerKeys = ', str(PlayerKeys)+"\n" ,
                          'cheat = ', str(cheat)+"\n",
                          'disguise = ', str(disguise)+"\n",
-                         'origamiHeadChecker = ', str(origamiHeadChecker)+"\n",
-                         'puzzle4 = ', str(programminglabOccupied)+"\n",
-                         'constructionChecker = ', str(constructionChecker)+"\n",
-                         'constructionBotChecker = ', str(constructionBotChecker)+"\n",
-                         'prototypeChecker = ', str(prototypeChecker)+"\n",
-                         'securityPuzzleCheck = ', str(securityPuzzleCheck)+"\n"
+                         'alarmOn = ', str(alarmOn)+"\n",
+                          'ventOpen = ', str(ventOpen)+"\n",
+                          'EMgate = ', str(EMgate)+"\n",
+                          'cleanHall = ', str(cleanHall)+"\n",
+                          'georgeDistracted = ', str(georgeDistracted)+"\n",
+                          'hasOribot = ', str(hasOribot)+"\n",
+                          'oriBotGPS = ', str(oriBotGPS)+"\n",
+                          'blockedDoor = ', str(blockedDoor)
                          ]
             
             f = open(my_file, 'w')

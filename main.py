@@ -196,14 +196,21 @@ while True:
     if os.path.exists('save.py') == True:
         import utils, save
         utils.cheat = save.cheat
-        utils.PlayerKey1 = save.PlayerKey1
+        utils.PlayerKeys = save.PlayerKeys
         utils.advanced = save.advanced
         utils.x = save.x
         utils.y = save.y
         utils.inventory = save.inventory
-        #utils.roomsvisited = save.visited
         utils.disguise = save.disguise
-        utils.programminglabOccupied = save.programminglabOccupied
+        utils.GPS = save.GPS
+        utils.alarmOn = save.alarmOn
+        utils.ventOpen = utils.ventOpen
+        utils.EMgate = utils.EMgate
+        utils.cleanHall = utils.cleanHall
+        utils.georgeDistracted = utils.georgeDistracted
+        utils.hasOribot = utils.hasOribot
+        utils.oriBotGPS = utils.oriBotGPS
+        utils.blockedDoor = utils.blockedDoor
         os.remove('save.py')
 
     processLanguage()

@@ -51,7 +51,9 @@ def moveeast():
     print("Woops! Can't go that way!")
 
 def listItems():
-    print(itemdictionary.keys())
+    listitems = (itemdictionary.keys())
+    for each in listitems:
+        print(each)
     
 def examine(obj):
     room.examine(obj, itemdictionary)

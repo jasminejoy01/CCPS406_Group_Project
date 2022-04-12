@@ -30,6 +30,41 @@ def inInventory(obj):
     return False
 
 
+def savegame(roomcodes):
+    #print("Saving state...")
+    my_file = 'save.py'
+        
+    if os.path.isfile(my_file) == True:
+        os.remove(my_file)
+        
+    arraylist = ['## current location\n', 
+                 'x = ', str(x)+"\n" , 
+                 'y = ', str(y)+"\n" , 
+                 'roomcodes = ', str(roomcodes)+"\n", 
+                 '## current inventory\n', 
+                 'inventory = ', str(inventory)+"\n",
+                 '## keys\n', 
+                 'GPS = ', str(GPS)+"\n" ,
+                 'advanced = ', str(advanced)+"\n" ,
+                 'PlayerKeys = ', str(PlayerKeys)+"\n" ,
+                 'cheat = ', str(cheat)+"\n",
+                 'disguise = ', str(disguise)+"\n",
+                 'alarmOn = ', str(alarmOn)+"\n",
+                  'ventOpen = ', str(ventOpen)+"\n",
+                  'EMgate = ', str(EMgate)+"\n",
+                  'cleanHall = ', str(cleanHall)+"\n",
+                  'georgeDistracted = ', str(georgeDistracted)+"\n",
+                  'hasOribot = ', str(hasOribot)+"\n",
+                  'oriBotGPS = ', str(oriBotGPS)+"\n",
+                  'blockedDoor = ', str(blockedDoor)
+                 ]
+    
+    f = open(my_file, 'w')
+    for each in arraylist:
+        f.write(each)
+    f.close()
+    #print("Current state saved!")
+        
 def exitgame(roomcodes):
     print("Are you sure you want to quit the game?")
     response = input()
@@ -43,35 +78,7 @@ def exitgame(roomcodes):
         if os.path.isfile(my_file) == True:
             os.remove(my_file)
         if saveinput == 's':
-            #arr = roomsvisited.tolist()
-            
-            arraylist = ['## current location\n', 
-                         'x = ', str(initialize.x)+"\n" , 
-                         'y = ', str(initialize.y)+"\n" , 
-                         'roomcodes = ', str(roomcodes)+"\n", 
-                         '## current inventory\n', 
-                         'inventory = ', str(inventory)+"\n",
-                         '## keys\n', 
-                         'GPS = ', str(GPS)+"\n" ,
-                         'advanced = ', str(advanced)+"\n" ,
-                         'PlayerKeys = ', str(PlayerKeys)+"\n" ,
-                         'cheat = ', str(cheat)+"\n",
-                         'disguise = ', str(disguise)+"\n",
-                         'alarmOn = ', str(alarmOn)+"\n",
-                          'ventOpen = ', str(ventOpen)+"\n",
-                          'EMgate = ', str(EMgate)+"\n",
-                          'cleanHall = ', str(cleanHall)+"\n",
-                          'georgeDistracted = ', str(georgeDistracted)+"\n",
-                          'hasOribot = ', str(hasOribot)+"\n",
-                          'oriBotGPS = ', str(oriBotGPS)+"\n",
-                          'blockedDoor = ', str(blockedDoor)
-                         ]
-            
-            f = open(my_file, 'w')
-            for each in arraylist:
-                f.write(each)
-            f.close()
-            
+            savegame(roomcodes)
             sys.exit()
         if saveinput == 'n':
             sys.exit()

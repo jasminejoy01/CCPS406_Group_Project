@@ -50,6 +50,7 @@ def processLanguage(obj=None):
         y = utils.y
         library(str(x), str(y))
         import PrivateWorkshop
+        #T.intro()
             
     #basic variables
     validCommand = False
@@ -70,17 +71,24 @@ def processLanguage(obj=None):
           x = utils.x
           y = utils.y
           where = library(str(x), str(y))
+          if "where am i" in command or "whereami" in command:
+              print("You're in ",whereami(str(x), str(y)))
+              validCommand = True
           if "north" in command or verb == "n":
               __import__(where).movenorth()
+              utils.savegame(currentroomdict)
               validCommand = True
           elif "east" in command or verb == "e":
               __import__(where).moveeast()
+              utils.savegame(currentroomdict)
               validCommand = True
           elif "south" in command or verb == "s":
               __import__(where).movesouth()
+              utils.savegame(currentroomdict)
               validCommand = True
           elif "west" in command or verb == "w":
               __import__(where).movewest()
+              utils.savegame(currentroomdict)
               validCommand = True
 
         #Player tools
@@ -96,8 +104,10 @@ def processLanguage(obj=None):
             else:
               if utils.advanced:
                   __import__(where).fancyDes()
+                  validCommand = True
               else:
                   __import__(where).basicDes()
+                  validCommand = True
 
           elif "help" in command:
                   T.help()
@@ -188,7 +198,7 @@ def processLanguage(obj=None):
                 __import__(where).listItems()
                 validCommand = True
                     
-          if len(splitCommand) == 0 or not validCommand:
+          if len(splitCommand) == 0 or validCommand == False:
             print("Please input a valid command")
             command = input("")
             
@@ -198,19 +208,25 @@ while True:
         utils.cheat = save.cheat
         utils.PlayerKeys = save.PlayerKeys
         utils.advanced = save.advanced
-        utils.x = save.x
-        utils.y = save.y
         utils.inventory = save.inventory
         utils.disguise = save.disguise
         utils.GPS = save.GPS
         utils.alarmOn = save.alarmOn
-        utils.ventOpen = utils.ventOpen
-        utils.EMgate = utils.EMgate
-        utils.cleanHall = utils.cleanHall
-        utils.georgeDistracted = utils.georgeDistracted
-        utils.hasOribot = utils.hasOribot
-        utils.oriBotGPS = utils.oriBotGPS
-        utils.blockedDoor = utils.blockedDoor
+        utils.ventOpen = save.ventOpen
+        utils.EMgate = save.EMgate
+        utils.cleanHall = save.cleanHall
+        utils.georgeDistracted = save.georgeDistracted
+        utils.hasOribot = save.hasOribot
+        utils.oriBotGPS = save.oriBotGPS
+        utils.blockedDoor = save.blockedDoor
+        
+        if save.x == 0 and save.y == 0:
+            utils.x = int(save.roomcodes[-1][0])
+            utils.y = int(save.roomcodes[-1][-1])
+        else:
+            utils.x = save.x
+            utils.y = save.y
+            
         os.remove('save.py')
 
     processLanguage()

@@ -6,18 +6,18 @@ import os
 
 rooms = []
 objects = []
-currentroomdict = []
 
 def library(string1, string2):
+    import utils
     inputstring = string1+string2
     inputint = int(inputstring)
     
-    currentroomdict.append(inputstring)
+    (utils.roomlist).append(inputstring)
+    #utils.roomlist = currentroomdict
     #print(inputstring, inputint, initialize.roomdict[inputint][3], rooms)
     try:
         location = initialize.roomdict[inputint][3]
         rooms.append(location)
-        #print(location)
         return location
     except:
         print("Room file not found.")
@@ -26,7 +26,7 @@ def library(string1, string2):
 def whereami(string1, string2):
     inputstring = string1+string2
     inputint = int(inputstring)
-    
+    #print(inputint)
     location = initialize.roomdict[inputint][0]
     return location
   
@@ -44,8 +44,10 @@ def hasItem(obj):
 
 
 def processLanguage(obj=None): 
+    #print(utils.roomlist)
     import utils
-    if len(rooms) == 0:
+    if len(utils.roomlist) == 0:
+        T.intro()
         x = utils.x
         y = utils.y
         library(str(x), str(y))
@@ -61,7 +63,7 @@ def processLanguage(obj=None):
     splitCommand = command.split()
     
     #Check for non-empty input
-    while len(splitCommand) == 0 or not validCommand:
+    while len(splitCommand) == 0 or validCommand == False:
         command = command.lower()
         splitCommand = command.split()
         if len(splitCommand)>0:
@@ -72,23 +74,19 @@ def processLanguage(obj=None):
           y = utils.y
           where = library(str(x), str(y))
           if "where am i" in command or "whereami" in command:
-              print("You're in ",whereami(str(x), str(y)))
+              print("You're in",whereami(str(x), str(y)))
               validCommand = True
           if "north" in command or verb == "n":
               __import__(where).movenorth()
-              utils.savegame(currentroomdict)
               validCommand = True
           elif "east" in command or verb == "e":
               __import__(where).moveeast()
-              utils.savegame(currentroomdict)
               validCommand = True
           elif "south" in command or verb == "s":
               __import__(where).movesouth()
-              utils.savegame(currentroomdict)
               validCommand = True
           elif "west" in command or verb == "w":
               __import__(where).movewest()
-              utils.savegame(currentroomdict)
               validCommand = True
 
         #Player tools
@@ -113,7 +111,7 @@ def processLanguage(obj=None):
                   T.help()
                   validCommand = True
           elif "exit" in command:
-                  utils.exitgame(currentroomdict)
+                  utils.exitgame()
                   validCommand = True
           elif "inventory" in command or command == "i":
                   items = str(utils.inventory.keys())
@@ -205,6 +203,14 @@ def processLanguage(obj=None):
 while True:
     if os.path.exists('save.py') == True:
         import utils, save
+        if save.x == 0 and save.y == 0 and len(save.roomcodes) != 0:
+            utils.x = int(save.roomcodes[-1][0])
+            utils.y = int(save.roomcodes[-1][-1])
+        else:
+            utils.x = save.x
+            utils.y = save.y
+            
+        utils.roomlist = save.roomcodes
         utils.cheat = save.cheat
         utils.PlayerKeys = save.PlayerKeys
         utils.advanced = save.advanced
@@ -219,14 +225,13 @@ while True:
         utils.hasOribot = save.hasOribot
         utils.oriBotGPS = save.oriBotGPS
         utils.blockedDoor = save.blockedDoor
-        
-        if save.x == 0 and save.y == 0:
-            utils.x = int(save.roomcodes[-1][0])
-            utils.y = int(save.roomcodes[-1][-1])
+        where = library(str(utils.x), str(utils.y))
+        if utils.advanced == True:
+            __import__(where).fancyDes()
         else:
-            utils.x = save.x
-            utils.y = save.y
-            
+            __import__(where).basicDes()
+        
+        if utils.x == 0 and utils.y == 0 and len(save.roomlist) == 0:
+            T.intro()  
         os.remove('save.py')
-
     processLanguage()

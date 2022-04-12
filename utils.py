@@ -20,6 +20,7 @@ georgeDistracted = initialize.georgeDistracted
 hasOribot = initialize.hasOribot
 oriBotGPS = initialize.oriBotGPS
 blockedDoor = initialize.blockedDoor
+roomlist = initialize.roomcodes
 
 def inInventory(obj):
   items = str(inventory.keys())
@@ -30,7 +31,7 @@ def inInventory(obj):
     return False
 
 
-def savegame(roomcodes):
+def savegame():
     #print("Saving state...")
     my_file = 'save.py'
         
@@ -40,7 +41,7 @@ def savegame(roomcodes):
     arraylist = ['## current location\n', 
                  'x = ', str(x)+"\n" , 
                  'y = ', str(y)+"\n" , 
-                 'roomcodes = ', str(roomcodes)+"\n", 
+                 'roomcodes = ', str(roomlist)+"\n", 
                  '## current inventory\n', 
                  'inventory = ', str(inventory)+"\n",
                  '## keys\n', 
@@ -65,7 +66,7 @@ def savegame(roomcodes):
     f.close()
     #print("Current state saved!")
         
-def exitgame(roomcodes):
+def exitgame():
     print("Are you sure you want to quit the game?")
     response = input()
     response = response.lower()
@@ -78,7 +79,7 @@ def exitgame(roomcodes):
         if os.path.isfile(my_file) == True:
             os.remove(my_file)
         if saveinput == 's':
-            savegame(roomcodes)
+            savegame()
             sys.exit()
         if saveinput == 'n':
             sys.exit()

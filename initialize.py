@@ -53,3 +53,4 @@ georgeDistracted = False
 oriBotGPS = True
 hasOribot = False
 blockedDoor = True
+roomcodes = []

@@ -30,7 +30,6 @@ roomdict = { # [desc, xcoord, ycoord, code]
   54: ["Server Room"                , 5, 4, "Server"]
 }
 
-T.intro()
 x = 0
 y = 0
 
